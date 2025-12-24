@@ -37,7 +37,7 @@
             class="w-full h-full bg-gradient-to-br from-[#00e1ff]/20 to-transparent rounded-xl border border-[#00e1ff]/30 animate-float"
           >
             <div class="absolute inset-2 flex items-center justify-center">
-              <div class="text-[#00e1ff] font-mono text-sm">{ }</div>
+              <Icon name="lucide:code" class="w-8 h-8 text-[#00e1ff]" />
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
             style="animation-delay: 1s"
           >
             <div class="absolute inset-2 flex items-center justify-center">
-              <div class="text-[#1bd4c1] font-mono text-xs">< /></div>
+              <Icon name="lucide:brackets" class="w-6 h-6 text-[#1bd4c1]" />
             </div>
           </div>
         </div>
@@ -188,23 +188,16 @@
               <div
                 class="relative w-20 h-20 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] flex items-center justify-center group-hover:border-[#00e1ff]/30 transition-all duration-300"
               >
-                <!-- Icon -->
-                <svg
+                <!-- Modern Icon -->
+                <Icon
+                  :name="getModernIcon(service.icon)"
                   class="w-10 h-10"
                   :class="
                     service.color === 'primary'
                       ? 'text-[#00e1ff]'
                       : 'text-[#1bd4c1]'
                   "
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <component :is="getIconComponent(service.icon)" />
-                </svg>
+                />
 
                 <!-- Pulsing dot -->
                 <div
@@ -274,17 +267,10 @@
                 class="relative z-10 text-[#0f1729] flex items-center gap-2"
               >
                 Get Started
-                <svg
+                <Icon
+                  name="lucide:arrow-right"
                   class="w-4 h-4 group-hover/cta:translate-x-1 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                />
               </span>
             </NuxtLink>
           </div>
@@ -316,22 +302,15 @@
                   <div
                     class="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] flex items-center justify-center"
                   >
-                    <svg
+                    <Icon
+                      :name="getFeatureIcon(feature.icon)"
                       class="w-6 h-6"
                       :class="
                         feature.color === 'primary'
                           ? 'text-[#00e1ff]'
                           : 'text-[#1bd4c1]'
                       "
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <component :is="getIconComponent(feature.icon)" />
-                    </svg>
+                    />
                   </div>
                 </div>
 
@@ -404,17 +383,10 @@
               >
                 <!-- Icon -->
                 <div class="mb-6">
-                  <svg
+                  <Icon
+                    :name="getProcessIcon(step.icon)"
                     class="w-10 h-10 text-[#00e1ff]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <component :is="getIconComponent(step.icon)" />
-                  </svg>
+                  />
                 </div>
 
                 <!-- Content -->
@@ -497,17 +469,10 @@
                 class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
               >
                 <span>Contact Us Today</span>
-                <svg
+                <Icon
+                  name="lucide:arrow-right"
                   class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                />
               </div>
 
               <!-- Outer glow -->
@@ -531,17 +496,10 @@
                 class="relative z-10 flex items-center justify-center gap-3 text-white"
               >
                 View Our Work
-                <svg
+                <Icon
+                  name="lucide:external-link"
                   class="w-5 h-5 group-hover/secondary:translate-x-1 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                />
               </div>
 
               <!-- Gradient border on hover -->
@@ -565,36 +523,36 @@ const quickStats = [
   { value: "24/7", label: "Support Available" },
 ];
 
-// Services data
+// Services data with modern icon names
 const services = [
   {
     id: "backend",
-    icon: "Server",
+    icon: "lucide:server",
     title: "Backend Development",
     description:
       "Build robust, scalable server-side solutions that power your applications with enterprise-grade security, performance, and reliability for millions of users.",
     color: "primary",
     features: [
       {
-        icon: "Database",
+        icon: "api",
         title: "API Development",
         desc: "RESTful & GraphQL APIs built for scale and security",
         color: "primary",
       },
       {
-        icon: "Database",
+        icon: "database",
         title: "Database Design",
         desc: "Optimized schemas, efficient queries, and data architecture",
         color: "secondary",
       },
       {
-        icon: "Cloud",
+        icon: "cloud",
         title: "Cloud Services",
         desc: "AWS, GCP, Azure infrastructure and serverless solutions",
         color: "primary",
       },
       {
-        icon: "GitBranch",
+        icon: "devops",
         title: "DevOps & CI/CD",
         desc: "Automated pipelines, containerization, and deployments",
         color: "secondary",
@@ -613,32 +571,32 @@ const services = [
   },
   {
     id: "frontend",
-    icon: "Monitor",
+    icon: "lucide:monitor",
     title: "Frontend Development",
     description:
       "Create beautiful, responsive user interfaces that deliver exceptional user experiences across all devices with cutting-edge frameworks and best practices.",
     color: "secondary",
     features: [
       {
-        icon: "Layers",
+        icon: "framework",
         title: "React/Vue/Angular",
         desc: "Modern SPA frameworks with TypeScript integration",
         color: "primary",
       },
       {
-        icon: "LayoutIcon",
+        icon: "responsive",
         title: "Responsive Design",
         desc: "Mobile-first approaches and cross-browser compatibility",
         color: "secondary",
       },
       {
-        icon: "Zap",
+        icon: "pwa",
         title: "PWA Development",
         desc: "Native-like web experiences with offline capabilities",
         color: "primary",
       },
       {
-        icon: "Gauge",
+        icon: "performance",
         title: "Performance",
         desc: "Optimized for speed, SEO, and Core Web Vitals",
         color: "secondary",
@@ -657,32 +615,32 @@ const services = [
   },
   {
     id: "mobile",
-    icon: "Smartphone",
+    icon: "lucide:smartphone",
     title: "Mobile Development",
     description:
       "Develop high-performance mobile applications that your users will love, on any platform, with seamless integration and exceptional user experiences.",
     color: "primary",
     features: [
       {
-        icon: "Apple",
+        icon: "ios",
         title: "iOS Development",
         desc: "Native iOS apps with Swift and modern Apple frameworks",
         color: "primary",
       },
       {
-        icon: "Smartphone",
+        icon: "android",
         title: "Android Development",
         desc: "Native Android apps with Kotlin and Jetpack",
         color: "secondary",
       },
       {
-        icon: "Tablet",
+        icon: "cross-platform",
         title: "Cross-Platform",
         desc: "React Native & Flutter solutions for wider reach",
         color: "primary",
       },
       {
-        icon: "Shuffle",
+        icon: "app-store",
         title: "App Store Optimization",
         desc: "Store listing optimization and ASO strategies",
         color: "secondary",
@@ -701,32 +659,32 @@ const services = [
   },
   {
     id: "design",
-    icon: "Palette",
+    icon: "lucide:palette",
     title: "UI/UX Design",
     description:
       "Design intuitive, user-centered experiences that convert visitors into loyal customers through research-driven design and seamless interactions.",
     color: "secondary",
     features: [
       {
-        icon: "Users",
+        icon: "research",
         title: "User Research",
         desc: "In-depth user research and persona development",
         color: "primary",
       },
       {
-        icon: "LayoutIcon",
+        icon: "wireframe",
         title: "Wireframing",
         desc: "Structure, information architecture, and user flows",
         color: "secondary",
       },
       {
-        icon: "Palette",
+        icon: "design-system",
         title: "Design Systems",
         desc: "Scalable design systems and component libraries",
         color: "primary",
       },
       {
-        icon: "MousePointer",
+        icon: "testing",
         title: "Usability Testing",
         desc: "Data-driven improvements and A/B testing",
         color: "secondary",
@@ -745,128 +703,75 @@ const services = [
   },
 ];
 
-// Process steps
+// Process steps with modern icons
 const processSteps = [
   {
-    icon: "Users",
+    icon: "discovery",
     title: "Discovery & Planning",
     description:
       "In-depth analysis of requirements, user research, and project scoping to define clear objectives.",
   },
   {
-    icon: "Palette",
+    icon: "design",
     title: "Design & Prototyping",
     description:
       "Wireframing, UI/UX design, and interactive prototypes for stakeholder feedback.",
   },
   {
-    icon: "Code",
+    icon: "development",
     title: "Development & Testing",
     description:
       "Agile development cycles with continuous testing and quality assurance.",
   },
   {
-    icon: "Rocket",
+    icon: "deployment",
     title: "Deployment & Support",
     description:
       "Production deployment, monitoring, and ongoing maintenance and support.",
   },
 ];
 
-// SVG Icon components
-const getIconComponent = (iconName) => {
-  const icons = {
-    Server: () => `
-      <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8z" />
-      <path d="M20 9H4" />
-      <path d="M12 9v8" />
-      <path d="M8 13h8" />
-    `,
-    Database: () => `
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M3 5v14a9 3 0 0 0 18 0V5" />
-      <path d="M3 12a9 3 0 0 0 18 0" />
-    `,
-    Cloud: () => `
-      <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
-    `,
-    GitBranch: () => `
-      <line x1="6" y1="3" x2="6" y2="15" />
-      <circle cx="18" cy="6" r="3" />
-      <circle cx="6" cy="18" r="3" />
-      <path d="M18 9a9 9 0 0 1-9 9" />
-    `,
-    Monitor: () => `
-      <rect x="2" y="3" width="20" height="14" rx="2" />
-      <path d="M8 21h8" />
-      <path d="M12 17v4" />
-    `,
-    Layers: () => `
-      <path d="M12 2L2 7l10 5 10-5-10-5z" />
-      <path d="M2 17l10 5 10-5" />
-      <path d="M2 12l10 5 10-5" />
-    `,
-    Zap: () => `
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    `,
-    Gauge: () => `
-      <path d="m12 15 3.5-3.5" />
-      <path d="M20.4 14.6C21 15.2 21 16.1 20.4 16.7L19.1 18c-.6.6-1.5.6-2.1 0l-3.5-3.5-3.5 3.5c-.6.6-1.5.6-2.1 0l-1.3-1.3c-.6-.6-.6-1.5 0-2.1l3.5-3.5L4.6 8.4c-.6-.6-.6-1.5 0-2.1l1.3-1.3c.6-.6 1.5-.6 2.1 0l3.5 3.5 3.5-3.5c.6-.6 1.5-.6 2.1 0l1.3 1.3c.6.6.6 1.5 0 2.1l-3.5 3.5 3.5 3.5z" />
-    `,
-    Smartphone: () => `
-      <rect x="5" y="2" width="14" height="20" rx="2" />
-      <path d="M12 18h0" />
-      <path d="M9 6h6" />
-    `,
-    Apple: () => `
-      <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z" />
-      <path d="M10 2c1 .5 2 2 2 5" />
-    `,
-    Tablet: () => `
-      <rect width="16" height="20" x="4" y="2" rx="2" />
-      <path d="M12 6h.01" />
-    `,
-    Shuffle: () => `
-      <path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22" />
-      <path d="m18 2 4 4-4 4" />
-      <path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2" />
-      <path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8" />
-      <path d="m18 14 4 4-4 4" />
-    `,
-    Palette: () => `
-      <circle cx="13.5" cy="6.5" r=".5" />
-      <circle cx="17.5" cy="10.5" r=".5" />
-      <circle cx="8.5" cy="7.5" r=".5" />
-      <circle cx="6.5" cy="12.5" r=".5" />
-      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
-    `,
-    Users: () => `
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    `,
-    LayoutIcon: () => `
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <path d="M3 9h18" />
-      <path d="M9 21V9" />
-    `,
-    MousePointer: () => `
-      <path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
-      <path d="m13 13 6 6" />
-    `,
-    Code: () => `
-      <polyline points="16 18 22 12 16 6" />
-      <polyline points="8 6 2 12 8 18" />
-    `,
-    Rocket: () => `
-      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-    `,
+// Modern icon mapping functions
+const getModernIcon = (iconName) => {
+  const iconMap = {
+    "lucide:server": "lucide:server",
+    "lucide:monitor": "lucide:monitor",
+    "lucide:smartphone": "lucide:smartphone",
+    "lucide:palette": "lucide:palette",
   };
-  return icons[iconName] || icons.Server;
+  return iconMap[iconName] || "lucide:server";
+};
+
+const getFeatureIcon = (iconName) => {
+  const iconMap = {
+    api: "lucide:network",
+    database: "lucide:database",
+    cloud: "lucide:cloud",
+    devops: "lucide:git-branch",
+    framework: "lucide:code-2",
+    responsive: "lucide:smartphone",
+    pwa: "lucide:zap",
+    performance: "lucide:gauge",
+    ios: "lucide:apple",
+    android: "lucide:smartphone",
+    "cross-platform": "lucide:smartphones",
+    "app-store": "lucide:shopping-bag",
+    research: "lucide:users",
+    wireframe: "lucide:layout-grid",
+    "design-system": "lucide:layers-3",
+    testing: "lucide:mouse-pointer-click",
+  };
+  return iconMap[iconName] || "lucide:help-circle";
+};
+
+const getProcessIcon = (iconName) => {
+  const iconMap = {
+    discovery: "lucide:search",
+    design: "lucide:palette",
+    development: "lucide:code-2",
+    deployment: "lucide:rocket",
+  };
+  return iconMap[iconName] || "lucide:rocket";
 };
 </script>
 
@@ -963,5 +868,10 @@ const getIconComponent = (iconName) => {
   transition-property: color, background-color, border-color, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+}
+
+/* Icon styling */
+.icon {
+  transition: all 0.3s ease;
 }
 </style>

@@ -75,17 +75,10 @@
               class="text-sm font-medium text-white tracking-[0.2em] uppercase"
               >Our Collective Genius</span
             >
-            <svg
+            <Icon
+              name="uil:arrow-right"
               class="w-4 h-4 text-[#00e1ff] group-hover/badge:translate-x-1 transition-transform duration-300"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            />
           </div>
 
           <!-- Main Headline -->
@@ -275,10 +268,10 @@
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <svg
+                      <Icon
+                        :name="getSocialIcon(platform)"
                         class="w-5 h-5 text-[#94a3b8] group-hover/social:text-white transition-colors duration-300"
-                        :class="getSocialIcon(platform)"
-                      ></svg>
+                      />
                     </a>
                   </div>
                 </div>
@@ -369,17 +362,10 @@
             class="group/view-more inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 text-white font-medium transition-all duration-300"
           >
             View All Team Members
-            <svg
+            <Icon
+              name="uil:arrow-right"
               class="w-4 h-4 group-hover/view-more:translate-x-1 transition-transform duration-300"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            />
           </button>
         </div>
       </div>
@@ -483,17 +469,7 @@
                 <div
                   class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
                 >
-                  <svg
-                    class="w-6 h-6 text-[#00e1ff]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M14 7l5 5-5 5M6 7l5 5-5 5" />
-                  </svg>
+                  <Icon name="uil:arrow-right" class="w-6 h-6 text-[#00e1ff]" />
                 </div>
                 <h3 class="text-xl font-bold text-white">
                   {{ category.name }}
@@ -514,17 +490,10 @@
                     <div
                       class="w-2 h-2 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] animate-pulse"
                     ></div>
-                    <svg
+                    <Icon
+                      name="uil:arrow-right"
                       class="w-4 h-4 text-[#94a3b8] group-hover/item:text-[#00e1ff] transition-colors duration-300"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                    />
                   </div>
                 </div>
               </div>
@@ -584,17 +553,10 @@
               class="text-sm font-medium text-white tracking-[0.2em] uppercase"
               >Join The Revolution</span
             >
-            <svg
+            <Icon
+              name="uil:arrow-right"
               class="w-4 h-4 text-[#00e1ff] group-hover/cta-badge:translate-x-1 transition-transform duration-300"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            />
           </div>
 
           <!-- Main Headline -->
@@ -646,32 +608,12 @@
               <div
                 class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
               >
-                <svg
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
+                <Icon name="uil:envelope" class="w-5 h-5" />
                 <span>Start Your Journey</span>
-                <svg
+                <Icon
+                  name="uil:arrow-right"
                   class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                />
               </div>
 
               <!-- Glow Effect -->
@@ -695,17 +637,10 @@
                 class="relative z-10 flex items-center justify-center gap-3 text-white"
               >
                 Explore Our Work
-                <svg
+                <Icon
+                  name="uil:arrow-right"
                   class="w-5 h-5 group-hover/secondary:translate-x-1 transition-transform duration-300"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                />
               </div>
 
               <!-- Gradient Border -->
@@ -1015,12 +950,12 @@ const getRoleColor = (role) => {
 
 const getSocialIcon = (platform) => {
   const icons = {
-    github: `<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />`,
-    linkedin: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />`,
-    twitter: `<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />`,
-    dribbble: `<circle cx="12" cy="12" r="10" /><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />`,
+    github: "uil:github",
+    linkedin: "uil:linkedin",
+    twitter: "uil:twitter",
+    dribbble: "uil:dribbble",
   };
-  return icons[platform] || "";
+  return icons[platform] || "uil:link";
 };
 
 const getTechTagStyle = (index) => {

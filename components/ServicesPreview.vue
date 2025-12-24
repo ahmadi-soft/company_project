@@ -39,9 +39,10 @@
         >
           <!-- Animated sparkles -->
           <div class="relative">
-            <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-pulse"
-            ></div>
+            <Icon
+              name="lucide:sparkles"
+              class="w-4 h-4 text-[#00e1ff] animate-pulse"
+            />
             <div
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
@@ -50,10 +51,11 @@
             >Our Expertise</span
           >
           <div class="relative">
-            <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-pulse"
+            <Icon
+              name="lucide:sparkles"
+              class="w-4 h-4 text-[#1bd4c1] animate-pulse"
               style="animation-delay: 0.5s"
-            ></div>
+            />
             <div
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
@@ -127,52 +129,42 @@
                 <div class="relative inline-block mb-6">
                   <!-- Animated background -->
                   <div
-                    class="absolute -ins-2 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] opacity-20 blur group-hover/service:opacity-40 transition-opacity duration-500"
+                    class="absolute -inset-2 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] opacity-20 blur group-hover/service:opacity-40 transition-opacity duration-500"
                   ></div>
 
                   <!-- Icon Circle -->
                   <div
                     class="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] group-hover/service:border-[#00e1ff]/50 flex items-center justify-center transition-all duration-300 group-hover/service:scale-110"
                   >
-                    <!-- Animated icon -->
-                    <div class="relative">
-                      <!-- SVG Icon -->
-                      <svg
-                        class="w-8 h-8"
-                        :class="
-                          service.color === 'primary'
-                            ? 'text-[#00e1ff]'
-                            : 'text-[#1bd4c1]'
-                        "
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <component :is="getIconComponent(service.icon)" />
-                      </svg>
+                    <!-- Nuxt Icon -->
+                    <Icon
+                      :name="getServiceIcon(service.icon)"
+                      class="w-8 h-8"
+                      :class="
+                        service.color === 'primary'
+                          ? 'text-[#00e1ff]'
+                          : 'text-[#1bd4c1]'
+                      "
+                    />
 
-                      <!-- Pulsing dot -->
+                    <!-- Pulsing dot -->
+                    <div
+                      class="absolute -top-1 -right-1 w-3 h-3 rounded-full"
+                      :class="
+                        service.color === 'primary'
+                          ? 'bg-[#00e1ff]'
+                          : 'bg-[#1bd4c1]'
+                      "
+                    >
                       <div
-                        class="absolute -top-1 -right-1 w-3 h-3 rounded-full"
+                        class="absolute inset-0 rounded-full animate-ping"
                         :class="
                           service.color === 'primary'
                             ? 'bg-[#00e1ff]'
                             : 'bg-[#1bd4c1]'
                         "
-                      >
-                        <div
-                          class="absolute inset-0 rounded-full animate-ping"
-                          :class="
-                            service.color === 'primary'
-                              ? 'bg-[#00e1ff]'
-                              : 'bg-[#1bd4c1]'
-                          "
-                          style="animation-delay: calc(var(--delay) + 200ms)"
-                        ></div>
-                      </div>
+                        style="animation-delay: calc(var(--delay) + 200ms)"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -208,17 +200,10 @@
                       class="inline-flex items-center gap-2 text-sm font-medium text-[#64748b] group-hover/service:text-[#00e1ff] transition-colors duration-300"
                     >
                       <span>Learn more</span>
-                      <svg
+                      <Icon
+                        name="lucide:arrow-right"
                         class="w-4 h-4 group-hover/service:translate-x-1 transition-transform duration-300"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
+                      />
                     </div>
                   </div>
                 </div>
@@ -265,17 +250,10 @@
           <span class="relative z-10 text-white flex items-center gap-3">
             Explore All Services
             <!-- Animated arrow -->
-            <svg
+            <Icon
+              name="lucide:arrow-right"
               class="w-5 h-5 group-hover/cta:translate-x-2 transition-transform duration-300"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
+            />
           </span>
 
           <!-- Floating particles on hover -->
@@ -315,11 +293,12 @@
               :key="tech.name"
               class="group/tech flex items-center gap-3 px-4 py-3 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300"
             >
-              <div class="relative">
-                <div class="w-6 h-6" :class="tech.iconColor">
-                  <!-- Tech icons would go here -->
-                </div>
-              </div>
+              <!-- Tech Icons -->
+              <Icon
+                :name="getTechIcon(tech.name)"
+                class="w-6 h-6"
+                :class="tech.iconColor"
+              />
               <span class="text-white font-medium">{{ tech.name }}</span>
               <div class="w-2 h-2 rounded-full" :class="tech.dotColor"></div>
             </div>
@@ -331,12 +310,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-
-// Services data
+// Services data with modern icon names
 const services = [
   {
-    icon: "Server",
+    icon: "server",
     title: "Backend Development",
     description:
       "Robust APIs, scalable databases, and cloud infrastructure that powers your applications with high performance and reliability.",
@@ -344,7 +321,7 @@ const services = [
     color: "primary",
   },
   {
-    icon: "Monitor",
+    icon: "monitor",
     title: "Frontend Development",
     description:
       "Beautiful, responsive interfaces built with modern frameworks and best practices for exceptional user experiences.",
@@ -352,7 +329,7 @@ const services = [
     color: "secondary",
   },
   {
-    icon: "Smartphone",
+    icon: "smartphone",
     title: "Mobile Development",
     description:
       "Native and cross-platform mobile apps that deliver exceptional user experiences across iOS and Android platforms.",
@@ -360,7 +337,7 @@ const services = [
     color: "primary",
   },
   {
-    icon: "Palette",
+    icon: "palette",
     title: "UI/UX Design",
     description:
       "User-centered design that combines aesthetics with functionality to create intuitive and engaging digital products.",
@@ -387,34 +364,29 @@ const techStack = [
   { name: "PostgreSQL", iconColor: "text-[#336791]", dotColor: "bg-[#336791]" },
 ];
 
-// SVG Icon components
-const getIconComponent = (iconName) => {
-  const icons = {
-    Server: () => `
-      <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8z" />
-      <path d="M20 9H4" />
-      <path d="M12 9v8" />
-      <path d="M8 13h8" />
-    `,
-    Monitor: () => `
-      <rect x="2" y="3" width="20" height="14" rx="2" />
-      <path d="M8 21h8" />
-      <path d="M12 17v4" />
-    `,
-    Smartphone: () => `
-      <rect x="5" y="2" width="14" height="20" rx="2" />
-      <path d="M12 18h0" />
-      <path d="M9 6h6" />
-    `,
-    Palette: () => `
-      <circle cx="13.5" cy="6.5" r=".5" />
-      <circle cx="17.5" cy="10.5" r=".5" />
-      <circle cx="8.5" cy="7.5" r=".5" />
-      <circle cx="6.5" cy="12.5" r=".5" />
-      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
-    `,
+// Icon mapping functions
+const getServiceIcon = (iconName) => {
+  const iconMap = {
+    server: "lucide:server",
+    monitor: "lucide:monitor",
+    smartphone: "lucide:smartphone",
+    palette: "lucide:palette",
   };
-  return icons[iconName] || icons.Server;
+  return iconMap[iconName] || "lucide:server";
+};
+
+const getTechIcon = (techName) => {
+  const iconMap = {
+    React: "simple-icons:react",
+    "Vue.js": "simple-icons:vuedotjs",
+    "Node.js": "simple-icons:nodedotjs",
+    Python: "simple-icons:python",
+    TypeScript: "simple-icons:typescript",
+    AWS: "simple-icons:amazonaws",
+    Docker: "simple-icons:docker",
+    PostgreSQL: "simple-icons:postgresql",
+  };
+  return iconMap[techName] || "lucide:code";
 };
 </script>
 
