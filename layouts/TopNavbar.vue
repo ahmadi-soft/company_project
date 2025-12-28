@@ -321,7 +321,11 @@
             >
               {{ t("navbar.get_started") }}
               <svg
-                class="w-4 h-4 group-hover/contact:translate-x-1 transition-transform duration-300"
+                :class="[
+                  'w-4 h-4 transition-transform duration-300',
+                  contactArrowHoverClass,
+                  contactArrowFlipClass,
+                ]"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -510,6 +514,7 @@
 <script setup>
 import LanguageModal from "~/components/LanguageModal.vue";
 import { useI18n } from "vue-i18n";
+import { computed } from "vue";
 const route = useRoute();
 
 const { t, locale } = useI18n();
@@ -539,6 +544,17 @@ const lastScrollY = ref(0);
 const scrollTimeout = ref(null);
 const currentLocale = ref(locale.value);
 const showLangModal = ref(false);
+
+// RTL-aware helpers for contact arrow
+const isRtl = computed(() => currentLocale.value === "ar");
+const contactArrowHoverClass = computed(() =>
+  isRtl.value
+    ? "group-hover/contact:-translate-x-1"
+    : "group-hover/contact:translate-x-1"
+);
+const contactArrowFlipClass = computed(() =>
+  isRtl.value ? "scale-x-[-1]" : ""
+);
 
 // Fade animation states (navbar always stays at top, just fades in/out)
 const navOpacity = ref(1);
