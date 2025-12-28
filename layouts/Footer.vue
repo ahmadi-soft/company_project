@@ -82,9 +82,11 @@
               <h2
                 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                AFTECH
+                {{ t("navbar.brand") }}
               </h2>
-              <p class="text-sm text-[#94a3b8] mt-1">Software Development</p>
+              <p class="text-sm text-[#94a3b8] mt-1">
+                {{ t("navbar.tagline") }}
+              </p>
               <div
                 class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] group-hover:w-full transition-all duration-500"
               ></div>
@@ -93,9 +95,7 @@
 
           <!-- Tagline -->
           <p class="text-[#cbd5e1] text-lg leading-relaxed max-w-lg">
-            Crafting exceptional digital experiences with cutting-edge
-            technology. We transform ideas into scalable, high-performance
-            solutions.
+            {{ t("footer.about.tagline") }}
           </p>
 
           <!-- Newsletter -->
@@ -105,13 +105,13 @@
                 name="ph:paper-plane-tilt-fill"
                 class="w-5 h-5 text-[#00e1ff]"
               />
-              Stay Updated
+              {{ t("footer.newsletter.title") }}
             </h3>
             <div class="flex flex-col sm:flex-row gap-3">
               <div class="relative flex-1">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  :placeholder="t('footer.newsletter.placeholder')"
                   class="w-full px-4 py-3 rounded-lg bg-[#111827] border border-[#334155] text-white placeholder-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300 pl-10"
                 />
                 <Icon
@@ -123,7 +123,7 @@
                 class="group relative px-6 py-3 rounded-lg bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729] font-semibold hover:shadow-[0_0_30px_rgba(0,225,255,0.3)] transition-all duration-300 transform hover:-translate-y-0.5 overflow-hidden"
               >
                 <span class="relative z-10 flex items-center gap-2">
-                  Subscribe
+                  {{ t("footer.newsletter.subscribe") }}
                   <Icon
                     name="ph:arrow-right"
                     class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
@@ -148,14 +148,14 @@
               class="text-white font-semibold text-lg mb-4 inline-flex items-center gap-2"
             >
               <Icon name="ph:caret-right-fill" class="w-4 h-4 text-[#00e1ff]" />
-              {{ category }}
+              {{ t(`footer.categories.${category}`) }}
             </h3>
             <div
               class="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
             ></div>
           </div>
           <ul class="space-y-3">
-            <li v-for="link in links" :key="link.name">
+            <li v-for="link in links" :key="link.nameKey">
               <NuxtLink
                 :to="link.path"
                 class="group flex items-center text-[#94a3b8] hover:text-white transition-all duration-300 py-1.5"
@@ -168,7 +168,7 @@
                 <span
                   class="ml-3 group-hover:translate-x-1 transition-transform duration-300"
                 >
-                  {{ link.name }}
+                  {{ t(link.nameKey) }}
                 </span>
                 <Icon
                   name="ph:arrow-up-right"
@@ -201,9 +201,9 @@
                   class="absolute -inset-1 bg-[#00e1ff] rounded-full blur opacity-20"
                 ></div>
               </div>
-              <span class="text-sm text-white font-medium"
-                >Secure & Reliable</span
-              >
+              <span class="text-sm text-white font-medium">{{
+                t("footer.badges.secure")
+              }}</span>
             </div>
 
             <!-- Global badge -->
@@ -219,9 +219,9 @@
                   class="absolute -inset-1 bg-[#1bd4c1] rounded-full blur opacity-20"
                 ></div>
               </div>
-              <span class="text-sm text-white font-medium"
-                >Global Services</span
-              >
+              <span class="text-sm text-white font-medium">{{
+                t("footer.badges.global")
+              }}</span>
             </div>
           </div>
 
@@ -231,11 +231,11 @@
               © {{ new Date().getFullYear() }}
               <span
                 class="text-white font-semibold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
-                >AFTECH</span
-              >. All rights reserved.
+                >{{ t("navbar.brand") }}</span
+              >. {{ t("footer.copyright") }}
             </p>
             <p class="text-xs text-[#64748b] mt-1">
-              Crafting digital excellence since 2023
+              {{ t("footer.since", { year: new Date().getFullYear() }) }}
             </p>
           </div>
 
@@ -254,9 +254,9 @@
                   class="absolute -inset-1 bg-[#00e1ff] rounded-full blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                 ></div>
               </div>
-              <span class="text-sm text-[#94a3b8] group-hover:text-white"
-                >Privacy</span
-              >
+              <span class="text-sm text-[#94a3b8] group-hover:text-white">{{
+                t("footer.legal.privacy")
+              }}</span>
             </NuxtLink>
 
             <div class="w-px h-4 bg-[#334155]"></div>
@@ -274,9 +274,9 @@
                   class="absolute -inset-1 bg-[#1bd4c1] rounded-full blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"
                 ></div>
               </div>
-              <span class="text-sm text-[#94a3b8] group-hover:text-white"
-                >Terms</span
-              >
+              <span class="text-sm text-[#94a3b8] group-hover:text-white">{{
+                t("footer.legal.terms")
+              }}</span>
             </NuxtLink>
           </div>
         </div>
@@ -284,7 +284,7 @@
         <!-- Tech stack -->
         <div class="mt-6">
           <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
-            <span class="text-[#64748b]">Powered by:</span>
+            <span class="text-[#64748b]">{{ t("footer.powered_by") }}</span>
 
             <!-- Tech badges -->
             <div class="flex flex-wrap items-center justify-center gap-2">
@@ -310,9 +310,9 @@
             <button
               class="ml-2 group flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 hover:from-[#00e1ff]/20 hover:to-[#1bd4c1]/20 border border-[#00e1ff]/20 hover:border-[#00e1ff]/40 transition-all duration-300"
             >
-              <span class="text-sm text-white font-medium"
-                >View Tech Stack</span
-              >
+              <span class="text-sm text-white font-medium">{{
+                t("footer.view_tech")
+              }}</span>
               <Icon
                 name="ph:arrow-up-right"
                 class="w-3 h-3 text-[#00e1ff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
@@ -328,26 +328,26 @@
           >
             <div class="flex items-center gap-4">
               <a
-                href="mailto:hello@aftech.dev"
+                :href="`mailto:${t('footer.contact.email')}`"
                 class="flex items-center gap-2 hover:text-[#00e1ff] transition-colors duration-300"
               >
                 <Icon name="ph:envelope-fill" class="w-4 h-4" />
-                hello@aftech.dev
+                {{ t("footer.contact.email") }}
               </a>
               <div class="w-px h-4 bg-[#334155] hidden md:block"></div>
               <a
-                href="tel:+1234567890"
+                :href="`tel:${t('footer.contact.phone')}`"
                 class="flex items-center gap-2 hover:text-[#1bd4c1] transition-colors duration-300"
               >
                 <Icon name="ph:phone-fill" class="w-4 h-4" />
-                +1 (234) 567-890
+                {{ t("footer.contact.phone") }}
               </a>
             </div>
 
             <div class="flex items-center gap-4">
               <div class="flex items-center gap-2">
                 <Icon name="ph:map-pin-fill" class="w-4 h-4 text-[#00e1ff]" />
-                <span>San Francisco, CA</span>
+                <span>{{ t("footer.contact.location") }}</span>
               </div>
             </div>
           </div>
@@ -358,28 +358,30 @@
 </template>
 
 <script setup>
-// Define footer links
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+// Define footer links (use translation keys for labels)
 const footerLinks = {
-  Services: [
-    { name: "Backend Development", path: "/services#backend" },
-    { name: "Frontend Development", path: "/services#frontend" },
-    { name: "Mobile Development", path: "/services#mobile" },
-    { name: "UI/UX Design", path: "/services#design" },
-    { name: "DevOps & Cloud", path: "/services#devops" },
+  services: [
+    { nameKey: "footer.links.services.backend", path: "/services#backend" },
+    { nameKey: "footer.links.services.frontend", path: "/services#frontend" },
+    { nameKey: "footer.links.services.mobile", path: "/services#mobile" },
+    { nameKey: "footer.links.services.design", path: "/services#design" },
+    { nameKey: "footer.links.services.devops", path: "/services#devops" },
   ],
-  Company: [
-    { name: "About Us", path: "/team" },
-    { name: "Projects", path: "/projects" },
-    { name: "Careers", path: "/team#careers" },
-    { name: "Contact", path: "/contact" },
-    { name: "Partners", path: "/partners" },
+  company: [
+    { nameKey: "footer.links.company.about", path: "/team" },
+    { nameKey: "footer.links.company.projects", path: "/projects" },
+    { nameKey: "footer.links.company.careers", path: "/team#careers" },
+    { nameKey: "footer.links.company.contact", path: "/contact" },
+    { nameKey: "footer.links.company.partners", path: "/partners" },
   ],
-  Resources: [
-    { name: "Blog", path: "/blog" },
-    { name: "Case Studies", path: "/projects" },
-    { name: "Documentation", path: "/docs" },
-    { name: "Support", path: "/contact" },
-    { name: "API Reference", path: "/docs/api" },
+  resources: [
+    { nameKey: "footer.links.resources.blog", path: "/blog" },
+    { nameKey: "footer.links.resources.case_studies", path: "/projects" },
+    { nameKey: "footer.links.resources.docs", path: "/docs" },
+    { nameKey: "footer.links.resources.support", path: "/contact" },
+    { nameKey: "footer.links.resources.api", path: "/docs/api" },
   ],
 };
 

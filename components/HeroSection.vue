@@ -7,7 +7,7 @@
       <!-- Background Image -->
       <img
         src="~/assets/images/bg-1.jpeg"
-        alt="Technology background"
+        :alt="t('hero.alt.bg')"
         class="absolute inset-0 w-full h-full object-cover"
         :style="{
           maskImage:
@@ -124,7 +124,7 @@
 
               <span
                 class="text-white font-medium text-sm tracking-wider uppercase"
-                >Crafting Digital Excellence</span
+                >{{ t("hero.tagline") }}</span
               >
 
               <!-- Arrow -->
@@ -148,19 +148,21 @@
           <h1
             class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight tracking-tight"
           >
-            <span class="block text-white">We Build</span>
+            <span class="block text-white">{{ t("hero.title.we_build") }}</span>
             <span class="block relative">
               <!-- Gradient text with animation -->
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Next-Generation
+                {{ t("hero.title.next_generation") }}
               </span>
               <span
                 class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-full blur-sm"
               ></span>
             </span>
-            <span class="block text-white mt-4">Software Solutions</span>
+            <span class="block text-white mt-4">{{
+              t("hero.title.software_solutions")
+            }}</span>
           </h1>
         </div>
 
@@ -169,14 +171,26 @@
           <p
             class="text-xl md:text-2xl text-center text-[#cbd5e1] leading-relaxed font-light"
           >
-            From <span class="text-[#00e1ff] font-medium">concept</span> to
-            <span class="text-[#1bd4c1] font-medium">deployment</span>, we
-            transform your vision into
+            {{
+              t("hero.description", {
+                concept: "",
+                deployment: "",
+                scalable: "",
+              })
+            }}
+            <span class="text-[#00e1ff] font-medium">{{
+              t("hero.description_keywords.concept")
+            }}</span>
+            {{ t("hero.to") }}
+            <span class="text-[#1bd4c1] font-medium">{{
+              t("hero.description_keywords.deployment")
+            }}</span
+            >{{ t("hero.transform") }}
             <span
               class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent font-medium"
-              >scalable, high-performance</span
+              >{{ t("hero.description_keywords.scalable") }}</span
             >
-            applications that drive business growth.
+            {{ t("hero.description_tail") }}
           </p>
         </div>
 
@@ -210,7 +224,7 @@
             <div
               class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
             >
-              <span>View Our Work</span>
+              <span>{{ t("hero.cta.view_work") }}</span>
               <svg
                 class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
                 viewBox="0 0 20 20"
@@ -270,7 +284,7 @@
                   class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-20 animate-ping"
                 ></div>
               </div>
-              <span>Book a Call</span>
+              <span>{{ t("hero.cta.book_call") }}</span>
             </div>
           </NuxtLink>
         </div>
@@ -313,7 +327,7 @@
                   <div
                     class="text-[#94a3b8] text-sm md:text-base font-medium uppercase tracking-wider"
                   >
-                    {{ stat.label }}
+                    {{ t(stat.label) }}
                   </div>
                   <!-- Underline animation -->
                   <div
@@ -352,7 +366,7 @@
             <span
               class="text-xs text-[#64748b] uppercase tracking-wider group-hover/scroll:text-[#94a3b8] transition-colors duration-300"
             >
-              Discover More
+              {{ t("hero.scroll_down") }}
             </span>
             <!-- Animated scroll line -->
             <div
@@ -371,12 +385,15 @@
 
 <script setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const stats = [
-  { value: "150", label: "Projects Delivered" },
-  { value: "50", label: "Happy Clients" },
-  { value: "25", label: "Team Members" },
-  { value: "8", label: "Years Experience" },
+  { value: "150", label: "hero.stats.projects" },
+  { value: "50", label: "hero.stats.clients" },
+  { value: "25", label: "hero.stats.team" },
+  { value: "8", label: "hero.stats.experience" },
 ];
 
 const hoveredStat = ref(null);

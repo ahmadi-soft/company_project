@@ -58,31 +58,37 @@
               </div>
               <span
                 class="text-white font-semibold text-sm tracking-wider uppercase"
-                >Featured Work</span
+                >{{ t("featured_projects.badge") }}</span
               >
             </div>
           </div>
 
           <!-- Title -->
           <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span class="text-white">Projects That</span>
+            <span class="text-white">{{
+              t("featured_projects.title.part1")
+            }}</span>
             <span
               class="block bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Define
+              {{ t("featured_projects.title.highlight") }}
             </span>
-            <span class="text-white">Excellence</span>
+            <span class="text-white">{{
+              t("featured_projects.title.part3")
+            }}</span>
           </h2>
 
           <!-- Description -->
           <p class="text-lg text-[#cbd5e1] mt-6 leading-relaxed font-light">
-            Showcasing our innovative solutions that transform businesses
-            through
-            <span class="text-[#00e1ff] font-medium"
-              >cutting-edge technology</span
-            >
-            and
-            <span class="text-[#1bd4c1] font-medium">exceptional design</span>.
+            {{ t("featured_projects.description.prefix") }}
+            <span class="text-[#00e1ff] font-medium">{{
+              t("featured_projects.description.tech")
+            }}</span>
+            {{ t("featured_projects.description.and") }}
+            <span class="text-[#1bd4c1] font-medium">{{
+              t("featured_projects.description.design")
+            }}</span
+            >.
           </p>
         </div>
 
@@ -102,7 +108,9 @@
           ></div>
 
           <!-- Content -->
-          <span class="relative z-10 text-white">View All Projects</span>
+          <span class="relative z-10 text-white">{{
+            t("featured_projects.view_all")
+          }}</span>
           <svg
             class="relative z-10 w-5 h-5 text-[#00e1ff] group-hover/all-projects:translate-x-1 transition-transform duration-300"
             viewBox="0 0 20 20"
@@ -213,7 +221,7 @@
                           d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
                         />
                       </svg>
-                      Live Demo
+                      {{ t("featured_projects.actions.live_demo") }}
                     </span>
                   </a>
 
@@ -239,7 +247,7 @@
                           clip-rule="evenodd"
                         />
                       </svg>
-                      View Code
+                      {{ t("featured_projects.actions.view_code") }}
                     </span>
                   </a>
                 </div>
@@ -342,15 +350,14 @@
         >
           <div class="max-w-xl">
             <h3 class="text-3xl font-bold text-white mb-4">
-              Ready to Start Your
+              {{ t("featured_projects.cta.title.part1") }}
               <span
                 class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
-                >Project?</span
+                >{{ t("featured_projects.cta.title.highlight") }}</span
               >
             </h3>
             <p class="text-[#cbd5e1]">
-              Let's discuss how we can bring your vision to life with
-              cutting-edge technology and expert craftsmanship.
+              {{ t("featured_projects.cta.description") }}
             </p>
           </div>
 
@@ -379,7 +386,7 @@
             <div
               class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
             >
-              <span>Start a Project</span>
+              <span>{{ t("featured_projects.cta.button") }}</span>
               <svg
                 class="w-5 h-5 group-hover/cta:translate-x-2 transition-transform duration-300"
                 viewBox="0 0 20 20"
@@ -401,6 +408,8 @@
 
 <script setup>
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 const projects = [
   {

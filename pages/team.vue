@@ -73,7 +73,7 @@
             </div>
             <span
               class="text-sm font-medium text-white tracking-[0.2em] uppercase"
-              >Our Collective Genius</span
+              >{{ t("team.badge") }}</span
             >
             <Icon
               name="uil:arrow-right"
@@ -85,13 +85,13 @@
           <h1
             class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9]"
           >
-            <span class="text-white block">Meet The</span>
+            <span class="text-white block">{{ t("team.title.part1") }}</span>
             <span class="relative">
               <!-- Gradient Text with Animation -->
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Masterminds
+                {{ t("team.title.highlight") }}
               </span>
               <!-- Animated Underline -->
               <span class="absolute -bottom-4 left-0 w-full h-1">
@@ -103,18 +103,28 @@
                 ></span>
               </span>
             </span>
-            <span class="text-white block mt-8">Behind AFTECH</span>
+            <span class="text-white block mt-8">{{
+              t("team.title.part3")
+            }}</span>
           </h1>
 
           <!-- Description -->
           <p
             class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mt-12 leading-relaxed font-light"
           >
-            A symphony of
-            <span class="text-[#00e1ff] font-medium">brilliant minds</span>,
-            <span class="text-[#1bd4c1] font-medium">creative visionaries</span
-            >, and <span class="font-medium">technical virtuosos</span> crafting
-            digital experiences that redefine possibilities.
+            {{ t("team.description.prefix") }}
+            <span class="text-[#00e1ff] font-medium">{{
+              t("team.description.highlight1")
+            }}</span
+            >,
+            <span class="text-[#1bd4c1] font-medium">{{
+              t("team.description.highlight2")
+            }}</span
+            >, and
+            <span class="font-medium">{{
+              t("team.description.highlight3")
+            }}</span>
+            {{ t("team.description.suffix") }}
           </p>
 
           <!-- Interactive Stats -->
@@ -141,7 +151,7 @@
                 <div
                   class="text-sm text-[#94a3b8] uppercase tracking-wider font-medium transition-all duration-300 group-hover/stat:text-white"
                 >
-                  {{ stat.label }}
+                  {{ t(stat.label) }}
                 </div>
                 <!-- Animated underline -->
                 <div
@@ -154,9 +164,9 @@
           <!-- Scroll Indicator -->
           <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2">
             <div class="flex flex-col items-center gap-2">
-              <span class="text-xs text-[#64748b] uppercase tracking-widest"
-                >Explore Team</span
-              >
+              <span class="text-xs text-[#64748b] uppercase tracking-widest">{{
+                t("team.explore")
+              }}</span>
               <div class="relative w-6 h-10">
                 <div
                   class="absolute inset-0 rounded-full border border-[#334155]"
@@ -201,7 +211,7 @@
             <div
               class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover/filter:translate-x-[100%] transition-transform duration-1000"
             ></div>
-            <span class="relative z-10">{{ filter.label }}</span>
+            <span class="relative z-10">{{ t(filter.label) }}</span>
           </button>
         </div>
 
@@ -251,7 +261,7 @@
                       class="px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-sm"
                       :class="getRoleColor(member.role)"
                     >
-                      {{ member.role }}
+                      {{ t(`team.roles.${member.role}`) }}
                       <span class="ml-1 animate-pulse">●</span>
                     </div>
                   </div>
@@ -316,13 +326,17 @@
                         <div class="text-white font-semibold">
                           {{ member.experience }}
                         </div>
-                        <div class="text-[#94a3b8]">Experience</div>
+                        <div class="text-[#94a3b8]">
+                          {{ t("team.card.experience") }}
+                        </div>
                       </div>
                       <div class="text-center">
                         <div class="text-white font-semibold">
                           {{ member.projects }}+
                         </div>
-                        <div class="text-[#94a3b8]">Projects</div>
+                        <div class="text-[#94a3b8]">
+                          {{ t("team.card.projects") }}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -361,7 +375,7 @@
             @click="loadMore"
             class="group/view-more inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 text-white font-medium transition-all duration-300"
           >
-            View All Team Members
+            {{ t("team.view_all") }}
             <Icon
               name="uil:arrow-right"
               class="w-4 h-4 group-hover/view-more:translate-x-1 transition-transform duration-300"
@@ -406,24 +420,23 @@
             </div>
             <span
               class="text-sm font-medium text-white tracking-[0.2em] uppercase"
-              >Our Tech Arsenal</span
+              >{{ t("team.tech.badge") }}</span
             >
           </div>
 
           <h2 class="text-5xl md:text-6xl font-bold mb-6">
-            <span class="text-white">Mastering The</span>
+            <span class="text-white">{{ t("team.tech.title.part1") }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Digital Frontier
+                {{ t("team.tech.title.highlight") }}
               </span>
             </span>
           </h2>
 
           <p class="text-lg text-[#cbd5e1] max-w-2xl mx-auto">
-            Cutting-edge technologies powering our innovative solutions and
-            driving digital transformation.
+            {{ t("team.tech.description") }}
           </p>
         </div>
 
@@ -551,7 +564,7 @@
             </div>
             <span
               class="text-sm font-medium text-white tracking-[0.2em] uppercase"
-              >Join The Revolution</span
+              >{{ t("team.cta.badge") }}</span
             >
             <Icon
               name="uil:arrow-right"
@@ -563,23 +576,24 @@
           <h2
             class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.9]"
           >
-            <span class="text-white">Ready To Write</span>
+            <span class="text-white">{{ t("team.cta.title.part1") }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                History
+                {{ t("team.cta.title.highlight") }}
               </span>
             </span>
-            <span class="text-white block mt-4">Together?</span>
+            <span class="text-white block mt-4">{{
+              t("team.cta.title.part3")
+            }}</span>
           </h2>
 
           <!-- Description -->
           <p
             class="text-xl md:text-2xl text-[#cbd5e1] max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           >
-            Join a team where innovation meets passion, and together we'll build
-            the future of digital experiences.
+            {{ t("team.cta.description") }}
           </p>
 
           <!-- Animated CTA Buttons -->
@@ -609,7 +623,7 @@
                 class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
               >
                 <Icon name="uil:envelope" class="w-5 h-5" />
-                <span>Start Your Journey</span>
+                <span>{{ t("team.cta.buttons.start_journey") }}</span>
                 <Icon
                   name="uil:arrow-right"
                   class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
@@ -636,7 +650,7 @@
               <div
                 class="relative z-10 flex items-center justify-center gap-3 text-white"
               >
-                Explore Our Work
+                {{ t("team.cta.buttons.explore_work") }}
                 <Icon
                   name="uil:arrow-right"
                   class="w-5 h-5 group-hover/secondary:translate-x-1 transition-transform duration-300"
@@ -657,22 +671,25 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 
-// Team stats
+const { t } = useI18n();
+
+// Team stats (labels are i18n keys)
 const teamStats = [
-  { value: "25", label: "Expert Engineers" },
-  { value: "15", label: "Avg. Years Experience" },
-  { value: "98", label: "Client Satisfaction Rate" },
-  { value: "150", label: "Projects Delivered" },
+  { value: "25", label: "team.stats.expert_engineers" },
+  { value: "15", label: "team.stats.avg_years_experience" },
+  { value: "98", label: "team.stats.client_satisfaction_rate" },
+  { value: "150", label: "team.stats.projects_delivered" },
 ];
 
 // Filters
 const filters = [
-  { id: "all", label: "All Stars" },
-  { id: "leadership", label: "Visionaries" },
-  { id: "development", label: "Code Wizards" },
-  { id: "design", label: "Design Gurus" },
-  { id: "devops", label: "Infra Ninjas" },
+  { id: "all", label: "team.filters.all" },
+  { id: "leadership", label: "team.filters.leadership" },
+  { id: "development", label: "team.filters.development" },
+  { id: "design", label: "team.filters.design" },
+  { id: "devops", label: "team.filters.devops" },
 ];
 
 const activeFilter = ref("all");
@@ -725,7 +742,7 @@ const team = [
   {
     id: 1,
     name: "Alex Chen",
-    role: "Founder & CEO",
+    role: "founder",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80",
     bio: "Serial entrepreneur with 15+ years in tech. Built three successful startups before founding AFTECH. Passionate about AI and quantum computing.",
@@ -742,7 +759,7 @@ const team = [
   {
     id: 2,
     name: "Sarah Martinez",
-    role: "Lead Frontend Architect",
+    role: "lead_frontend",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=80",
     bio: "Award-winning UI engineer with expertise in React ecosystem. Speaker at major tech conferences. Passionate about accessibility and performance.",
@@ -759,7 +776,7 @@ const team = [
   {
     id: 3,
     name: "James Wilson",
-    role: "Backend Systems Architect",
+    role: "backend_architect",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&auto=format&fit=crop&q=80",
     bio: "Built scalable systems handling millions of requests daily. Expert in distributed systems and real-time data processing.",
@@ -775,7 +792,7 @@ const team = [
   {
     id: 4,
     name: "Emily Zhang",
-    role: "Creative Director",
+    role: "creative_director",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=80",
     bio: "Former Apple designer bringing minimalist aesthetics to complex interfaces. Advocate for human-centered design.",
@@ -792,7 +809,7 @@ const team = [
   {
     id: 5,
     name: "Michael Brown",
-    role: "Mobile Lead",
+    role: "mobile_lead",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&auto=format&fit=crop&q=80",
     bio: "Created apps with millions of downloads. Expert in native iOS/Android development and cross-platform solutions.",
@@ -808,7 +825,7 @@ const team = [
   {
     id: 6,
     name: "Lisa Park",
-    role: "DevOps Principal",
+    role: "devops_principal",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&auto=format&fit=crop&q=80",
     bio: "Built and scaled infrastructure for Fortune 500 companies. Passionate about security, automation, and SRE practices.",
@@ -932,17 +949,16 @@ const techCategories = [
 // Helper functions
 const getRoleColor = (role) => {
   const colors = {
-    "Founder & CEO":
-      "bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729]",
-    "Lead Frontend Architect":
+    founder: "bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729]",
+    lead_frontend:
       "bg-gradient-to-r from-[#00e1ff]/20 to-[#00e1ff]/40 text-white border border-[#00e1ff]/30",
-    "Backend Systems Architect":
+    backend_architect:
       "bg-gradient-to-r from-[#1bd4c1]/20 to-[#1bd4c1]/40 text-white border border-[#1bd4c1]/30",
-    "Creative Director":
+    creative_director:
       "bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/40 text-white border border-[#334155]",
-    "Mobile Lead":
+    mobile_lead:
       "bg-gradient-to-r from-[#00e1ff]/20 to-[#00e1ff]/40 text-white border border-[#00e1ff]/30",
-    "DevOps Principal":
+    devops_principal:
       "bg-gradient-to-r from-[#1bd4c1]/20 to-[#1bd4c1]/40 text-white border border-[#1bd4c1]/30",
   };
   return colors[role] || "bg-[#334155] text-white border border-[#334155]";

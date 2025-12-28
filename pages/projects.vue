@@ -64,7 +64,7 @@
               </div>
               <span
                 class="text-white font-semibold text-sm tracking-wider uppercase"
-                >Our Portfolio</span
+                >{{ t("projects.badge") }}</span
               >
             </div>
           </div>
@@ -73,12 +73,12 @@
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span class="text-white">Projects That</span>
+            <span class="text-white">{{ t("projects.title.part1") }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Define Excellence
+                {{ t("projects.title.highlight") }}
               </span>
             </span>
           </h1>
@@ -87,12 +87,18 @@
           <p
             class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Explore our diverse portfolio of successful projects across
-            <span class="text-[#00e1ff] font-medium">web</span>,
-            <span class="text-[#1bd4c1] font-medium">mobile</span>, and
+            {{ t("projects.description.pre") }}
+            <span class="text-[#00e1ff] font-medium">{{
+              t("projects.categories.Web Apps")
+            }}</span
+            >,
+            <span class="text-[#1bd4c1] font-medium">{{
+              t("projects.categories.Mobile Apps")
+            }}</span
+            >, and
             <span
               class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent font-medium"
-              >design</span
+              >{{ t("projects.categories.UI/UX Design") }}</span
             >.
           </p>
         </div>
@@ -126,9 +132,15 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-white font-semibold">Filter by Category</h3>
+                <h3 class="text-white font-semibold">
+                  {{ t("projects.filter.title") }}
+                </h3>
                 <p class="text-sm text-[#94a3b8]">
-                  {{ filteredProjects.length }} projects found
+                  {{
+                    t("projects.filter.found", {
+                      count: filteredProjects.length,
+                    })
+                  }}
                 </p>
               </div>
             </div>
@@ -158,7 +170,9 @@
                   class="absolute inset-0 bg-[#111827] border border-[#334155] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
 
-                <span class="relative z-10">{{ category }}</span>
+                <span class="relative z-10">{{
+                  t(`projects.categories.${category}`)
+                }}</span>
 
                 <!-- Active indicator -->
                 <div
@@ -185,7 +199,8 @@
                   />
                 </svg>
                 <span class="text-white font-medium"
-                  >Sort: {{ sortOptions[activeSort] }}</span
+                  >{{ t("projects.sort.label") }}:
+                  {{ t(sortOptions[activeSort]) }}</span
                 >
               </button>
 
@@ -200,7 +215,7 @@
                     @click="activeSort = key"
                     class="w-full px-4 py-2 text-left text-[#94a3b8] hover:text-white hover:bg-[#1e293b] transition-colors duration-300 flex items-center justify-between"
                   >
-                    <span>{{ label }}</span>
+                    <span>{{ t(label) }}</span>
                     <svg
                       v-if="activeSort === key"
                       class="w-4 h-4 text-[#00e1ff]"
@@ -319,7 +334,7 @@
                               d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
                             />
                           </svg>
-                          Live Demo
+                          {{ t("featured_projects.actions.live_demo") }}
                         </span>
                       </a>
 
@@ -345,7 +360,7 @@
                               clip-rule="evenodd"
                             />
                           </svg>
-                          View Code
+                          {{ t("featured_projects.actions.view_code") }}
                         </span>
                       </a>
                     </div>
@@ -425,7 +440,7 @@
                         <div
                           class="text-xs text-[#94a3b8] uppercase tracking-wider"
                         >
-                          Year
+                          {{ t("projects.stats.year") }}
                         </div>
                       </div>
                       <div class="text-center">
@@ -435,7 +450,7 @@
                         <div
                           class="text-xs text-[#94a3b8] uppercase tracking-wider"
                         >
-                          Duration
+                          {{ t("projects.stats.duration") }}
                         </div>
                       </div>
                       <div class="text-center">
@@ -445,7 +460,7 @@
                         <div
                           class="text-xs text-[#94a3b8] uppercase tracking-wider"
                         >
-                          Team
+                          {{ t("projects.stats.team") }}
                         </div>
                       </div>
                     </div>
@@ -494,16 +509,17 @@
               />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-3">No Projects Found</h3>
+          <h3 class="text-2xl font-bold text-white mb-3">
+            {{ t("projects.empty.title") }}
+          </h3>
           <p class="text-[#cbd5e1] mb-6 max-w-md mx-auto">
-            We don't have any projects in this category yet. Check back soon or
-            explore other categories.
+            {{ t("projects.empty.desc") }}
           </p>
           <button
             @click="setActiveCategory('All')"
             class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729] font-semibold hover:shadow-[0_0_30px_rgba(0,225,255,0.3)] transition-all duration-300"
           >
-            View All Projects
+            {{ t("projects.empty.view_all") }}
           </button>
         </div>
       </div>
@@ -513,6 +529,8 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 // Define reactive state
 const activeCategory = ref("All");
@@ -529,11 +547,11 @@ const categories = [
   "Enterprise",
 ];
 
-// Sort options
+// Sort options (store translation keys)
 const sortOptions = {
-  recent: "Most Recent",
-  popular: "Most Popular",
-  alphabet: "Alphabetical",
+  recent: "projects.sort.recent",
+  popular: "projects.sort.popular",
+  alphabet: "projects.sort.alphabet",
 };
 
 // Projects data

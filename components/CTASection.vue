@@ -106,12 +106,12 @@
           ref="headingRef"
           class="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 leading-tight"
         >
-          <span class="text-white">Ready to Build</span>
+          <span class="text-white">{{ t("cta.heading.part1") }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Something Amazing?
+              {{ t("cta.heading.part2") }}
             </span>
           </span>
         </h2>
@@ -121,8 +121,7 @@
           ref="descriptionRef"
           class="text-xl md:text-2xl text-center text-[#cbd5e1] mb-12 max-w-2xl mx-auto leading-relaxed font-light"
         >
-          Let's discuss your project and explore how we can help you achieve
-          your goals. Our team is ready to turn your ideas into reality.
+          {{ t("cta.description") }}
         </p>
 
         <!-- Action Buttons -->
@@ -156,7 +155,7 @@
             <div
               class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
             >
-              <span>Start Your Project</span>
+              <span>{{ t("cta.buttons.primary") }}</span>
               <svg
                 class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
                 viewBox="0 0 20 20"
@@ -206,7 +205,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <span>Explore Our Work</span>
+              <span>{{ t("cta.buttons.secondary") }}</span>
             </div>
           </NuxtLink>
         </div>
@@ -221,7 +220,7 @@
             <div class="relative flex justify-center">
               <span
                 class="px-4 bg-[#0f1729] text-[#94a3b8] text-sm uppercase tracking-wider"
-                >Trusted By</span
+                >{{ t("cta.trusted_by") }}</span
               >
             </div>
           </div>
@@ -275,8 +274,12 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">Call Us</div>
-                  <div class="text-white font-medium">+1 (555) 123-4567</div>
+                  <div class="text-sm text-[#94a3b8]">
+                    {{ t("cta.contact_info.call.label") }}
+                  </div>
+                  <div class="text-white font-medium">
+                    {{ t("cta.contact_info.call.value") }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -298,8 +301,12 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">Email Us</div>
-                  <div class="text-white font-medium">hello@aftech.dev</div>
+                  <div class="text-sm text-[#94a3b8]">
+                    {{ t("cta.contact_info.email.label") }}
+                  </div>
+                  <div class="text-white font-medium">
+                    {{ t("cta.contact_info.email.value") }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -320,8 +327,12 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">Visit Us</div>
-                  <div class="text-white font-medium">San Francisco, CA</div>
+                  <div class="text-sm text-[#94a3b8]">
+                    {{ t("cta.contact_info.visit.label") }}
+                  </div>
+                  <div class="text-white font-medium">
+                    {{ t("cta.contact_info.visit.value") }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -334,6 +345,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const companies = [
   { name: "TechCorp", initials: "TC" },

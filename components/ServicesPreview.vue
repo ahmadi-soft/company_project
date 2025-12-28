@@ -47,9 +47,9 @@
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider"
-            >Our Expertise</span
-          >
+          <span class="text-sm font-medium text-white tracking-wider">{{
+            t("services.badge")
+          }}</span>
           <div class="relative">
             <Icon
               name="lucide:sparkles"
@@ -66,14 +66,14 @@
         <h2
           class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span class="text-white">Full-Stack</span>
+          <span class="text-white">{{ t("services.heading.fullstack") }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Development
+              {{ t("services.heading.development") }}
             </span>
-            <span class="text-white">Services</span>
+            <span class="text-white">{{ t("services.heading.services") }}</span>
           </span>
         </h2>
 
@@ -81,9 +81,11 @@
         <p
           class="text-lg md:text-xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed"
         >
-          From backend infrastructure to pixel-perfect frontends, we deliver
-          <span class="text-[#00e1ff] font-medium">end-to-end solutions</span>
-          tailored to your specific needs and business goals.
+          {{ t("services.description.prefix") }}
+          <span class="text-[#00e1ff] font-medium">{{
+            t("services.end_to_end")
+          }}</span>
+          {{ t("services.description.suffix") }}
         </p>
 
         <!-- Animated underline -->
@@ -175,12 +177,12 @@
                   <h3
                     class="text-2xl font-bold text-white group-hover/service:text-transparent group-hover/service:bg-gradient-to-r group-hover/service:from-[#00e1ff] group-hover/service:via-[#1bd4c1] group-hover/service:to-[#00e1ff] group-hover/service:bg-clip-text transition-all duration-500"
                   >
-                    {{ service.title }}
+                    {{ t(service.titleKey) }}
                   </h3>
 
                   <!-- Description -->
                   <p class="text-[#94a3b8] leading-relaxed">
-                    {{ service.description }}
+                    {{ t(service.descriptionKey) }}
                   </p>
 
                   <!-- Tech Tags -->
@@ -199,7 +201,7 @@
                     <div
                       class="inline-flex items-center gap-2 text-sm font-medium text-[#64748b] group-hover/service:text-[#00e1ff] transition-colors duration-300"
                     >
-                      <span>Learn more</span>
+                      <span>{{ t("services.learn_more") }}</span>
                       <Icon
                         name="lucide:arrow-right"
                         class="w-4 h-4 group-hover/service:translate-x-1 transition-transform duration-300"
@@ -248,7 +250,7 @@
 
           <!-- Content -->
           <span class="relative z-10 text-white flex items-center gap-3">
-            Explore All Services
+            {{ t("services.cta.explore_all") }}
             <!-- Animated arrow -->
             <Icon
               name="lucide:arrow-right"
@@ -280,10 +282,10 @@
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-8">
             <h3 class="text-2xl font-bold text-white mb-2">
-              Our Technology Stack
+              {{ t("services.tech.title") }}
             </h3>
             <p class="text-[#94a3b8]">
-              Built with cutting-edge technologies for optimal performance
+              {{ t("services.tech.subtitle") }}
             </p>
           </div>
 
@@ -310,37 +312,36 @@
 </template>
 
 <script setup>
-// Services data with modern icon names
+// Services data with i18n keys for titles/descriptions
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+
 const services = [
   {
     icon: "server",
-    title: "Backend Development",
-    description:
-      "Robust APIs, scalable databases, and cloud infrastructure that powers your applications with high performance and reliability.",
+    titleKey: "services.list.backend.title",
+    descriptionKey: "services.list.backend.description",
     tags: ["Node.js", "Python", "AWS", "PostgreSQL", "GraphQL", "Docker"],
     color: "primary",
   },
   {
     icon: "monitor",
-    title: "Frontend Development",
-    description:
-      "Beautiful, responsive interfaces built with modern frameworks and best practices for exceptional user experiences.",
+    titleKey: "services.list.frontend.title",
+    descriptionKey: "services.list.frontend.description",
     tags: ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Next.js", "Nuxt"],
     color: "secondary",
   },
   {
     icon: "smartphone",
-    title: "Mobile Development",
-    description:
-      "Native and cross-platform mobile apps that deliver exceptional user experiences across iOS and Android platforms.",
+    titleKey: "services.list.mobile.title",
+    descriptionKey: "services.list.mobile.description",
     tags: ["React Native", "Flutter", "Swift", "Kotlin", "iOS", "Android"],
     color: "primary",
   },
   {
     icon: "palette",
-    title: "UI/UX Design",
-    description:
-      "User-centered design that combines aesthetics with functionality to create intuitive and engaging digital products.",
+    titleKey: "services.list.uiux.title",
+    descriptionKey: "services.list.uiux.description",
     tags: [
       "Figma",
       "Prototyping",

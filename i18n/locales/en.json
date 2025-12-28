@@ -1,1 +1,503 @@
-{}
+{
+  "language_modal": {
+    "title": "Choose language",
+    "subtitle": "Choose your preferred language",
+    "english": "English",
+    "chinese": "中文",
+    "arabic": "Arabic",
+    "default_note": "Default / Global",
+    "simplified_note": "Simplified Chinese",
+    "available": "{count} languages available",
+    "close": "Close",
+    "done": "Done"
+  },
+  "navbar": {
+    "brand": "AFTECH",
+    "tagline": "Software Development",
+    "toggle_menu": "Toggle menu",
+    "get_started": "Get Started",
+    "contact_us": "Contact Us",
+    "language": "Change language",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "team": "Team",
+      "contact": "Contact"
+    }
+  },
+  "hero": {
+    "tagline": "Crafting Digital Excellence",
+    "title": {
+      "we_build": "We Build",
+      "next_generation": "Next-Generation",
+      "software_solutions": "Software Solutions"
+    },
+    "description": "From {concept} to {deployment}, we transform your vision into {scalable} applications that drive business growth.",
+    "to": "to",
+    "description_keywords": {
+      "concept": "concept",
+      "deployment": "deployment",
+      "scalable": "scalable, high-performance"
+    },
+    "cta": {
+      "view_work": "View Our Work",
+      "book_call": "Book a Call"
+    },
+    "description_tail": "applications that drive business growth.",
+    "transform": ", we transform your vision into",
+    "stats": {
+      "projects": "Projects Delivered",
+      "clients": "Happy Clients",
+      "team": "Team Members",
+      "experience": "Years Experience"
+    },
+    "scroll_down": "Discover More",
+    "alt": {
+      "bg": "Technology background"
+    }
+  },
+  "services": {
+    "badge": "Our Expertise",
+    "heading": {
+      "fullstack": "Full-Stack",
+      "development": "Development",
+      "services": "Services"
+    },
+    "description": {
+      "prefix": "From backend infrastructure to pixel-perfect frontends, we deliver",
+      "suffix": "tailored to your specific needs and business goals."
+    },
+    "end_to_end": "end-to-end solutions",
+    "learn_more": "Learn more",
+    "cta": {
+      "explore_all": "Explore All Services"
+    },
+    "tech": {
+      "title": "Our Technology Stack",
+      "subtitle": "Built with cutting-edge technologies for optimal performance"
+    },
+    "list": {
+      "backend": {
+        "title": "Backend Development",
+        "description": "Robust APIs, scalable databases, and cloud infrastructure that powers your applications with high performance and reliability."
+      },
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Beautiful, responsive interfaces built with modern frameworks and best practices for exceptional user experiences."
+      },
+      "mobile": {
+        "title": "Mobile Development",
+        "description": "Native and cross-platform mobile apps that deliver exceptional user experiences across iOS and Android platforms."
+      },
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "User-centered design that combines aesthetics with functionality to create intuitive and engaging digital products."
+      }
+    },
+    "page": {
+      "pre": "From ",
+      "mid": " to ",
+      "post": ", we deliver comprehensive software solutions tailored to your specific business needs and objectives."
+    },
+    "features": {
+      "backend": {
+        "api": {
+          "title": "API Development",
+          "desc": "RESTful & GraphQL APIs built for scale and security"
+        },
+        "database": {
+          "title": "Database Design",
+          "desc": "Optimized schemas, efficient queries, and data architecture"
+        },
+        "cloud": {
+          "title": "Cloud Services",
+          "desc": "AWS, GCP, Azure infrastructure and serverless solutions"
+        },
+        "devops": {
+          "title": "DevOps & CI/CD",
+          "desc": "Automated pipelines, containerization, and deployments"
+        }
+      },
+      "frontend": {
+        "framework": {
+          "title": "React/Vue/Angular",
+          "desc": "Modern SPA frameworks with TypeScript integration"
+        },
+        "responsive": {
+          "title": "Responsive Design",
+          "desc": "Mobile-first approaches and cross-browser compatibility"
+        },
+        "pwa": {
+          "title": "PWA Development",
+          "desc": "Native-like web experiences with offline capabilities"
+        },
+        "performance": {
+          "title": "Performance",
+          "desc": "Optimized for speed, SEO, and Core Web Vitals"
+        }
+      },
+      "mobile": {
+        "ios": {
+          "title": "iOS Development",
+          "desc": "Native iOS apps with Swift and modern Apple frameworks"
+        },
+        "android": {
+          "title": "Android Development",
+          "desc": "Native Android apps with Kotlin and Jetpack"
+        },
+        "cross_platform": {
+          "title": "Cross-Platform",
+          "desc": "React Native & Flutter solutions for wider reach"
+        },
+        "app_store": {
+          "title": "App Store Optimization",
+          "desc": "Store listing optimization and ASO strategies"
+        }
+      },
+      "design": {
+        "research": {
+          "title": "User Research",
+          "desc": "In-depth user research and persona development"
+        },
+        "wireframe": {
+          "title": "Wireframing",
+          "desc": "Structure, information architecture, and user flows"
+        },
+        "design_system": {
+          "title": "Design Systems",
+          "desc": "Scalable design systems and component libraries"
+        },
+        "testing": {
+          "title": "Usability Testing",
+          "desc": "Data-driven improvements and A/B testing"
+        }
+      }
+    },
+    "process": {
+      "title_prefix": "Our",
+      "title_highlight": "Development Process",
+      "description": "A structured approach that ensures quality, transparency, and successful delivery from start to finish.",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Planning",
+          "description": "In-depth analysis of requirements, user research, and project scoping to define clear objectives."
+        },
+        "design": {
+          "title": "Design & Prototyping",
+          "description": "Wireframing, UI/UX design, and interactive prototypes for stakeholder feedback."
+        },
+        "development": {
+          "title": "Development & Testing",
+          "description": "Agile development cycles with continuous testing and quality assurance."
+        },
+        "deployment": {
+          "title": "Deployment & Support",
+          "description": "Production deployment, monitoring, and ongoing maintenance and support."
+        }
+      }
+    }
+  },
+  "featured_projects": {
+    "badge": "Featured Work",
+    "title": {
+      "part1": "Projects That",
+      "highlight": "Define",
+      "part3": "Excellence"
+    },
+    "description": {
+      "prefix": "Showcasing our innovative solutions that transform businesses through",
+      "tech": "cutting-edge technology",
+      "and": "and",
+      "design": "exceptional design"
+    },
+    "view_all": "View All Projects",
+    "actions": {
+      "live_demo": "Live Demo",
+      "view_code": "View Code"
+    },
+    "cta": {
+      "title": {
+        "part1": "Ready to Start Your",
+        "highlight": "Project?"
+      },
+      "description": "Let's discuss how we can bring your vision to life with cutting-edge technology and expert craftsmanship.",
+      "button": "Start a Project"
+    }
+  },
+  "projects": {
+    "badge": "Our Portfolio",
+    "title": { "part1": "Projects That", "highlight": "Define Excellence" },
+    "description": {
+      "pre": "Explore our diverse portfolio of successful projects across"
+    },
+    "filter": {
+      "title": "Filter by Category",
+      "found": "{count} projects found"
+    },
+    "sort": {
+      "label": "Sort",
+      "recent": "Most Recent",
+      "popular": "Most Popular",
+      "alphabet": "Alphabetical"
+    },
+    "categories": {
+      "All": "All",
+      "Web Apps": "Web Apps",
+      "Mobile Apps": "Mobile Apps",
+      "E-Commerce": "E-Commerce",
+      "UI/UX Design": "UI/UX Design",
+      "Enterprise": "Enterprise"
+    },
+    "stats": { "year": "Year", "duration": "Duration", "team": "Team" },
+    "empty": {
+      "title": "No Projects Found",
+      "desc": "We don't have any projects in this category yet. Check back soon or explore other categories.",
+      "view_all": "View All Projects"
+    }
+  },
+  "testimonials": {
+    "badge": "Client Success Stories",
+    "title": {
+      "part1": "Trusted by",
+      "highlight": "Industry Leaders"
+    },
+    "description": {
+      "prefix": "See how",
+      "brand": "AFTECH",
+      "suffix": "transforms businesses across industries"
+    },
+    "stats": {
+      "client_satisfaction": "Client Satisfaction",
+      "projects_delivered": "Projects Delivered",
+      "avg_growth": "Average Growth",
+      "support_available": "Support Available"
+    },
+    "go_to": "Go to testimonial {n}",
+    "company": {
+      "title": "Trusted by Industry Leaders",
+      "description": "Join hundreds of companies that trust AFTECH for their digital transformation"
+    },
+    "cta": {
+      "title": "Ready to transform your business?",
+      "description": "Join industry leaders who trust us with their digital transformation journey.",
+      "button": "Start Your Success Story"
+    },
+    "metrics_labels": {
+      "User Growth": "User Growth",
+      "Load Time": "Load Time",
+      "Uptime": "Uptime",
+      "Cost Reduction": "Cost Reduction",
+      "No-Show Reduction": "No-Show Reduction",
+      "App Rating": "App Rating",
+      "Monthly Users": "Monthly Users",
+      "Compliant": "Compliant",
+      "Conversion Increase": "Conversion Increase",
+      "Sales Growth": "Sales Growth",
+      "Countries Launched": "Countries Launched"
+    }
+  },
+  "cta": {
+    "heading": {
+      "part1": "Ready to Build",
+      "part2": "Something Amazing?"
+    },
+    "description": "Let's discuss your project and explore how we can help you achieve your goals. Our team is ready to turn your ideas into reality.",
+    "buttons": {
+      "primary": "Start Your Project",
+      "secondary": "Explore Our Work"
+    },
+    "trusted_by": "Trusted By",
+    "contact_info": {
+      "call": {
+        "label": "Call Us",
+        "value": "+1 (555) 123-4567"
+      },
+      "email": {
+        "label": "Email Us",
+        "value": "hello@aftech.dev"
+      },
+      "visit": {
+        "label": "Visit Us",
+        "value": "San Francisco, CA"
+      }
+    },
+    "companies": [
+      { "name": "TechCorp", "initials": "TC" },
+      { "name": "Global Finance", "initials": "GF" },
+      { "name": "Innovate Co", "initials": "IC" },
+      { "name": "Digital Solutions", "initials": "DS" }
+    ]
+  },
+  "footer": {
+    "about": {
+      "tagline": "Crafting exceptional digital experiences with cutting-edge technology. We transform ideas into scalable, high-performance solutions."
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "categories": {
+      "services": "Services",
+      "company": "Company",
+      "resources": "Resources"
+    },
+    "links": {
+      "services": {
+        "backend": "Backend Development",
+        "frontend": "Frontend Development",
+        "mobile": "Mobile Development",
+        "design": "UI/UX Design",
+        "devops": "DevOps & Cloud"
+      },
+      "company": {
+        "about": "About Us",
+        "projects": "Projects",
+        "careers": "Careers",
+        "contact": "Contact",
+        "partners": "Partners"
+      },
+      "resources": {
+        "blog": "Blog",
+        "case_studies": "Case Studies",
+        "docs": "Documentation",
+        "support": "Support",
+        "api": "API Reference"
+      }
+    },
+    "badges": {
+      "secure": "Secure & Reliable",
+      "global": "Global Services"
+    },
+    "copyright": "All rights reserved.",
+    "since": "Crafting digital excellence since {year}",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms"
+    },
+    "powered_by": "Powered by:",
+    "view_tech": "View Tech Stack",
+    "contact": {
+      "email": "hello@aftech.dev",
+      "phone": "+1 (234) 567-890",
+      "location": "San Francisco, CA"
+    }
+  },
+  "team": {
+    "badge": "Our Collective Genius",
+    "title": {
+      "part1": "Meet The",
+      "highlight": "Masterminds",
+      "part3": "Behind AFTECH"
+    },
+    "description": {
+      "prefix": "A symphony of",
+      "highlight1": "brilliant minds",
+      "highlight2": "creative visionaries",
+      "highlight3": "technical virtuosos",
+      "suffix": "crafting digital experiences that redefine possibilities."
+    },
+    "stats": {
+      "expert_engineers": "Expert Engineers",
+      "avg_years_experience": "Avg. Years Experience",
+      "client_satisfaction_rate": "Client Satisfaction Rate",
+      "projects_delivered": "Projects Delivered"
+    },
+    "explore": "Explore Team",
+    "filters": {
+      "all": "All Stars",
+      "leadership": "Visionaries",
+      "development": "Code Wizards",
+      "design": "Design Gurus",
+      "devops": "Infra Ninjas"
+    },
+    "view_all": "View All Team Members",
+    "tech": {
+      "badge": "Our Tech Arsenal",
+      "title": { "part1": "Mastering The", "highlight": "Digital Frontier" },
+      "description": "Cutting-edge technologies powering our innovative solutions and driving digital transformation."
+    },
+    "cta": {
+      "badge": "Join The Revolution",
+      "title": {
+        "part1": "Ready To Write",
+        "highlight": "History",
+        "part3": "Together?"
+      },
+      "description": "Join a team where innovation meets passion, and together we'll build the future of digital experiences.",
+      "buttons": {
+        "start_journey": "Start Your Journey",
+        "explore_work": "Explore Our Work"
+      }
+    },
+    "card": { "experience": "Experience", "projects": "Projects" },
+    "roles": {
+      "founder": "Founder & CEO",
+      "lead_frontend": "Lead Frontend Architect",
+      "backend_architect": "Backend Systems Architect",
+      "creative_director": "Creative Director",
+      "mobile_lead": "Mobile Lead",
+      "devops_principal": "DevOps Principal"
+    }
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "title": {
+      "part1": "Let's Build Something",
+      "part2": "Amazing",
+      "part3": "Together"
+    },
+    "description": {
+      "prefix": "Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you within ",
+      "suffix": "."
+    },
+    "response_time": "24 hours",
+    "form": {
+      "title": "Send us a Message",
+      "subtitle": "Fill out the form below and we'll get back to you soon.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company (Optional)",
+      "subject": "Subject",
+      "select_subject": "Select a subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "company": "Your Company",
+      "message": "Tell us about your project, timeline, and budget..."
+    },
+    "subjects": {
+      "project": "Project Inquiry",
+      "partnership": "Partnership",
+      "career": "Career Opportunity",
+      "support": "Technical Support",
+      "other": "Other"
+    },
+    "submit": { "send": "Send Message", "sending": "Sending..." },
+    "success": {
+      "title": "Message sent successfully!",
+      "subtitle": "We'll get back to you within {hours}."
+    },
+    "follow_us": "Follow us on social media",
+    "map": { "location": "San Francisco, CA", "title": "Office Location" },
+    "quick": {
+      "title": "Quick Contact",
+      "call_us": "Call us",
+      "email_us": "Email us"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "hours": "Office Hours"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  }
+}

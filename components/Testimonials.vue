@@ -56,9 +56,9 @@
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider"
-            >Client Success Stories</span
-          >
+          <span class="text-sm font-medium text-white tracking-wider">{{
+            t("testimonials.badge")
+          }}</span>
           <div class="relative">
             <div
               class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
@@ -72,12 +72,12 @@
 
         <!-- Main Heading -->
         <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-          <span class="text-white">Trusted by</span>
+          <span class="text-white">{{ t("testimonials.title.part1") }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Industry Leaders
+              {{ t("testimonials.title.highlight") }}
             </span>
           </span>
         </h2>
@@ -86,24 +86,25 @@
         <p
           class="text-lg md:text-xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed"
         >
-          Don't just take our word for it. Here's what our amazing clients have
-          to say about partnering with
-          <span class="text-[#00e1ff] font-medium">AFTECH</span> for their
-          digital transformation.
+          {{ t("testimonials.description.prefix") }}
+          <span class="text-[#00e1ff] font-medium">{{
+            t("testimonials.description.brand")
+          }}</span>
+          {{ t("testimonials.description.suffix") }}
         </p>
 
         <!-- Stats Row -->
         <div
           class="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 border-t border-[#334155]/30"
         >
-          <div v-for="stat in stats" :key="stat.label" class="text-center">
+          <div v-for="stat in stats" :key="stat.labelKey" class="text-center">
             <div
               class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent mb-1"
             >
               {{ stat.value }}
             </div>
             <div class="text-sm text-[#94a3b8] uppercase tracking-wider">
-              {{ stat.label }}
+              {{ t(stat.labelKey) }}
             </div>
           </div>
         </div>
@@ -145,7 +146,6 @@
             />
           </svg>
         </button>
-
         <!-- Testimonials Container -->
         <div class="relative overflow-hidden">
           <div
@@ -200,7 +200,7 @@
                       <!-- Rating Stars -->
                       <div class="flex gap-1 mb-8">
                         <svg
-                          v-for="i in testimonial.rating"
+                          v-for="i in 5"
                           :key="i"
                           class="w-6 h-6"
                           :class="
@@ -292,7 +292,9 @@
                             <div
                               class="text-xs text-[#94a3b8] uppercase tracking-wider"
                             >
-                              {{ metric.label }}
+                              {{
+                                t(`testimonials.metrics_labels.${metric.label}`)
+                              }}
                             </div>
                           </div>
                         </div>
@@ -309,7 +311,6 @@
             </div>
           </div>
         </div>
-
         <!-- Dots Indicator -->
         <div class="flex justify-center gap-2 mt-12">
           <button
@@ -317,7 +318,7 @@
             :key="index"
             @click="goToTestimonial(index)"
             class="relative"
-            :aria-label="`Go to testimonial ${index + 1}`"
+            :aria-label="$t('testimonials.go_to', { n: index + 1 })"
           >
             <!-- Dot -->
             <div
@@ -342,11 +343,10 @@
       <div class="mt-24 pt-16 border-t border-[#334155]/30">
         <div class="text-center mb-12">
           <h3 class="text-2xl font-bold text-white mb-4">
-            Trusted by Innovative Companies
+            {{ t("testimonials.company.title") }}
           </h3>
           <p class="text-[#94a3b8] max-w-2xl mx-auto">
-            We partner with forward-thinking organizations across industries to
-            deliver exceptional results
+            {{ t("testimonials.company.description") }}
           </p>
         </div>
 
@@ -386,10 +386,10 @@
       <div class="text-center mt-24">
         <div class="max-w-2xl mx-auto">
           <h3 class="text-3xl font-bold text-white mb-4">
-            Ready to join our success stories?
+            {{ t("testimonials.cta.title") }}
           </h3>
           <p class="text-lg text-[#cbd5e1] mb-8">
-            Let's discuss how we can help transform your vision into reality
+            {{ t("testimonials.cta.description") }}
           </p>
           <NuxtLink
             to="/contact"
@@ -409,7 +409,7 @@
             <span
               class="relative z-10 text-[#0f1729] font-bold flex items-center gap-3"
             >
-              Schedule a Consultation
+              {{ t("testimonials.cta.button") }}
               <svg
                 class="w-5 h-5 group-hover/cta:translate-x-2 transition-transform duration-300"
                 viewBox="0 0 20 20"
@@ -436,16 +436,18 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
-// Stats data
+// Stats data (use labelKey for translations)
 const stats = [
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "150+", label: "Projects Delivered" },
-  { value: "40%", label: "Avg. Growth Impact" },
-  { value: "24/7", label: "Support Available" },
+  { value: "98%", labelKey: "testimonials.stats.client_satisfaction" },
+  { value: "150+", labelKey: "testimonials.stats.projects_delivered" },
+  { value: "40%", labelKey: "testimonials.stats.avg_growth" },
+  { value: "24/7", labelKey: "testimonials.stats.support_available" },
 ];
 
-// Testimonials data
+// Testimonials data - keep this in component for now
 const testimonials = [
   {
     id: 1,
@@ -549,15 +551,6 @@ onUnmounted(() => {
     clearInterval(rotationInterval.value);
   }
 });
-
-// Pause auto-rotation on hover
-const pauseRotation = () => {
-  autoRotate.value = false;
-};
-
-const resumeRotation = () => {
-  autoRotate.value = true;
-};
 </script>
 
 <style>

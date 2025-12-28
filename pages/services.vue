@@ -66,9 +66,9 @@
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider"
-            >What We Do</span
-          >
+          <span class="text-sm font-medium text-white tracking-wider">{{
+            t("services.badge")
+          }}</span>
           <div class="relative">
             <div
               class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
@@ -84,14 +84,14 @@
         <h1
           class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span class="text-white">Full-Stack</span>
+          <span class="text-white">{{ t("services.heading.fullstack") }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Development
+              {{ t("services.heading.development") }}
             </span>
-            <span class="text-white">Services</span>
+            <span class="text-white">{{ t("services.heading.services") }}</span>
           </span>
         </h1>
 
@@ -99,22 +99,31 @@
         <p
           class="text-lg md:text-xl text-[#cbd5e1] max-w-3xl leading-relaxed mb-12"
         >
-          From <span class="text-[#00e1ff] font-medium">concept</span> to
-          <span class="text-[#1bd4c1] font-medium">deployment</span>, we deliver
-          comprehensive software solutions tailored to your specific business
-          needs and objectives.
+          {{ t("services.page.pre")
+          }}<span class="text-[#00e1ff] font-medium">{{
+            t("hero.description_keywords.concept")
+          }}</span
+          >{{ t("services.page.mid")
+          }}<span class="text-[#1bd4c1] font-medium">{{
+            t("hero.description_keywords.deployment")
+          }}</span
+          >{{ t("services.page.post") }}
         </p>
 
         <!-- Quick Stats -->
         <div
           class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-[#334155]/30"
         >
-          <div v-for="stat in quickStats" :key="stat.label" class="text-center">
+          <div
+            v-for="stat in quickStats"
+            :key="stat.labelKey || stat.label"
+            class="text-center"
+          >
             <div class="text-3xl font-bold text-white mb-1">
               {{ stat.value }}
             </div>
             <div class="text-sm text-[#94a3b8] uppercase tracking-wider">
-              {{ stat.label }}
+              {{ t(stat.labelKey) }}
             </div>
           </div>
         </div>
@@ -122,9 +131,9 @@
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div class="flex flex-col items-center gap-2">
-            <span class="text-xs text-[#64748b] uppercase tracking-wider"
-              >Explore Services</span
-            >
+            <span class="text-xs text-[#64748b] uppercase tracking-wider">{{
+              t("services.cta.explore_all")
+            }}</span>
             <div class="relative w-5 h-10 rounded-full border border-[#334155]">
               <div
                 class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-[#00e1ff] to-[#1bd4c1] rounded-full animate-scroll"
@@ -266,7 +275,7 @@
               <span
                 class="relative z-10 text-[#0f1729] flex items-center gap-2"
               >
-                Get Started
+                {{ t("navbar.get_started") }}
                 <Icon
                   name="lucide:arrow-right"
                   class="w-4 h-4 group-hover/cta:translate-x-1 transition-transform duration-300"
@@ -318,10 +327,10 @@
                 <h3
                   class="font-semibold text-white mb-2 group-hover/feature:text-transparent group-hover/feature:bg-gradient-to-r group-hover/feature:from-[#00e1ff] group-hover/feature:via-[#1bd4c1] group-hover/feature:to-[#00e1ff] group-hover/feature:bg-clip-text transition-all duration-300"
                 >
-                  {{ feature.title }}
+                  {{ t(feature.titleKey) }}
                 </h3>
                 <p class="text-sm text-[#94a3b8] leading-relaxed">
-                  {{ feature.desc }}
+                  {{ t(feature.descKey) }}
                 </p>
 
                 <!-- Bottom gradient bar -->
@@ -342,18 +351,19 @@
       <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            <span class="text-white">Our</span>
+            <span class="text-white">{{
+              t("services.process.title_prefix")
+            }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Development Process
+                {{ t("services.process.title_highlight") }}
               </span>
             </span>
           </h2>
           <p class="text-lg text-[#cbd5e1] max-w-3xl mx-auto">
-            A structured approach that ensures quality, transparency, and
-            successful delivery from start to finish.
+            {{ t("services.process.description") }}
           </p>
         </div>
 
@@ -367,7 +377,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div
               v-for="(step, index) in processSteps"
-              :key="step.title"
+              :key="step.titleKey || step.icon"
               class="relative group/step"
             >
               <!-- Step number -->
@@ -391,9 +401,9 @@
 
                 <!-- Content -->
                 <h3 class="text-xl font-bold text-white mb-3">
-                  {{ step.title }}
+                  {{ t(step.titleKey) }}
                 </h3>
-                <p class="text-[#94a3b8]">{{ step.description }}</p>
+                <p class="text-[#94a3b8]">{{ t(step.descriptionKey) }}</p>
 
                 <!-- Hover effect -->
                 <div
@@ -515,12 +525,15 @@
 </template>
 
 <script setup>
-// Quick stats
+// i18n
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
+// Quick stats (use labelKey for translations)
 const quickStats = [
-  { value: "150+", label: "Projects Delivered" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "40%", label: "Avg. Growth Impact" },
-  { value: "24/7", label: "Support Available" },
+  { value: "150+", labelKey: "testimonials.stats.projects_delivered" },
+  { value: "98%", labelKey: "testimonials.stats.client_satisfaction" },
+  { value: "40%", labelKey: "testimonials.stats.avg_growth" },
+  { value: "24/7", labelKey: "testimonials.stats.support_available" },
 ];
 
 // Services data with modern icon names
@@ -528,33 +541,32 @@ const services = [
   {
     id: "backend",
     icon: "lucide:server",
-    title: "Backend Development",
-    description:
-      "Build robust, scalable server-side solutions that power your applications with enterprise-grade security, performance, and reliability for millions of users.",
+    titleKey: "services.list.backend.title",
+    descriptionKey: "services.list.backend.description",
     color: "primary",
     features: [
       {
         icon: "api",
-        title: "API Development",
-        desc: "RESTful & GraphQL APIs built for scale and security",
+        titleKey: "services.features.backend.api.title",
+        descKey: "services.features.backend.api.desc",
         color: "primary",
       },
       {
         icon: "database",
-        title: "Database Design",
-        desc: "Optimized schemas, efficient queries, and data architecture",
+        titleKey: "services.features.backend.database.title",
+        descKey: "services.features.backend.database.desc",
         color: "secondary",
       },
       {
         icon: "cloud",
-        title: "Cloud Services",
-        desc: "AWS, GCP, Azure infrastructure and serverless solutions",
+        titleKey: "services.features.backend.cloud.title",
+        descKey: "services.features.backend.cloud.desc",
         color: "primary",
       },
       {
         icon: "devops",
-        title: "DevOps & CI/CD",
-        desc: "Automated pipelines, containerization, and deployments",
+        titleKey: "services.features.backend.devops.title",
+        descKey: "services.features.backend.devops.desc",
         color: "secondary",
       },
     ],
@@ -572,33 +584,32 @@ const services = [
   {
     id: "frontend",
     icon: "lucide:monitor",
-    title: "Frontend Development",
-    description:
-      "Create beautiful, responsive user interfaces that deliver exceptional user experiences across all devices with cutting-edge frameworks and best practices.",
+    titleKey: "services.list.frontend.title",
+    descriptionKey: "services.list.frontend.description",
     color: "secondary",
     features: [
       {
         icon: "framework",
-        title: "React/Vue/Angular",
-        desc: "Modern SPA frameworks with TypeScript integration",
+        titleKey: "services.features.frontend.framework.title",
+        descKey: "services.features.frontend.framework.desc",
         color: "primary",
       },
       {
         icon: "responsive",
-        title: "Responsive Design",
-        desc: "Mobile-first approaches and cross-browser compatibility",
+        titleKey: "services.features.frontend.responsive.title",
+        descKey: "services.features.frontend.responsive.desc",
         color: "secondary",
       },
       {
         icon: "pwa",
-        title: "PWA Development",
-        desc: "Native-like web experiences with offline capabilities",
+        titleKey: "services.features.frontend.pwa.title",
+        descKey: "services.features.frontend.pwa.desc",
         color: "primary",
       },
       {
         icon: "performance",
-        title: "Performance",
-        desc: "Optimized for speed, SEO, and Core Web Vitals",
+        titleKey: "services.features.frontend.performance.title",
+        descKey: "services.features.frontend.performance.desc",
         color: "secondary",
       },
     ],
@@ -616,33 +627,32 @@ const services = [
   {
     id: "mobile",
     icon: "lucide:smartphone",
-    title: "Mobile Development",
-    description:
-      "Develop high-performance mobile applications that your users will love, on any platform, with seamless integration and exceptional user experiences.",
+    titleKey: "services.list.mobile.title",
+    descriptionKey: "services.list.mobile.description",
     color: "primary",
     features: [
       {
         icon: "ios",
-        title: "iOS Development",
-        desc: "Native iOS apps with Swift and modern Apple frameworks",
+        titleKey: "services.features.mobile.ios.title",
+        descKey: "services.features.mobile.ios.desc",
         color: "primary",
       },
       {
         icon: "android",
-        title: "Android Development",
-        desc: "Native Android apps with Kotlin and Jetpack",
+        titleKey: "services.features.mobile.android.title",
+        descKey: "services.features.mobile.android.desc",
         color: "secondary",
       },
       {
         icon: "cross-platform",
-        title: "Cross-Platform",
-        desc: "React Native & Flutter solutions for wider reach",
+        titleKey: "services.features.mobile.cross_platform.title",
+        descKey: "services.features.mobile.cross_platform.desc",
         color: "primary",
       },
       {
         icon: "app-store",
-        title: "App Store Optimization",
-        desc: "Store listing optimization and ASO strategies",
+        titleKey: "services.features.mobile.app_store.title",
+        descKey: "services.features.mobile.app_store.desc",
         color: "secondary",
       },
     ],
@@ -660,33 +670,32 @@ const services = [
   {
     id: "design",
     icon: "lucide:palette",
-    title: "UI/UX Design",
-    description:
-      "Design intuitive, user-centered experiences that convert visitors into loyal customers through research-driven design and seamless interactions.",
+    titleKey: "services.list.uiux.title",
+    descriptionKey: "services.list.uiux.description",
     color: "secondary",
     features: [
       {
         icon: "research",
-        title: "User Research",
-        desc: "In-depth user research and persona development",
+        titleKey: "services.features.design.research.title",
+        descKey: "services.features.design.research.desc",
         color: "primary",
       },
       {
         icon: "wireframe",
-        title: "Wireframing",
-        desc: "Structure, information architecture, and user flows",
+        titleKey: "services.features.design.wireframe.title",
+        descKey: "services.features.design.wireframe.desc",
         color: "secondary",
       },
       {
         icon: "design-system",
-        title: "Design Systems",
-        desc: "Scalable design systems and component libraries",
+        titleKey: "services.features.design.design_system.title",
+        descKey: "services.features.design.design_system.desc",
         color: "primary",
       },
       {
         icon: "testing",
-        title: "Usability Testing",
-        desc: "Data-driven improvements and A/B testing",
+        titleKey: "services.features.design.testing.title",
+        descKey: "services.features.design.testing.desc",
         color: "secondary",
       },
     ],
@@ -707,27 +716,23 @@ const services = [
 const processSteps = [
   {
     icon: "discovery",
-    title: "Discovery & Planning",
-    description:
-      "In-depth analysis of requirements, user research, and project scoping to define clear objectives.",
+    titleKey: "services.process.steps.discovery.title",
+    descriptionKey: "services.process.steps.discovery.description",
   },
   {
     icon: "design",
-    title: "Design & Prototyping",
-    description:
-      "Wireframing, UI/UX design, and interactive prototypes for stakeholder feedback.",
+    titleKey: "services.process.steps.design.title",
+    descriptionKey: "services.process.steps.design.description",
   },
   {
     icon: "development",
-    title: "Development & Testing",
-    description:
-      "Agile development cycles with continuous testing and quality assurance.",
+    titleKey: "services.process.steps.development.title",
+    descriptionKey: "services.process.steps.development.description",
   },
   {
     icon: "deployment",
-    title: "Deployment & Support",
-    description:
-      "Production deployment, monitoring, and ongoing maintenance and support.",
+    titleKey: "services.process.steps.deployment.title",
+    descriptionKey: "services.process.steps.deployment.description",
   },
 ];
 

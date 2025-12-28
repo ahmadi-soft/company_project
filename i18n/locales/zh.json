@@ -1,1 +1,513 @@
-{}
+{
+  "language_modal": {
+    "title": "选择语言",
+    "subtitle": "选择您偏好的语言",
+    "english": "English",
+    "chinese": "中文",
+    "default_note": "默认 / 全局",
+    "simplified_note": "简体中文",
+    "arabic": "阿拉伯语",
+    "available": "共有 {count} 个可用语言",
+    "close": "关闭",
+    "done": "完成"
+  },
+  "navbar": {
+    "brand": "AFTECH",
+    "tagline": "软件开发",
+    "toggle_menu": "切换菜单",
+    "get_started": "立即开始",
+    "contact_us": "联系我们",
+    "language": "切换语言",
+    "nav": {
+      "home": "首页",
+      "services": "服务",
+      "projects": "项目",
+      "team": "团队",
+      "contact": "联系"
+    }
+  },
+  "hero": {
+    "tagline": "打造卓越数字产品",
+    "title": {
+      "we_build": "我们构建",
+      "next_generation": "下一代",
+      "software_solutions": "软件解决方案"
+    },
+    "description": "从 {concept} 到 {deployment}，我们将您的愿景转化为推动业务增长的 {scalable} 应用程序。",
+    "to": "到",
+    "description_keywords": {
+      "concept": "概念",
+      "deployment": "部署",
+      "scalable": "可扩展、高性能"
+    },
+    "cta": {
+      "view_work": "查看我们的工作",
+      "book_call": "预约通话"
+    },
+    "description_tail": "推动业务增长的应用程序。",
+    "transform": "，我们将您的愿景转化为",
+    "stats": {
+      "projects": "项目交付",
+      "clients": "满意客户",
+      "team": "团队成员",
+      "experience": "年经验"
+    },
+    "scroll_down": "了解更多",
+    "alt": {
+      "bg": "技术背景"
+    }
+  },
+  "services": {
+    "badge": "我们的专长",
+    "heading": {
+      "fullstack": "全栈",
+      "development": "开发",
+      "services": "服务"
+    },
+    "description": {
+      "prefix": "从后端基础设施到像素级前端，我们交付",
+      "suffix": "以满足您特定需求和业务目标。"
+    },
+    "end_to_end": "端到端解决方案",
+    "learn_more": "了解更多",
+    "cta": {
+      "explore_all": "查看全部服务"
+    },
+    "tech": {
+      "title": "我们的技术栈",
+      "subtitle": "使用前沿技术构建以实现最佳性能"
+    },
+    "list": {
+      "backend": {
+        "title": "后端开发",
+        "description": "强大的 API、可扩展的数据库和云基础设施，为您的应用提供高性能和可靠性。"
+      },
+      "frontend": {
+        "title": "前端开发",
+        "description": "美观、响应式的界面，采用现代框架和最佳实践，为出色的用户体验而构建。"
+      },
+      "mobile": {
+        "title": "移动开发",
+        "description": "原生和跨平台移动应用，在 iOS 和 Android 平台上提供卓越的用户体验。"
+      },
+      "uiux": {
+        "title": "UI/UX 设计",
+        "description": "以用户为中心的设计，将美学与功能结合，创造直观且引人参与的数字产品。"
+      }
+    },
+    "page": {
+      "pre": "从 ",
+      "mid": " 到 ",
+      "post": "，我们交付量身定制的软件解决方案，以满足您特定的业务需求和目标。"
+    },
+    "features": {
+      "backend": {
+        "api": {
+          "title": "API 开发",
+          "desc": "为可扩展性和安全性构建的 RESTful 与 GraphQL API"
+        },
+        "database": {
+          "title": "数据库设计",
+          "desc": "优化的模式、高效的查询与数据架构"
+        },
+        "cloud": {
+          "title": "云服务",
+          "desc": "AWS、GCP、Azure 基础设施与无服务器解决方案"
+        },
+        "devops": {
+          "title": "DevOps 与 CI/CD",
+          "desc": "自动化流水线、容器化与部署"
+        }
+      },
+      "frontend": {
+        "framework": {
+          "title": "React/Vue/Angular",
+          "desc": "现代单页应用框架并支持 TypeScript 集成"
+        },
+        "responsive": {
+          "title": "响应式设计",
+          "desc": "移动优先策略与跨浏览器兼容性"
+        },
+        "pwa": { "title": "PWA 开发", "desc": "具有离线能力的原生级网页体验" },
+        "performance": {
+          "title": "性能优化",
+          "desc": "针对速度、SEO 与核心网页指标进行优化"
+        }
+      },
+      "mobile": {
+        "ios": {
+          "title": "iOS 开发",
+          "desc": "使用 Swift 与现代 Apple 框架开发原生 iOS 应用"
+        },
+        "android": {
+          "title": "Android 开发",
+          "desc": "使用 Kotlin 与 Jetpack 构建原生 Android 应用"
+        },
+        "cross_platform": {
+          "title": "跨平台开发",
+          "desc": "使用 React Native 与 Flutter 扩展覆盖范围"
+        },
+        "app_store": {
+          "title": "应用商店优化",
+          "desc": "商店页面优化与 ASO 策略"
+        }
+      },
+      "design": {
+        "research": { "title": "用户研究", "desc": "深入的用户研究与角色设定" },
+        "wireframe": { "title": "线框图", "desc": "结构、信息架构与用户流程" },
+        "design_system": {
+          "title": "设计系统",
+          "desc": "可扩展的设计系统与组件库"
+        },
+        "testing": {
+          "title": "可用性测试",
+          "desc": "基于数据的改进与 A/B 测试"
+        }
+      }
+    },
+    "process": {
+      "title_prefix": "我们的",
+      "title_highlight": "开发流程",
+      "description": "一个结构化方法，确保质量、透明度和从开始到交付的成功实现。",
+      "steps": {
+        "discovery": {
+          "title": "发现与规划",
+          "description": "深入分析需求、用户研究与项目范围界定以定义明确目标。"
+        },
+        "design": {
+          "title": "设计与原型",
+          "description": "线框图、UI/UX 设计与互动原型以获取利益相关者反馈。"
+        },
+        "development": {
+          "title": "开发与测试",
+          "description": "敏捷开发周期，持续测试与质量保障。"
+        },
+        "deployment": {
+          "title": "部署与支持",
+          "description": "生产部署、监控以及持续维护与支持。"
+        }
+      }
+    }
+  },
+  "featured_projects": {
+    "badge": "精选作品",
+    "title": {
+      "part1": "项目",
+      "highlight": "定义",
+      "part3": "卓越"
+    },
+    "description": {
+      "prefix": "展示我们的创新解决方案，",
+      "tech": "前沿技术",
+      "and": "和",
+      "design": "卓越设计"
+    },
+    "view_all": "查看全部项目",
+    "actions": {
+      "live_demo": "在线演示",
+      "view_code": "查看代码"
+    },
+    "cta": {
+      "title": {
+        "part1": "准备好开始",
+        "highlight": "您的项目？"
+      },
+      "description": "让我们讨论如何通过前沿技术和专业工艺将您的愿景变为现实。",
+      "button": "开始一个项目"
+    }
+  },
+  "projects": {
+    "badge": "我们的作品",
+    "title": { "part1": "项目", "highlight": "定义卓越" },
+    "description": { "pre": "探索我们在" },
+    "filter": { "title": "按类别筛选", "found": "共找到 {count} 个项目" },
+    "sort": {
+      "label": "排序",
+      "recent": "最新",
+      "popular": "最受欢迎",
+      "alphabet": "字母顺序"
+    },
+    "categories": {
+      "All": "全部",
+      "Web Apps": "Web 应用",
+      "Mobile Apps": "移动应用",
+      "E-Commerce": "电子商务",
+      "UI/UX Design": "UI/UX 设计",
+      "Enterprise": "企业级"
+    },
+    "stats": { "year": "年份", "duration": "时长", "team": "团队" },
+    "empty": {
+      "title": "未找到项目",
+      "desc": "此类别下暂无项目。请稍后再来或查看其他类别。",
+      "view_all": "查看全部项目"
+    }
+  },
+  "testimonials": {
+    "badge": "客户成功故事",
+    "title": {
+      "part1": "受",
+      "highlight": "行业领袖"
+    },
+    "description": {
+      "prefix": "不要只听我们说。以下是我们的客户在与",
+      "brand": "AFTECH",
+      "suffix": "在数字化转型方面合作时的评价。"
+    },
+    "go_to": "转到第 {n} 条推荐",
+    "company": {
+      "title": "受创新公司的信赖",
+      "description": "我们与各行业具有前瞻性的组织合作，交付卓越成果"
+    },
+    "cta": {
+      "title": "准备加入我们的成功案例吗？",
+      "description": "让我们讨论如何帮助将您的愿景变为现实",
+      "button": "安排咨询"
+    },
+    "stats": {
+      "client_satisfaction": "客户满意度",
+      "projects_delivered": "项目交付",
+      "avg_growth": "平均增长影响",
+      "support_available": "支持服务"
+    },
+    "testimonials": {
+      "badge": "客户成功案例",
+      "title": {
+        "part1": "获得",
+        "highlight": "行业领袖的信任"
+      },
+      "description": {
+        "prefix": "了解",
+        "brand": "AFTECH",
+        "suffix": "如何跨行业转型企业"
+      },
+      "stats": {
+        "client_satisfaction": "客户满意度",
+        "projects_delivered": "项目交付",
+        "avg_growth": "平均增长率",
+        "support_available": "支持服务"
+      },
+      "go_to": "跳转到第{n}条评价",
+      "company": {
+        "title": "获得行业领袖信任",
+        "description": "加入数百家信任AFTECH进行数字化转型的公司"
+      },
+      "cta": {
+        "title": "准备好转型您的业务了吗？",
+        "description": "加入信任我们的行业领袖，开启数字化转型之旅。",
+        "button": "开启您的成功故事"
+      },
+      "metrics_labels": {
+        "User Growth": "用户增长",
+        "Load Time": "加载时间",
+        "Uptime": "运行时间",
+        "Cost Reduction": "成本降低",
+        "No-Show Reduction": "未到率降低",
+        "App Rating": "应用评分",
+        "Monthly Users": "月活跃用户",
+        "Compliant": "合规认证",
+        "Conversion Increase": "转化率提升",
+        "Sales Growth": "销售增长",
+        "Countries Launched": "上线国家"
+      }
+    }
+  },
+  "cta": {
+    "heading": {
+      "part1": "准备好打造",
+      "part2": "非凡之物了吗？"
+    },
+    "description": "让我们讨论您的项目，探索如何帮助您实现目标。我们的团队随时准备将您的想法变为现实。",
+    "buttons": {
+      "primary": "开始您的项目",
+      "secondary": "探索我们的作品"
+    },
+    "trusted_by": "获得信任",
+    "contact_info": {
+      "call": {
+        "label": "致电我们",
+        "value": "+1 (555) 123-4567"
+      },
+      "email": {
+        "label": "发送邮件",
+        "value": "hello@aftech.dev"
+      },
+      "visit": {
+        "label": "拜访我们",
+        "value": "加利福尼亚州，旧金山"
+      }
+    },
+    "companies": [
+      { "name": "科技集团", "initials": "TC" },
+      { "name": "全球金融", "initials": "GF" },
+      { "name": "创新公司", "initials": "IC" },
+      { "name": "数字解决方案", "initials": "DS" }
+    ]
+  },
+  "footer": {
+    "about": {
+      "tagline": "使用前沿技术打造卓越的数字体验。我们将想法转化为可扩展的高性能解决方案。"
+    },
+    "newsletter": {
+      "title": "保持更新",
+      "placeholder": "输入您的邮箱",
+      "subscribe": "订阅"
+    },
+    "categories": {
+      "services": "服务",
+      "company": "公司",
+      "resources": "资源"
+    },
+    "links": {
+      "services": {
+        "backend": "后端开发",
+        "frontend": "前端开发",
+        "mobile": "移动开发",
+        "design": "UI/UX 设计",
+        "devops": "运维与云"
+      },
+      "company": {
+        "about": "关于我们",
+        "projects": "项目",
+        "careers": "招聘",
+        "contact": "联系",
+        "partners": "合作伙伴"
+      },
+      "resources": {
+        "blog": "博客",
+        "case_studies": "案例研究",
+        "docs": "文档",
+        "support": "支持",
+        "api": "API 参考"
+      }
+    },
+    "badges": {
+      "secure": "安全可靠",
+      "global": "全球服务"
+    },
+    "copyright": "版权所有。",
+    "since": "自 {year} 年起打造数字化卓越",
+    "legal": {
+      "privacy": "隐私",
+      "terms": "条款"
+    },
+    "powered_by": "技术支持：",
+    "view_tech": "查看技术栈",
+    "contact": {
+      "email": "hello@aftech.dev",
+      "phone": "+1 (234) 567-890",
+      "location": "旧金山，加利福尼亚"
+    }
+  },
+  "team": {
+    "badge": "我们的集体天才",
+    "title": {
+      "part1": "认识",
+      "highlight": "大师团队",
+      "part3": "AFTECH 背后"
+    },
+    "description": {
+      "prefix": "一支由",
+      "highlight1": "杰出人才",
+      "highlight2": "富有创造力的愿景者",
+      "highlight3": "技术能手",
+      "suffix": "组成的交响乐，创造重新定义可能性的数字体验。"
+    },
+    "stats": {
+      "expert_engineers": "资深工程师",
+      "avg_years_experience": "平均工作年限",
+      "client_satisfaction_rate": "客户满意度",
+      "projects_delivered": "已交付项目"
+    },
+    "explore": "探索团队",
+    "filters": {
+      "all": "全部成员",
+      "leadership": "领导者",
+      "development": "代码大师",
+      "design": "设计专家",
+      "devops": "基础设施专家"
+    },
+    "view_all": "查看所有团队成员",
+    "tech": {
+      "badge": "我们的技术库",
+      "title": { "part1": "精通", "highlight": "数字前沿" },
+      "description": "领先技术为我们的创新解决方案提供支持，推动数字化转型。"
+    },
+    "cta": {
+      "badge": "加入革命",
+      "title": {
+        "part1": "准备好书写",
+        "highlight": "历史",
+        "part3": "一起吗？"
+      },
+      "description": "加入一个将创新与热情结合的团队，我们将共同构建数字体验的未来。",
+      "buttons": {
+        "start_journey": "开始您的旅程",
+        "explore_work": "探索我们的作品"
+      }
+    },
+    "card": { "experience": "经验", "projects": "项目" },
+    "roles": {
+      "founder": "创始人兼首席执行官",
+      "lead_frontend": "前端首席架构师",
+      "backend_architect": "后端系统架构师",
+      "creative_director": "创意总监",
+      "mobile_lead": "移动负责人",
+      "devops_principal": "DevOps 负责人"
+    }
+  },
+  "contact": {
+    "badge": "联系我们",
+    "title": { "part1": "让我们一起", "part2": "创造", "part3": "美好体验" },
+    "description": {
+      "prefix": "有项目想法吗？我们很乐意了解。给我们发条消息，我们将在 ",
+      "suffix": " 内回复。"
+    },
+    "response_time": "24 小时",
+    "form": {
+      "title": "给我们留言",
+      "subtitle": "填写下面的表格，我们会尽快与您联系。",
+      "name": "姓名",
+      "email": "电子邮箱",
+      "company": "公司（可选）",
+      "subject": "主题",
+      "select_subject": "请选择主题",
+      "message": "留言"
+    },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "company": "您的公司",
+      "message": "告诉我们您的项目、时间表和预算..."
+    },
+    "subjects": {
+      "project": "项目咨询",
+      "partnership": "合作",
+      "career": "职位机会",
+      "support": "技术支持",
+      "other": "其他"
+    },
+    "submit": { "send": "发送消息", "sending": "发送中..." },
+    "success": {
+      "title": "消息发送成功！",
+      "subtitle": "我们将在 {hours} 内回复您。"
+    },
+    "follow_us": "在社交媒体上关注我们",
+    "map": { "location": "旧金山，加利福尼亚", "title": "办公室位置" },
+    "quick": {
+      "title": "快速联系",
+      "call_us": "致电我们",
+      "email_us": "发送邮件"
+    },
+    "info": {
+      "email": "电子邮箱",
+      "phone": "电话",
+      "address": "地址",
+      "hours": "办公时间"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter"
+    }
+  }
+}

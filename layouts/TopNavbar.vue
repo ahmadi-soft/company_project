@@ -123,14 +123,14 @@
                 opacity: navOpacity,
               }"
             >
-              AFTECH
+              {{ t("navbar.brand") }}
             </h1>
             <p
               class="text-xs font-medium mt-0.5 transition-all duration-500"
               :class="scrolled ? 'text-[#cbd5e1]' : 'text-[#94a3b8]'"
               :style="{ opacity: navOpacity }"
             >
-              Software Development
+              {{ t("navbar.tagline") }}
             </p>
 
             <!-- Underline animation -->
@@ -187,7 +187,7 @@
             ></div>
 
             <span class="relative z-10 flex items-center gap-2">
-              {{ item.name }}
+              {{ t(item.nameKey) }}
               <svg
                 v-if="route.path === item.path"
                 class="w-4 h-4 transition-all duration-500"
@@ -228,6 +228,63 @@
                         transform ${navTransitionDuration}ms cubic-bezier(0.34, 1.56, 0.64, 1)`,
           }"
         >
+          <!-- Language Button -->
+          <button
+            @click="openLangModal"
+            class="group/language relative px-4 py-2 rounded-xl bg-[#111827] border transition-all duration-500 flex items-center gap-3"
+            :class="
+              scrolled
+                ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
+                : 'border-[#334155] hover:border-[#00e1ff]/30'
+            "
+            :style="{
+              opacity: navOpacity,
+            }"
+            :aria-label="t('navbar.language')"
+          >
+            <!-- Current Language Display -->
+            <div class="flex items-center gap-3">
+              <span class="text-xl">{{ getCurrentFlag() }}</span>
+              <div class="text-left">
+                <div
+                  class="text-sm font-medium text-white transition-all duration-300"
+                >
+                  {{ currentLocale.toUpperCase() }}
+                </div>
+                <div class="text-xs text-[#94a3b8] transition-all duration-300">
+                  {{ getCurrentLanguageName() }}
+                </div>
+              </div>
+            </div>
+
+            <!-- Language Icon -->
+            <svg
+              class="w-4 h-4 transition-all duration-500 text-[#64748b] group-hover/language:text-[#00e1ff]"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1h3zm4 6a1 1 0 011-1h5a1 1 0 110 2h-5a1 1 0 01-1-1zm0 4a1 1 0 011-1h5a1 1 0 110 2h-5a1 1 0 01-1-1zm0 4a1 1 0 011-1h5a1 1 0 110 2h-5a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+
+            <!-- Background Glow -->
+            <div
+              class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/language:opacity-10 blur transition-opacity duration-300"
+              :style="{ opacity: 0.1 * navOpacity }"
+            ></div>
+
+            <!-- Animated Border -->
+            <div
+              class="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/language:opacity-30 blur-sm transition-opacity duration-500"
+              :style="{
+                backgroundSize: '300% 300%',
+              }"
+            ></div>
+          </button>
+
           <!-- Contact Button -->
           <NuxtLink
             to="/contact"
@@ -257,13 +314,12 @@
                 class="absolute -inset-y-full -left-20 w-20 bg-white/20 skew-x-12 group-hover/contact:left-full transition-all duration-1000"
               ></div>
             </div>
-
             <!-- Text -->
             <span
               class="relative z-10 text-[#0f1729] font-bold flex items-center gap-2 transition-all duration-500"
               :class="scrolled ? 'text-sm' : ''"
             >
-              Get Started
+              {{ t("navbar.get_started") }}
               <svg
                 class="w-4 h-4 group-hover/contact:translate-x-1 transition-transform duration-300"
                 viewBox="0 0 20 20"
@@ -293,7 +349,7 @@
               ? 'border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
               : 'border-[#334155] hover:border-[#00e1ff]/30'
           "
-          aria-label="Toggle menu"
+          :aria-label="t('navbar.toggle_menu')"
           :style="{
             opacity: navOpacity,
             transform: `scale(${
@@ -378,7 +434,7 @@
               ></div>
 
               <span class="relative z-10 flex items-center justify-between">
-                <span>{{ item.name }}</span>
+                <span>{{ t(item.nameKey) }}</span>
                 <svg
                   class="w-4 h-4 text-[#00e1ff] group-hover/mobile-item:translate-x-1 transition-transform duration-300"
                   viewBox="0 0 20 20"
@@ -397,6 +453,30 @@
             <div
               class="flex items-center gap-3 mt-4 pt-4 border-t border-[#1e293b]"
             >
+              <!-- Language Button Mobile -->
+              <button
+                @click="openLangModal"
+                class="group/language-mobile flex-1 py-3 rounded-xl bg-[#111827] border border-[#1e293b] hover:border-[#00e1ff]/30 transition-all duration-300 flex items-center justify-center gap-2"
+                :style="{
+                  opacity: isMobileOpen ? 1 : 0,
+                  transform: isMobileOpen
+                    ? 'translateY(0)'
+                    : 'translateY(-5px)',
+                  transitionDelay: '150ms',
+                }"
+                :aria-label="t('navbar.language')"
+              >
+                <span class="text-lg">{{ getCurrentFlag() }}</span>
+                <span class="font-medium text-white">{{
+                  getCurrentLanguageName()
+                }}</span>
+                <span
+                  class="text-xs px-1.5 py-0.5 rounded bg-[#1e293b] text-[#94a3b8]"
+                >
+                  {{ currentLocale.toUpperCase() }}
+                </span>
+              </button>
+
               <!-- Contact Button Mobile -->
               <NuxtLink
                 to="/contact"
@@ -410,7 +490,7 @@
                   transitionDelay: '200ms',
                 }"
               >
-                Contact Us
+                {{ t("navbar.contact_us") }}
               </NuxtLink>
             </div>
           </div>
@@ -423,18 +503,31 @@
   <div :class="['transition-all duration-300', scrolled ? 'pt-20' : 'pt-20']">
     <slot />
   </div>
+
+  <LanguageModal v-model:show="showLangModal" @select="onLanguageSelected" />
 </template>
 
 <script setup>
+import LanguageModal from "~/components/LanguageModal.vue";
+import { useI18n } from "vue-i18n";
 const route = useRoute();
 
-// Define navigation items
+const { t, locale } = useI18n();
+
+// Define navigation items (use i18n keys for names)
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Services", path: "/services" },
-  { name: "Projects", path: "/projects" },
-  { name: "Team", path: "/team" },
-  { name: "Contact", path: "/contact" },
+  { nameKey: "navbar.nav.home", path: "/" },
+  { nameKey: "navbar.nav.services", path: "/services" },
+  { nameKey: "navbar.nav.projects", path: "/projects" },
+  { nameKey: "navbar.nav.team", path: "/team" },
+  { nameKey: "navbar.nav.contact", path: "/contact" },
+];
+
+// Language data
+const languages = [
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "zh", name: "Chinese", flag: "🇨🇳" },
+  { code: "ar", name: "Arabic", flag: "🇸🇦" },
 ];
 
 // Reactive states
@@ -444,6 +537,8 @@ const logoAnimated = ref(false);
 const scrollProgress = ref(0);
 const lastScrollY = ref(0);
 const scrollTimeout = ref(null);
+const currentLocale = ref(locale.value);
+const showLangModal = ref(false);
 
 // Fade animation states (navbar always stays at top, just fades in/out)
 const navOpacity = ref(1);
@@ -460,6 +555,42 @@ const isScrollingDown = ref(false);
 const scrollThreshold = 50; // Minimum scroll distance before animation starts
 const fadeIntensity = 0.3; // How much to fade (0-1)
 const maxFade = 0.7; // Maximum fade opacity (0.3 = 30% opacity at max fade)
+
+// Language helper functions
+const getCurrentFlag = () => {
+  const lang = languages.find((l) => l.code === currentLocale.value);
+  return lang ? lang.flag : "🇺🇸";
+};
+
+const getCurrentLanguageName = () => {
+  const lang = languages.find((l) => l.code === currentLocale.value);
+  return lang ? lang.name : "English";
+};
+
+function openLangModal() {
+  showLangModal.value = true;
+}
+
+function onLanguageSelected(code) {
+  currentLocale.value = code;
+  locale.value = code;
+
+  // Update HTML attributes for RTL support
+  if (code === "ar") {
+    document.documentElement.dir = "rtl";
+    document.documentElement.lang = "ar";
+  } else {
+    document.documentElement.dir = "ltr";
+    document.documentElement.lang = code;
+  }
+
+  // Persist to localStorage
+  if (typeof window !== "undefined") {
+    localStorage.setItem("locale", code);
+  }
+
+  showLangModal.value = false;
+}
 
 // Mobile menu toggle
 const toggleMobileMenu = () => {
@@ -573,6 +704,23 @@ const handleScroll = () => {
 onMounted(() => {
   // Set dark mode as default
   document.documentElement.classList.add("dark");
+
+  // Load saved locale
+  try {
+    const savedLocale = localStorage.getItem("locale");
+    if (savedLocale && languages.some((lang) => lang.code === savedLocale)) {
+      currentLocale.value = savedLocale;
+      locale.value = savedLocale;
+
+      // Set HTML attributes
+      if (savedLocale === "ar") {
+        document.documentElement.dir = "rtl";
+        document.documentElement.lang = "ar";
+      }
+    }
+  } catch (e) {
+    console.warn("Could not access localStorage:", e);
+  }
 
   // Initialize scroll position
   lastScrollY.value = window.scrollY;

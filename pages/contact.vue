@@ -58,7 +58,7 @@
               </div>
               <span
                 class="text-white font-semibold text-sm tracking-wider uppercase"
-                >Get in Touch</span
+                >{{ t("contact.badge") }}</span
               >
             </div>
           </div>
@@ -67,22 +67,24 @@
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span class="text-white">Let's Build Something</span>
+            <span class="text-white">{{ t("contact.title.part1") }}</span>
             <span
               class="block bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
-              Amazing
+              {{ t("contact.title.part2") }}
             </span>
-            <span class="text-white">Together</span>
+            <span class="text-white">{{ t("contact.title.part3") }}</span>
           </h1>
 
           <!-- Description -->
           <p
             class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Have a project in mind? We'd love to hear about it. Send us a
-            message and we'll get back to you within
-            <span class="text-[#00e1ff] font-medium">24 hours</span>.
+            {{ t("contact.description.prefix") }}
+            <span class="text-[#00e1ff] font-medium">{{
+              t("contact.response_time")
+            }}</span
+            >{{ t("contact.description.suffix") }}
           </p>
         </div>
       </div>
@@ -109,10 +111,10 @@
                 <!-- Form Header -->
                 <div class="mb-8">
                   <h2 class="text-3xl font-bold text-white mb-3">
-                    Send us a Message
+                    {{ t("contact.form.title") }}
                   </h2>
                   <p class="text-[#cbd5e1]">
-                    Fill out the form below and we'll get back to you soon.
+                    {{ t("contact.form.subtitle") }}
                   </p>
                 </div>
 
@@ -125,7 +127,7 @@
                         for="name"
                         class="block text-sm font-medium text-white"
                       >
-                        Full Name
+                        {{ t("contact.form.name") }}
                         <span class="text-[#ef4444]">*</span>
                       </label>
                       <div class="relative">
@@ -139,6 +141,7 @@
                           required
                           class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300"
                           placeholder="John Doe"
+                          :placeholder="t('contact.placeholders.name')"
                         />
                       </div>
                     </div>
@@ -148,7 +151,7 @@
                         for="email"
                         class="block text-sm font-medium text-white"
                       >
-                        Email Address
+                        {{ t("contact.form.email") }}
                         <span class="text-[#ef4444]">*</span>
                       </label>
                       <div class="relative">
@@ -162,6 +165,7 @@
                           required
                           class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300"
                           placeholder="john@example.com"
+                          :placeholder="t('contact.placeholders.email')"
                         />
                       </div>
                     </div>
@@ -174,7 +178,7 @@
                         for="company"
                         class="block text-sm font-medium text-white"
                       >
-                        Company (Optional)
+                        {{ t("contact.form.company") }}
                       </label>
                       <div class="relative">
                         <input
@@ -183,6 +187,7 @@
                           type="text"
                           class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300"
                           placeholder="Your Company"
+                          :placeholder="t('contact.placeholders.company')"
                         />
                       </div>
                     </div>
@@ -192,7 +197,7 @@
                         for="subject"
                         class="block text-sm font-medium text-white"
                       >
-                        Subject
+                        {{ t("contact.form.subject") }}
                         <span class="text-[#ef4444]">*</span>
                       </label>
                       <div class="relative">
@@ -203,19 +208,23 @@
                           class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="" disabled selected>
-                            Select a subject
+                            {{ t("contact.form.select_subject") }}
                           </option>
-                          <option value="Project Inquiry">
-                            Project Inquiry
+                          <option value="project">
+                            {{ t("contact.subjects.project") }}
                           </option>
-                          <option value="Partnership">Partnership</option>
-                          <option value="Career Opportunity">
-                            Career Opportunity
+                          <option value="partnership">
+                            {{ t("contact.subjects.partnership") }}
                           </option>
-                          <option value="Technical Support">
-                            Technical Support
+                          <option value="career">
+                            {{ t("contact.subjects.career") }}
                           </option>
-                          <option value="Other">Other</option>
+                          <option value="support">
+                            {{ t("contact.subjects.support") }}
+                          </option>
+                          <option value="other">
+                            {{ t("contact.subjects.other") }}
+                          </option>
                         </select>
                         <svg
                           class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#94a3b8] pointer-events-none"
@@ -238,7 +247,7 @@
                       for="message"
                       class="block text-sm font-medium text-white"
                     >
-                      Message
+                      {{ t("contact.form.message") }}
                       <span class="text-[#ef4444]">*</span>
                     </label>
                     <div class="relative">
@@ -251,7 +260,7 @@
                         required
                         rows="6"
                         class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300 resize-none"
-                        placeholder="Tell us about your project, timeline, and budget..."
+                        :placeholder="t('contact.placeholders.message')"
                       ></textarea>
                     </div>
                   </div>
@@ -291,10 +300,10 @@
                           <div
                             class="w-5 h-5 border-2 border-[#0f1729] border-t-transparent rounded-full animate-spin"
                           ></div>
-                          <span>Sending...</span>
+                          <span>{{ t("contact.submit.sending") }}</span>
                         </template>
                         <template v-else>
-                          <span>Send Message</span>
+                          <span>{{ t("contact.submit.send") }}</span>
                           <svg
                             class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300"
                             viewBox="0 0 20 20"
@@ -334,10 +343,14 @@
                         </svg>
                         <div>
                           <p class="text-white font-medium">
-                            Message sent successfully!
+                            {{ t("contact.success.title") }}
                           </p>
                           <p class="text-sm text-[#cbd5e1]">
-                            We'll get back to you within 24 hours.
+                            {{
+                              t("contact.success.subtitle", {
+                                hours: t("contact.response_time"),
+                              })
+                            }}
                           </p>
                         </div>
                       </div>
@@ -415,7 +428,7 @@
                     <!-- Content -->
                     <div class="flex-1">
                       <p class="text-sm text-[#94a3b8] mb-1">
-                        {{ info.title }}
+                        {{ t(info.title) }}
                       </p>
                       <a
                         v-if="info.link"
@@ -464,7 +477,7 @@
                   class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
                 >
                   <p class="text-sm text-[#94a3b8] mb-4">
-                    Follow us on social media
+                    {{ t("contact.follow_us") }}
                   </p>
                   <div class="flex gap-3">
                     <a
@@ -474,7 +487,7 @@
                       target="_blank"
                       rel="noopener noreferrer"
                       class="group/social relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-                      :aria-label="social.label"
+                      :aria-label="t(social.label)"
                     >
                       <!-- Background -->
                       <div
@@ -543,7 +556,7 @@
                       allowfullscreen
                       loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade"
-                      title="Office Location"
+                      :title="t('contact.map.title')"
                       class="opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
@@ -564,7 +577,9 @@
                           clip-rule="evenodd"
                         />
                       </svg>
-                      <span class="text-sm font-medium">San Francisco, CA</span>
+                      <span class="text-sm font-medium">{{
+                        t("contact.map.location")
+                      }}</span>
                     </div>
                   </div>
                 </div>
@@ -587,7 +602,7 @@
                   class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
                 >
                   <h3 class="text-lg font-bold text-white mb-4">
-                    Quick Contact
+                    {{ t("contact.quick.title") }}
                   </h3>
                   <div class="space-y-3">
                     <a
@@ -608,7 +623,9 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="text-sm text-[#94a3b8]">Call us</p>
+                        <p class="text-sm text-[#94a3b8]">
+                          {{ t("contact.quick.call_us") }}
+                        </p>
                         <p class="text-white font-medium">+1 (555) 123-4567</p>
                       </div>
                     </a>
@@ -634,7 +651,9 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="text-sm text-[#94a3b8]">Email us</p>
+                        <p class="text-sm text-[#94a3b8]">
+                          {{ t("contact.quick.email_us") }}
+                        </p>
                         <p class="text-white font-medium">hello@aftech.dev</p>
                       </div>
                     </a>
@@ -651,6 +670,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 // Form data
 const isSubmitting = ref(false);
@@ -663,50 +685,50 @@ const formData = ref({
   message: "",
 });
 
-// Contact info
+// Contact info (titles are i18n keys)
 const contactInfo = [
   {
     icon: "Mail",
-    title: "Email",
+    title: "contact.info.email",
     value: "hello@aftech.dev",
     link: "mailto:hello@aftech.dev",
   },
   {
     icon: "Phone",
-    title: "Phone",
+    title: "contact.info.phone",
     value: "+1 (555) 123-4567",
     link: "tel:+15551234567",
   },
   {
     icon: "MapPin",
-    title: "Address",
+    title: "contact.info.address",
     value: "123 Tech Street, San Francisco, CA 94105",
     link: "https://maps.google.com",
   },
   {
     icon: "Clock",
-    title: "Office Hours",
+    title: "contact.info.hours",
     value: "Mon - Fri: 9:00 AM - 6:00 PM PST",
     link: null,
   },
 ];
 
-// Social links
+// Social links (labels are i18n keys)
 const socialLinks = [
   {
     icon: "Github",
     href: "https://github.com",
-    label: "GitHub",
+    label: "contact.social.github",
   },
   {
     icon: "Linkedin",
     href: "https://linkedin.com",
-    label: "LinkedIn",
+    label: "contact.social.linkedin",
   },
   {
     icon: "Twitter",
     href: "https://twitter.com",
-    label: "Twitter",
+    label: "contact.social.twitter",
   },
 ];
 
