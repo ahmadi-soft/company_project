@@ -99,7 +99,7 @@
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 relative z-20">
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto max-sm:mt-20">
         <!-- Tagline Badge -->
         <div class="flex justify-center mb-8">
           <div

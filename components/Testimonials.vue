@@ -1,5 +1,5 @@
 <template>
-  <section class="relative py-24 md:py-32 overflow-hidden">
+  <section class="relative py-16 md:py-24 lg:py-32 overflow-hidden">
     <!-- Background Effects -->
     <div class="absolute inset-0 bg-[#0f1729]">
       <!-- Grid Pattern -->
@@ -11,20 +11,22 @@
               linear-gradient(to right, #00e1ff22 1px, transparent 1px),
               linear-gradient(to bottom, #1bd4c122 1px, transparent 1px)
             `,
-            backgroundSize: '80px 80px',
+            backgroundSize: '40px 40px',
           }"
         ></div>
       </div>
 
       <!-- Animated Orbs -->
       <div
-        class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px]"
+        class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]"
       >
         <div
           class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
         ></div>
       </div>
-      <div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px]">
+      <div
+        class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]"
+      >
         <div
           class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-5 blur-3xl animate-pulse-slow"
           style="animation-delay: 2s"
@@ -32,36 +34,43 @@
       </div>
 
       <!-- Floating Quote Marks -->
-      <div class="absolute top-20 left-10 opacity-10">
-        <div class="text-9xl font-serif text-[#00e1ff]">"</div>
+      <div class="absolute top-10 left-4 md:top-20 md:left-10 opacity-10">
+        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-[#00e1ff]">
+          "
+        </div>
       </div>
-      <div class="absolute bottom-20 right-10 opacity-10">
-        <div class="text-9xl font-serif text-[#1bd4c1]">"</div>
+      <div
+        class="absolute bottom-10 right-4 md:bottom-20 md:right-10 opacity-10"
+      >
+        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-[#1bd4c1]">
+          "
+        </div>
       </div>
     </div>
 
-    <div class="container mx-auto px-4 relative z-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Header Section -->
-      <div class="text-center max-w-4xl mx-auto mb-20">
+      <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16 lg:mb-20">
         <!-- Animated Badge -->
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 mb-6 group/badge"
+          class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 mb-4 md:mb-6 group/badge"
         >
           <!-- Pulsing dots -->
           <div class="relative">
             <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
             ></div>
             <div
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider">{{
-            t("testimonials.badge")
-          }}</span>
+          <span
+            class="text-xs md:text-sm font-medium text-white tracking-wider"
+            >{{ t("testimonials.badge") }}</span
+          >
           <div class="relative">
             <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
               style="animation-delay: 0.5s"
             ></div>
             <div
@@ -71,9 +80,11 @@
         </div>
 
         <!-- Main Heading -->
-        <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6"
+        >
           <span class="text-white">{{ t("testimonials.title.part1") }}</span>
-          <span class="block">
+          <span class="block mt-2 md:mt-4">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
@@ -84,7 +95,7 @@
 
         <!-- Description -->
         <p
-          class="text-lg md:text-xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed"
+          class="text-sm sm:text-base md:text-lg lg:text-xl text-[#cbd5e1] max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
         >
           {{ t("testimonials.description.prefix") }}
           <span class="text-[#00e1ff] font-medium">{{
@@ -95,287 +106,336 @@
 
         <!-- Stats Row -->
         <div
-          class="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 border-t border-[#334155]/30"
+          class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#334155]/30"
         >
-          <div v-for="stat in stats" :key="stat.labelKey" class="text-center">
+          <div
+            v-for="stat in stats"
+            :key="stat.labelKey"
+            class="text-center px-2 sm:px-0"
+          >
             <div
-              class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent mb-1"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent mb-1"
             >
               {{ stat.value }}
             </div>
-            <div class="text-sm text-[#94a3b8] uppercase tracking-wider">
+            <div
+              class="text-xs sm:text-sm text-[#94a3b8] uppercase tracking-wider"
+            >
               {{ t(stat.labelKey) }}
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Testimonials Carousel -->
-      <div class="relative max-w-6xl mx-auto">
-        <!-- Navigation Arrows -->
-        <button
-          @click="prevTestimonial"
-          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 z-20 w-12 h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#00e1ff] hover:bg-[#00e1ff]/10 flex items-center justify-center transition-all duration-300 group/prev"
+      <!-- Testimonials Swiper -->
+      <div class="relative max-w-4xl lg:max-w-6xl mx-auto">
+        <Swiper
+          ref="swiperRef"
+          :modules="[Navigation, Pagination, Autoplay, EffectFade]"
+          :slides-per-view="1"
+          :space-between="20"
+          :loop="true"
+          :autoplay="{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }"
+          :speed="500"
+          :effect="'fade'"
+          :fade-effect="{ crossFade: true }"
+          :navigation="{
+            nextEl: '.custom-next',
+            prevEl: '.custom-prev',
+          }"
+          :pagination="{
+            el: '.custom-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return `<span class='${className}'></span>`;
+            },
+          }"
+          :breakpoints="{
+            320: {
+              spaceBetween: 16,
+            },
+            640: {
+              spaceBetween: 20,
+            },
+            1024: {
+              spaceBetween: 30,
+            },
+          }"
+          class="testimonial-swiper"
+          @swiper="onSwiper"
         >
-          <svg
-            class="w-5 h-5 text-[#94a3b8] group-hover/prev:text-[#00e1ff] transition-colors duration-300"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+          <SwiperSlide
+            v-for="testimonial in testimonials"
+            :key="testimonial.id"
           >
-            <path
-              fill-rule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
+            <div class="max-w-4xl mx-auto px-2 sm:px-4">
+              <!-- Testimonial Card -->
+              <div class="relative group/testimonial">
+                <!-- Outer glow -->
+                <div
+                  class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-xl md:rounded-2xl lg:rounded-3xl opacity-0 group-hover/testimonial:opacity-30 blur transition-opacity duration-500 animate-gradient-border -z-10"
+                ></div>
 
-        <button
-          @click="nextTestimonial"
-          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 z-20 w-12 h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#1bd4c1] hover:bg-[#1bd4c1]/10 flex items-center justify-center transition-all duration-300 group/next"
-        >
-          <svg
-            class="w-5 h-5 text-[#94a3b8] group-hover/next:text-[#1bd4c1] transition-colors duration-300"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-        <!-- Testimonials Container -->
-        <div class="relative overflow-hidden">
-          <div
-            class="flex transition-transform duration-500 ease-out"
-            :style="{ transform: `translateX(-${activeIndex * 100}%)` }"
-          >
-            <div
-              v-for="(testimonial, index) in testimonials"
-              :key="testimonial.id"
-              class="w-full flex-shrink-0 px-4"
-            >
-              <div class="max-w-4xl mx-auto">
-                <!-- Testimonial Card -->
-                <div class="relative group/testimonial">
-                  <!-- Outer glow -->
-                  <div
-                    class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover/testimonial:opacity-30 blur transition-opacity duration-500 animate-gradient-border -z-10"
-                  ></div>
+                <!-- Main Card -->
+                <div
+                  class="relative rounded-xl md:rounded-2xl lg:rounded-3xl bg-[#111827] border border-[#334155] group-hover/testimonial:border-[#00e1ff]/30 overflow-hidden transition-all duration-500"
+                >
+                  <!-- Background pattern -->
+                  <div class="absolute inset-0 opacity-5">
+                    <div
+                      class="absolute inset-0"
+                      :style="{
+                        backgroundImage:
+                          'radial-gradient(circle at 30% 20%, #00e1ff 1px, transparent 1px)',
+                        backgroundSize: '30px 30px',
+                      }"
+                    ></div>
+                  </div>
 
-                  <!-- Main Card -->
-                  <div
-                    class="relative rounded-3xl bg-[#111827] border border-[#334155] group-hover/testimonial:border-[#00e1ff]/30 overflow-hidden transition-all duration-500"
-                  >
-                    <!-- Background pattern -->
-                    <div class="absolute inset-0 opacity-5">
+                  <!-- Content -->
+                  <div class="relative p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+                    <!-- Quote Icon -->
+                    <div class="relative mb-4 md:mb-6 lg:mb-8">
                       <div
-                        class="absolute inset-0"
-                        :style="{
-                          backgroundImage:
-                            'radial-gradient(circle at 30% 20%, #00e1ff 1px, transparent 1px)',
-                          backgroundSize: '40px 40px',
-                        }"
-                      ></div>
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#00e1ff] opacity-20"
+                      >
+                        "
+                      </div>
+                      <div
+                        class="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#1bd4c1] opacity-10"
+                      >
+                        "
+                      </div>
                     </div>
 
-                    <!-- Content -->
-                    <div class="relative p-8 md:p-12">
-                      <!-- Quote Icon -->
-                      <div class="relative mb-8">
-                        <div
-                          class="text-6xl font-serif text-[#00e1ff] opacity-20"
-                        >
-                          "
-                        </div>
-                        <div
-                          class="absolute top-0 left-0 text-6xl font-serif text-[#1bd4c1] opacity-10"
-                        >
-                          "
-                        </div>
-                      </div>
-
-                      <!-- Rating Stars -->
-                      <div class="flex gap-1 mb-8">
-                        <svg
-                          v-for="i in 5"
-                          :key="i"
-                          class="w-6 h-6"
-                          :class="
-                            i <= testimonial.rating
-                              ? 'text-yellow-400 fill-yellow-400'
-                              : 'text-gray-600'
-                          "
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                          />
-                        </svg>
-                      </div>
-
-                      <!-- Quote Text -->
-                      <p
-                        class="text-xl md:text-2xl text-[#cbd5e1] leading-relaxed mb-8"
+                    <!-- Rating Stars -->
+                    <div class="flex gap-0.5 sm:gap-1 mb-4 md:mb-6 lg:mb-8">
+                      <svg
+                        v-for="i in 5"
+                        :key="i"
+                        class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                        :class="
+                          i <= testimonial.rating
+                            ? 'text-yellow-400 fill-yellow-400'
+                            : 'text-gray-600'
+                        "
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
                       >
-                        "{{ testimonial.quote }}"
-                      </p>
+                        <path
+                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                        />
+                      </svg>
+                    </div>
 
-                      <!-- Author Info -->
-                      <div class="flex items-center gap-4">
-                        <!-- Avatar -->
-                        <div class="relative">
-                          <!-- Gradient border -->
-                          <div
-                            class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
-                          ></div>
-                          <!-- Avatar image -->
-                          <img
-                            :src="testimonial.avatar"
-                            :alt="testimonial.author"
-                            class="relative w-16 h-16 rounded-full object-cover border-2 border-[#111827]"
-                          />
-                        </div>
+                    <!-- Quote Text -->
+                    <p
+                      class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#cbd5e1] leading-relaxed mb-6 md:mb-8"
+                    >
+                      "{{ testimonial.quote }}"
+                    </p>
 
-                        <!-- Author details -->
-                        <div class="flex-1">
-                          <div class="flex items-center justify-between">
-                            <div>
-                              <p class="text-xl font-bold text-white">
-                                {{ testimonial.author }}
-                              </p>
-                              <p class="text-[#94a3b8]">
-                                {{ testimonial.role }}
-                              </p>
-                            </div>
-                            <!-- Company logo/icon -->
-                            <div class="relative">
+                    <!-- Author Info -->
+                    <div
+                      class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4"
+                    >
+                      <!-- Avatar -->
+                      <div class="relative self-start">
+                        <!-- Gradient border -->
+                        <div
+                          class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+                        ></div>
+                        <!-- Avatar image -->
+                        <img
+                          :src="testimonial.avatar"
+                          :alt="testimonial.author"
+                          class="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-[#111827]"
+                        />
+                      </div>
+
+                      <!-- Author details -->
+                      <div class="flex-1">
+                        <div
+                          class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-0"
+                        >
+                          <div>
+                            <p
+                              class="text-base sm:text-lg md:text-xl font-bold text-white"
+                            >
+                              {{ testimonial.author }}
+                            </p>
+                            <p
+                              class="text-xs sm:text-sm md:text-[#94a3b8] text-[#94a3b8]"
+                            >
+                              {{ testimonial.role }}
+                            </p>
+                          </div>
+                          <!-- Company logo/icon -->
+                          <div class="relative self-start sm:self-auto">
+                            <div
+                              class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
+                            >
                               <div
-                                class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
+                                class="text-xs sm:text-sm font-bold text-[#00e1ff]"
                               >
-                                <div class="text-sm font-bold text-[#00e1ff]">
-                                  {{ testimonial.companyInitial }}
-                                </div>
+                                {{ testimonial.companyInitial }}
                               </div>
                             </div>
                           </div>
-
-                          <!-- Project info -->
-                          <div class="mt-4 pt-4 border-t border-[#334155]">
-                            <div class="flex flex-wrap gap-2">
-                              <span
-                                v-for="tag in testimonial.tags"
-                                :key="tag"
-                                class="px-3 py-1 text-sm rounded-full bg-[#1e293b] border border-[#334155] text-[#cbd5e1]"
-                              >
-                                {{ tag }}
-                              </span>
-                            </div>
-                          </div>
                         </div>
-                      </div>
 
-                      <!-- Result metrics -->
-                      <div class="mt-8 pt-8 border-t border-[#334155]">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                          <div
-                            v-for="metric in testimonial.metrics"
-                            :key="metric.label"
-                            class="text-center"
-                          >
-                            <div class="text-2xl font-bold text-white mb-1">
-                              {{ metric.value }}
-                            </div>
-                            <div
-                              class="text-xs text-[#94a3b8] uppercase tracking-wider"
+                        <!-- Project info -->
+                        <div
+                          class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#334155]"
+                        >
+                          <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                            <span
+                              v-for="tag in testimonial.tags"
+                              :key="tag"
+                              class="px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-full bg-[#1e293b] border border-[#334155] text-[#cbd5e1]"
                             >
-                              {{
-                                t(`testimonials.metrics_labels.${metric.label}`)
-                              }}
-                            </div>
+                              {{ tag }}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <!-- Bottom gradient bar -->
+                    <!-- Result metrics -->
                     <div
-                      class="h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
-                    ></div>
+                      class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-[#334155]"
+                    >
+                      <div
+                        class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
+                      >
+                        <div
+                          v-for="metric in testimonial.metrics"
+                          :key="metric.label"
+                          class="text-center"
+                        >
+                          <div
+                            class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1"
+                          >
+                            {{ metric.value }}
+                          </div>
+                          <div
+                            class="text-[10px] xs:text-xs text-[#94a3b8] uppercase tracking-wider"
+                          >
+                            {{
+                              t(`testimonials.metrics_labels.${metric.label}`)
+                            }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <!-- Bottom gradient bar -->
+                  <div
+                    class="h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                  ></div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- Dots Indicator -->
-        <div class="flex justify-center gap-2 mt-12">
+          </SwiperSlide>
+        </Swiper>
+
+        <!-- Custom Navigation Buttons -->
+        <div class="swiper-navigation">
           <button
-            v-for="(_, index) in testimonials"
-            :key="index"
-            @click="goToTestimonial(index)"
-            class="relative"
-            :aria-label="$t('testimonials.go_to', { n: index + 1 })"
+            @click="prevSlide"
+            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 md:-translate-x-8 lg:-translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#00e1ff] hover:bg-[#00e1ff]/10 flex items-center justify-center transition-all duration-300 group/prev"
+            aria-label="Previous testimonial"
           >
-            <!-- Dot -->
-            <div
-              class="w-3 h-3 rounded-full transition-all duration-300"
-              :class="
-                activeIndex === index
-                  ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] scale-125'
-                  : 'bg-[#334155] hover:bg-[#475569]'
-              "
+            <svg
+              class="w-4 h-4 sm:w-5 sm:h-5 text-[#94a3b8] group-hover/prev:text-[#00e1ff] transition-colors duration-300"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              <!-- Active dot glow -->
-              <div
-                v-if="activeIndex === index"
-                class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
-              ></div>
-            </div>
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <button
+            @click="nextSlide"
+            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#1bd4c1] hover:bg-[#1bd4c1]/10 flex items-center justify-center transition-all duration-300 group/next"
+            aria-label="Next testimonial"
+          >
+            <svg
+              class="w-4 h-4 sm:w-5 sm:h-5 text-[#94a3b8] group-hover/next:text-[#1bd4c1] transition-colors duration-300"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
           </button>
         </div>
+
+        <!-- Custom Pagination Dots -->
+        <div
+          class="custom-pagination flex justify-center gap-1.5 sm:gap-2 mt-8 sm:mt-10 md:mt-12"
+        ></div>
       </div>
 
       <!-- Company Logos Section -->
-      <div class="mt-24 pt-16 border-t border-[#334155]/30">
-        <div class="text-center mb-12">
-          <h3 class="text-2xl font-bold text-white mb-4">
+      <div
+        class="mt-16 md:mt-20 lg:mt-24 pt-12 md:pt-16 border-t border-[#334155]/30"
+      >
+        <div class="text-center mb-8 md:mb-10 lg:mb-12">
+          <h3
+            class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4"
+          >
             {{ t("testimonials.company.title") }}
           </h3>
-          <p class="text-[#94a3b8] max-w-2xl mx-auto">
+          <p
+            class="text-sm sm:text-base text-[#94a3b8] max-w-xl sm:max-w-2xl mx-auto px-2 sm:px-0"
+          >
             {{ t("testimonials.company.description") }}
           </p>
         </div>
 
         <!-- Logos Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8"
+        >
           <div
             v-for="company in companies"
             :key="company.name"
             class="group/company relative"
           >
             <!-- Company logo container -->
-            <div class="relative h-20 flex items-center justify-center">
+            <div
+              class="relative h-16 sm:h-18 md:h-20 flex items-center justify-center"
+            >
               <!-- Background effect -->
               <div
-                class="absolute inset-0 bg-[#111827] rounded-xl border border-[#334155] group-hover/company:border-[#00e1ff]/30 transition-all duration-300 opacity-0 group-hover/company:opacity-100"
+                class="absolute inset-0 bg-[#111827] rounded-lg sm:rounded-xl border border-[#334155] group-hover/company:border-[#00e1ff]/30 transition-all duration-300 opacity-0 group-hover/company:opacity-100"
               ></div>
 
               <!-- Logo placeholder -->
               <div
-                class="relative z-10 text-2xl font-bold text-[#334155] group-hover/company:text-[#00e1ff] transition-colors duration-300"
+                class="relative z-10 text-lg sm:text-xl md:text-2xl font-bold text-[#334155] group-hover/company:text-[#00e1ff] transition-colors duration-300"
               >
                 {{ company.initial }}
               </div>
 
               <!-- Tooltip on hover -->
               <div
-                class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-[#111827] border border-[#334155] px-3 py-1.5 rounded-lg opacity-0 group-hover/company:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap"
+                class="absolute -bottom-10 sm:-bottom-12 left-1/2 transform -translate-x-1/2 bg-[#111827] border border-[#334155] px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg opacity-0 group-hover/company:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap text-xs sm:text-sm"
               >
-                <span class="text-sm text-white">{{ company.name }}</span>
+                <span class="text-white">{{ company.name }}</span>
               </div>
             </div>
           </div>
@@ -383,35 +443,39 @@
       </div>
 
       <!-- CTA Section -->
-      <div class="text-center mt-24">
-        <div class="max-w-2xl mx-auto">
-          <h3 class="text-3xl font-bold text-white mb-4">
+      <div class="text-center mt-16 md:mt-20 lg:mt-24">
+        <div class="max-w-lg sm:max-w-xl md:max-w-2xl mx-auto px-2 sm:px-0">
+          <h3
+            class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4"
+          >
             {{ t("testimonials.cta.title") }}
           </h3>
-          <p class="text-lg text-[#cbd5e1] mb-8">
+          <p
+            class="text-sm sm:text-base md:text-lg text-[#cbd5e1] mb-6 md:mb-8"
+          >
             {{ t("testimonials.cta.description") }}
           </p>
           <NuxtLink
             to="/contact"
-            class="group/cta inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 relative overflow-hidden"
+            class="group/cta inline-flex items-center gap-2 sm:gap-3 px-6 py-3 sm:px-8 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg transition-all duration-300 relative overflow-hidden"
           >
             <!-- Gradient background -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg sm:rounded-xl"
             ></div>
 
             <!-- Hover gradient overlay -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/cta:opacity-100 rounded-xl transition-opacity duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/cta:opacity-100 rounded-lg sm:rounded-xl transition-opacity duration-300"
             ></div>
 
             <!-- Content -->
             <span
-              class="relative z-10 text-[#0f1729] font-bold flex items-center gap-3"
+              class="relative z-10 text-[#0f1729] font-bold flex items-center gap-2 sm:gap-3"
             >
               {{ t("testimonials.cta.button") }}
               <svg
-                class="w-5 h-5 group-hover/cta:translate-x-2 transition-transform duration-300"
+                class="w-4 h-4 sm:w-5 sm:h-5 group-hover/cta:translate-x-1 sm:group-hover/cta:translate-x-2 transition-transform duration-300"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -425,7 +489,7 @@
 
             <!-- Glow effect -->
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/cta:opacity-30 transition-opacity duration-300 -z-10"
+              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg sm:rounded-xl blur opacity-0 group-hover/cta:opacity-30 transition-opacity duration-300 -z-10"
             ></div>
           </NuxtLink>
         </div>
@@ -435,11 +499,61 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
+
+// Import Swiper
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 const { t } = useI18n();
 
-// Stats data (use labelKey for translations)
+// Swiper instance
+const swiperRef = ref(null);
+const swiperInstance = ref(null);
+
+const onSwiper = (swiper) => {
+  swiperInstance.value = swiper;
+};
+
+const nextSlide = () => {
+  if (swiperInstance.value) {
+    swiperInstance.value.slideNext();
+  }
+};
+
+const prevSlide = () => {
+  if (swiperInstance.value) {
+    swiperInstance.value.slidePrev();
+  }
+};
+
+// Handle keyboard navigation
+const handleKeyDown = (event) => {
+  if (swiperInstance.value) {
+    if (event.key === "ArrowLeft") {
+      prevSlide();
+    } else if (event.key === "ArrowRight") {
+      nextSlide();
+    }
+  }
+};
+
+onMounted(() => {
+  window.addEventListener("keydown", handleKeyDown);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleKeyDown);
+});
+
+// Stats data
 const stats = [
   { value: "98%", labelKey: "testimonials.stats.client_satisfaction" },
   { value: "150+", labelKey: "testimonials.stats.projects_delivered" },
@@ -447,7 +561,7 @@ const stats = [
   { value: "24/7", labelKey: "testimonials.stats.support_available" },
 ];
 
-// Testimonials data - keep this in component for now
+// Testimonials data
 const testimonials = [
   {
     id: 1,
@@ -517,40 +631,6 @@ const companies = [
   { name: "EduTech Platforms", initial: "EP" },
   { name: "Logistics Pro", initial: "LP" },
 ];
-
-// Carousel state
-const activeIndex = ref(0);
-const autoRotate = ref(true);
-const rotationInterval = ref(null);
-
-// Navigation functions
-const nextTestimonial = () => {
-  activeIndex.value = (activeIndex.value + 1) % testimonials.length;
-};
-
-const prevTestimonial = () => {
-  activeIndex.value =
-    (activeIndex.value - 1 + testimonials.length) % testimonials.length;
-};
-
-const goToTestimonial = (index) => {
-  activeIndex.value = index;
-};
-
-// Auto rotation
-onMounted(() => {
-  rotationInterval.value = setInterval(() => {
-    if (autoRotate.value) {
-      nextTestimonial();
-    }
-  }, 5000); // Rotate every 5 seconds
-});
-
-onUnmounted(() => {
-  if (rotationInterval.value) {
-    clearInterval(rotationInterval.value);
-  }
-});
 </script>
 
 <style>
@@ -600,9 +680,72 @@ onUnmounted(() => {
   animation: pulse-slow 4s ease-in-out infinite;
 }
 
+/* Swiper Custom Styles */
+.testimonial-swiper {
+  padding: 16px 4px 32px !important;
+}
+
+@media (min-width: 640px) {
+  .testimonial-swiper {
+    padding: 20px 10px 40px !important;
+  }
+}
+
+/* Custom pagination dots */
+.custom-pagination span {
+  width: 8px;
+  height: 8px;
+  background: #334155;
+  opacity: 1;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 2px;
+}
+
+@media (min-width: 640px) {
+  .custom-pagination span {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-pagination span {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+  }
+}
+
+.custom-pagination span.swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #00e1ff, #1bd4c1);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(0, 225, 255, 0.5);
+}
+
+/* Navigation button positioning */
+.swiper-navigation {
+  position: relative;
+}
+
+/* Hide default Swiper navigation arrows */
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  display: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -611,7 +754,7 @@ onUnmounted(() => {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #00e1ff, #1bd4c1);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -623,5 +766,23 @@ onUnmounted(() => {
   transition-property: color, background-color, border-color, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+}
+
+/* Swiper slide transition fix */
+.swiper-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.swiper-slide-active,
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 1;
+}
+
+/* Responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
 }
 </style>

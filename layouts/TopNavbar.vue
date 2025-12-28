@@ -164,7 +164,6 @@
                 : 'text-[#94a3b8] hover:text-white',
             ]"
             @mouseenter="setActiveHover(item.path)"
-            @mouseleave="resetActiveHover"
             :style="{
               opacity: navOpacity,
               transform: `translateY(${navItemsTranslateY}px)`,

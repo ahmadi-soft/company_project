@@ -1,38 +1,40 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { defineNuxtConfig } from 'nuxt/config';
-
+import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/icon"],
   // Optional configuration
   icon: {
     // Default size
-    size: '1em',
-    
+    size: "1em",
+
     // Default class
-    class: 'icon',
-    
+    class: "icon",
+
     // Aliases
     aliases: {
-      'nuxt': 'logos:nuxt-icon',
-      'search': 'mdi:magnify'  // Alias for search icon
-    }
+      nuxt: "logos:nuxt-icon",
+      search: "mdi:magnify", // Alias for search icon
+    },
   },
   css: [
     // '~/assets/scss/fonts.scss',
-    '~/assets/css/main.css',
+    "~/assets/css/main.css",
     // '~/assets/scss/custom.scss'
+    "swiper/css",
+    "swiper/css/navigation",
+    "swiper/css/pagination",
+    "swiper/css/effect-fade",
   ],
-  
+
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
-    }
+      autoprefixer: {},
+    },
   },
   // @ts-ignore
-
-})
+});

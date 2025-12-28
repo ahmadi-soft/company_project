@@ -65,7 +65,6 @@
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        :class="{ 'animate-pulse': logoAnimated }"
                       />
                     </svg>
                     <!-- Pulsing dot -->
@@ -242,7 +241,7 @@
           <!-- Right: Legal links -->
           <div class="flex items-center gap-2">
             <NuxtLink
-              to="/privacy"
+              to="#"
               class="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#1e293b] transition-all duration-300"
             >
               <div class="relative">
@@ -262,7 +261,7 @@
             <div class="w-px h-4 bg-[#334155]"></div>
 
             <NuxtLink
-              to="/terms"
+              to="#"
               class="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#1e293b] transition-all duration-300"
             >
               <div class="relative">
@@ -328,7 +327,7 @@
           >
             <div class="flex items-center gap-4">
               <a
-                :href="`mailto:${t('footer.contact.email')}`"
+                href="mailto:hello@aftech.dev"
                 class="flex items-center gap-2 hover:text-[#00e1ff] transition-colors duration-300"
               >
                 <Icon name="ph:envelope-fill" class="w-4 h-4" />
@@ -372,16 +371,16 @@ const footerLinks = {
   company: [
     { nameKey: "footer.links.company.about", path: "/team" },
     { nameKey: "footer.links.company.projects", path: "/projects" },
-    { nameKey: "footer.links.company.careers", path: "/team#careers" },
+    { nameKey: "footer.links.company.careers", path: "/team" },
     { nameKey: "footer.links.company.contact", path: "/contact" },
-    { nameKey: "footer.links.company.partners", path: "/partners" },
+    { nameKey: "footer.links.company.partners", path: "#" },
   ],
   resources: [
-    { nameKey: "footer.links.resources.blog", path: "/blog" },
+    { nameKey: "footer.links.resources.blog", path: "#" },
     { nameKey: "footer.links.resources.case_studies", path: "/projects" },
-    { nameKey: "footer.links.resources.docs", path: "/docs" },
+    { nameKey: "footer.links.resources.docs", path: "#" },
     { nameKey: "footer.links.resources.support", path: "/contact" },
-    { nameKey: "footer.links.resources.api", path: "/docs/api" },
+    { nameKey: "footer.links.resources.api", path: "#" },
   ],
 };
 

@@ -340,7 +340,7 @@
       },
       "email": {
         "label": "راسلنا",
-        "value": "hello@aftech.dev"
+        "value": "'hello@gmail.com'"
       },
       "visit": {
         "label": "زرنا",
@@ -404,7 +404,7 @@
     "powered_by": "مدعوم بواسطة:",
     "view_tech": "عرض حزمة التقنيات",
     "contact": {
-      "email": "hello@aftech.dev",
+      "email": "'hello@gmail.com'",
       "phone": "+1 (234) 567-890",
       "location": "سان فرانسيسكو، كاليفورنيا"
     }

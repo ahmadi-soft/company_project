@@ -315,7 +315,7 @@
       },
       "email": {
         "label": "Email Us",
-        "value": "hello@aftech.dev"
+        "value": "'hello@gmail.com'"
       },
       "visit": {
         "label": "Visit Us",
@@ -379,7 +379,7 @@
     "powered_by": "Powered by:",
     "view_tech": "View Tech Stack",
     "contact": {
-      "email": "hello@aftech.dev",
+      "email": "'hello@gmail.com'",
       "phone": "+1 (234) 567-890",
       "location": "San Francisco, CA"
     }
