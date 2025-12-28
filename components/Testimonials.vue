@@ -348,7 +348,7 @@
         <div class="swiper-navigation">
           <button
             @click="prevSlide"
-            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-6 md:-translate-x-8 lg:-translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#00e1ff] hover:bg-[#00e1ff]/10 flex items-center justify-center transition-all duration-300 group/prev"
+            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 max-sm:left-5 sm:-translate-x-6 md:-translate-x-8 lg:-translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#00e1ff] hover:bg-[#00e1ff]/10 flex items-center justify-center transition-all duration-300 group/prev"
             aria-label="Previous testimonial"
           >
             <svg
@@ -366,7 +366,7 @@
 
           <button
             @click="nextSlide"
-            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-6 md:translate-x-8 lg:translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#1bd4c1] hover:bg-[#1bd4c1]/10 flex items-center justify-center transition-all duration-300 group/next"
+            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 max-sm:right-5 sm:translate-x-6 md:translate-x-8 lg:translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#1bd4c1] hover:bg-[#1bd4c1]/10 flex items-center justify-center transition-all duration-300 group/next"
             aria-label="Next testimonial"
           >
             <svg
