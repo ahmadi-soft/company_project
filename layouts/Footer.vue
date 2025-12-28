@@ -326,12 +326,13 @@
             class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#94a3b8]"
           >
             <div class="flex items-center gap-4">
+              <!-- href="mailto:hello@aftech.dev" -->
               <a
-                href="mailto:hello@aftech.dev"
+                :href="`mailto:${contactEmail}`"
                 class="flex items-center gap-2 hover:text-[#00e1ff] transition-colors duration-300"
               >
                 <Icon name="ph:envelope-fill" class="w-4 h-4" />
-                {{ t("footer.contact.email") }}
+                {{ contactEmail }}
               </a>
               <div class="w-px h-4 bg-[#334155] hidden md:block"></div>
               <a
@@ -400,6 +401,9 @@ const techStack = [
   { name: "Vue.js", icon: "logos:vue", color: "text-[#41B883]" },
   { name: "Node.js", icon: "logos:nodejs-icon", color: "text-[#339933]" },
 ];
+
+// Contact email constant (keep out of i18n messages to avoid message-compiler linked-format parsing)
+const contactEmail = "hello@gmail.com";
 </script>
 
 <style scoped>

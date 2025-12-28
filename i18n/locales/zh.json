@@ -329,7 +329,7 @@
       },
       "email": {
         "label": "发送邮件",
-        "value": "'hello@gmail.com'"
+        "value": "hello\\@gmail.com"
       },
       "visit": {
         "label": "拜访我们",
@@ -393,7 +393,7 @@
     "powered_by": "技术支持：",
     "view_tech": "查看技术栈",
     "contact": {
-      "email": "'hello@gmail.com'",
+      "email": "hello\\@gmail.com",
       "phone": "+1 (234) 567-890",
       "location": "旧金山，加利福尼亚"
     }

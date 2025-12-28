@@ -305,7 +305,7 @@
                     {{ t("cta.contact_info.email.label") }}
                   </div>
                   <div class="text-white font-medium">
-                    {{ t("cta.contact_info.email.value") }}
+                    {{ contactEmail }}
                   </div>
                 </div>
               </div>
@@ -348,6 +348,8 @@ import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+const contactEmail = "hello@gmail.com";
 
 const companies = [
   { name: "TechCorp", initials: "TC" },

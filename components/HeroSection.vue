@@ -38,20 +38,22 @@
         }"
       ></div>
 
-      <!-- Animated Particles -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div
-          v-for="i in 30"
-          :key="i"
-          class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
-          :style="{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${Math.random() * 3 + 2}s`,
-          }"
-        ></div>
-      </div>
+      <!-- Animated Particles - FIXED: Only render on client -->
+      <ClientOnly>
+        <div class="absolute inset-0 overflow-hidden">
+          <div
+            v-for="(particle, i) in particles"
+            :key="i"
+            class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+            :style="{
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`,
+            }"
+          ></div>
+        </div>
+      </ClientOnly>
     </div>
 
     <!-- Animated Orbs -->
@@ -336,23 +338,20 @@
                 </div>
               </div>
 
-              <!-- Floating particles on hover -->
-              <div
-                v-if="hoveredStat === index"
-                class="absolute inset-0 overflow-hidden pointer-events-none"
-              >
+              <!-- Floating particles on hover - FIXED: Only render on client -->
+              <ClientOnly>
                 <div
-                  v-for="i in 5"
-                  :key="i"
-                  class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
-                  :style="{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 0.5}s`,
-                    animationDuration: `${Math.random() * 1 + 0.5}s`,
-                  }"
-                ></div>
-              </div>
+                  v-if="hoveredStat === index"
+                  class="absolute inset-0 overflow-hidden pointer-events-none"
+                >
+                  <div
+                    v-for="i in 5"
+                    :key="i"
+                    class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+                    :style="hoverParticleStyles[i - 1]"
+                  ></div>
+                </div>
+              </ClientOnly>
             </div>
           </div>
         </div>
@@ -384,7 +383,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
@@ -397,13 +396,48 @@ const stats = [
 ];
 
 const hoveredStat = ref(null);
+const particles = ref([]);
+const hoverParticleStyles = ref([]);
+
+// Generate particle positions on client side only
+const generateParticles = () => {
+  particles.value = Array.from({ length: 30 }, () => ({
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+    delay: Math.random() * 5,
+    duration: Math.random() * 3 + 2,
+  }));
+};
+
+// Generate deterministic hover particle styles
+const generateHoverParticleStyles = () => {
+  hoverParticleStyles.value = Array.from({ length: 5 }, (_, i) => {
+    // Use consistent values based on index
+    const base = i * 0.2;
+    return {
+      left: `${(Math.sin(base) * 0.5 + 0.5) * 100}%`,
+      top: `${(Math.cos(base) * 0.5 + 0.5) * 100}%`,
+      animationDelay: `${base * 0.5}s`,
+      animationDuration: `${Math.abs(Math.sin(base)) * 1 + 0.5}s`,
+    };
+  });
+};
 
 const scrollToNext = () => {
-  const nextSection = document.querySelector("section:nth-of-type(2)");
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: "smooth" });
-  }
+  // Use nextTick to ensure DOM is ready
+  setTimeout(() => {
+    const nextSection = document.querySelector("section:nth-of-type(2)");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100);
 };
+
+// Initialize particles on client side
+onMounted(() => {
+  generateParticles();
+  generateHoverParticleStyles();
+});
 </script>
 
 <style>
@@ -533,5 +567,13 @@ const scrollToNext = () => {
   transition-property: color, background-color, border-color, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
+}
+
+/* Ensure particles only show on supported browsers */
+@supports not (backdrop-filter: blur(1px)) {
+  .backdrop-blur-sm {
+    backdrop-filter: none;
+    background: rgba(17, 24, 39, 0.9);
+  }
 }
 </style>

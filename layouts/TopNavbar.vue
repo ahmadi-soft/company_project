@@ -164,6 +164,7 @@
                 : 'text-[#94a3b8] hover:text-white',
             ]"
             @mouseenter="setActiveHover(item.path)"
+            @mouseleave="clearActiveHover"
             :style="{
               opacity: navOpacity,
               transform: `translateY(${navItemsTranslateY}px)`,
@@ -181,7 +182,7 @@
             <!-- Hover indicator -->
             <div
               class="absolute inset-0 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 opacity-0 group-hover/nav-item:opacity-100 transition-opacity duration-300"
-              v-show="!route.path === item.path"
+              v-show="route.path !== item.path"
               :style="{ opacity: 0.1 * navOpacity }"
             ></div>
 
@@ -543,6 +544,16 @@ const lastScrollY = ref(0);
 const scrollTimeout = ref(null);
 const currentLocale = ref(locale.value);
 const showLangModal = ref(false);
+// Hover state for nav items (used to track which item is hovered)
+const activeHover = ref(null);
+
+function setActiveHover(path) {
+  activeHover.value = path;
+}
+
+function clearActiveHover() {
+  activeHover.value = null;
+}
 
 // RTL-aware helpers for contact arrow
 const isRtl = computed(() => currentLocale.value === "ar");

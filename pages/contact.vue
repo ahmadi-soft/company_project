@@ -691,7 +691,7 @@ const contactInfo = [
     icon: "Mail",
     title: "contact.info.email",
     value: "hello@aftech.dev",
-    link: "mailto:hello@aftech.dev",
+    // link: "mailto:hello@aftech.dev",
   },
   {
     icon: "Phone",
