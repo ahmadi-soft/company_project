@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#0f1729] overflow-hidden">
+  <div class="min-h-screen bg-bg overflow-hidden">
     <!-- Hero Section -->
     <section class="relative py-24 md:py-32 overflow-hidden">
       <!-- Background Elements -->
@@ -21,14 +21,14 @@
         <!-- Animated Orbs -->
         <div class="absolute top-1/3 -left-40 w-[600px] h-[600px]">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
           ></div>
         </div>
 
         <!-- Floating Elements -->
         <div class="absolute top-1/3 right-20">
           <div
-            class="w-32 h-32 bg-gradient-to-br from-[#00e1ff]/20 to-transparent rounded-lg border border-[#00e1ff]/30 animate-float rotate-12"
+            class="w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-lg border border-primary/50 animate-float rotate-12"
           ></div>
         </div>
       </div>
@@ -37,12 +37,12 @@
         <div ref="heroRef" class="max-w-4xl mx-auto text-center">
           <!-- Badge -->
           <div
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20 mb-8"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 border border-primary/20 mb-8"
           >
             <div class="flex items-center gap-2">
               <div class="relative">
                 <svg
-                  class="w-5 h-5 text-white"
+                  class="w-5 h-5 text-textPrimary"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -53,11 +53,11 @@
                   />
                 </svg>
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30 animate-ping"
+                  class="absolute -inset-1 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-full blur opacity-30 animate-ping"
                 ></div>
               </div>
               <span
-                class="text-white font-semibold text-sm tracking-wider uppercase"
+                class="text-textPrimary font-semibold text-sm tracking-wider uppercase"
                 >{{ t("contact.badge") }}</span
               >
             </div>
@@ -67,13 +67,13 @@
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span class="text-white">{{ t("contact.title.part1") }}</span>
+            <span class="text-textPrimary">{{ t("contact.title.part1") }}</span>
             <span
-              class="block bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="block bg-gradient-to-r from-primary via-[#1bd4c1] to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("contact.title.part2") }}
             </span>
-            <span class="text-white">{{ t("contact.title.part3") }}</span>
+            <span class="text-textPrimary">{{ t("contact.title.part3") }}</span>
           </h1>
 
           <!-- Description -->
@@ -81,7 +81,7 @@
             class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed font-light"
           >
             {{ t("contact.description.prefix") }}
-            <span class="text-[#00e1ff] font-medium">{{
+            <span class="text-primary font-medium">{{
               t("contact.response_time")
             }}</span
             >{{ t("contact.description.suffix") }}
@@ -101,16 +101,16 @@
             >
               <!-- Gradient Border -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
               ></div>
 
               <!-- Main Card -->
               <div
-                class="relative h-full bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-8 transition-all duration-300"
+                class="relative h-full bg-card rounded-3xl border border-border group-hover:border-primary/30 p-8 transition-all duration-300"
               >
                 <!-- Form Header -->
                 <div class="mb-8">
-                  <h2 class="text-3xl font-bold text-white mb-3">
+                  <h2 class="text-3xl font-bold text-textPrimary mb-3">
                     {{ t("contact.form.title") }}
                   </h2>
                   <p class="text-[#cbd5e1]">
@@ -125,21 +125,21 @@
                     <div class="space-y-3">
                       <label
                         for="name"
-                        class="block text-sm font-medium text-white"
+                        class="block text-sm font-medium text-textPrimary"
                       >
                         {{ t("contact.form.name") }}
                         <span class="text-[#ef4444]">*</span>
                       </label>
                       <div class="relative">
                         <div
-                          class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                          class="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                         ></div>
                         <input
                           id="name"
                           v-model="formData.name"
                           type="text"
                           required
-                          class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           placeholder="John Doe"
                           :placeholder="t('contact.placeholders.name')"
                         />
@@ -149,21 +149,21 @@
                     <div class="space-y-3">
                       <label
                         for="email"
-                        class="block text-sm font-medium text-white"
+                        class="block text-sm font-medium text-textPrimary"
                       >
                         {{ t("contact.form.email") }}
                         <span class="text-[#ef4444]">*</span>
                       </label>
                       <div class="relative">
                         <div
-                          class="absolute -inset-0.5 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                          class="absolute -inset-0.5 bg-gradient-to-r from-[#1bd4c1] to-primary rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                         ></div>
                         <input
                           id="email"
                           v-model="formData.email"
                           type="email"
                           required
-                          class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300"
                           placeholder="john@example.com"
                           :placeholder="t('contact.placeholders.email')"
                         />
@@ -176,7 +176,7 @@
                     <div class="space-y-3">
                       <label
                         for="company"
-                        class="block text-sm font-medium text-white"
+                        class="block text-sm font-medium text-textPrimary"
                       >
                         {{ t("contact.form.company") }}
                       </label>
@@ -185,7 +185,7 @@
                           id="company"
                           v-model="formData.company"
                           type="text"
-                          class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           placeholder="Your Company"
                           :placeholder="t('contact.placeholders.company')"
                         />
@@ -195,7 +195,7 @@
                     <div class="space-y-3">
                       <label
                         for="subject"
-                        class="block text-sm font-medium text-white"
+                        class="block text-sm font-medium text-textPrimary"
                       >
                         {{ t("contact.form.subject") }}
                         <span class="text-[#ef4444]">*</span>
@@ -205,7 +205,7 @@
                           id="subject"
                           v-model="formData.subject"
                           required
-                          class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300 appearance-none"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="" disabled selected>
                             {{ t("contact.form.select_subject") }}
@@ -245,21 +245,21 @@
                   <div class="space-y-3">
                     <label
                       for="message"
-                      class="block text-sm font-medium text-white"
+                      class="block text-sm font-medium text-textPrimary"
                     >
                       {{ t("contact.form.message") }}
                       <span class="text-[#ef4444]">*</span>
                     </label>
                     <div class="relative">
                       <div
-                        class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                        class="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                       ></div>
                       <textarea
                         id="message"
                         v-model="formData.message"
                         required
                         rows="6"
-                        class="w-full px-4 py-3 bg-[#1e293b] border border-[#334155] rounded-lg text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300 resize-none"
+                        class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                         :placeholder="t('contact.placeholders.message')"
                       ></textarea>
                     </div>
@@ -277,12 +277,12 @@
                     >
                       <!-- Background gradient -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+                        class="absolute inset-0 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-xl"
                       ></div>
 
                       <!-- Hover gradient -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/btn:opacity-100 rounded-xl transition-opacity duration-300"
+                        class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-primary opacity-0 group-hover/btn:opacity-100 rounded-xl transition-opacity duration-300"
                       ></div>
 
                       <!-- Shine effect -->
@@ -320,18 +320,18 @@
 
                       <!-- Outer glow -->
                       <div
-                        class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/btn:opacity-30 transition-opacity duration-300 -z-10"
+                        class="absolute -inset-2 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/btn:opacity-30 transition-opacity duration-300 -z-10"
                       ></div>
                     </button>
 
                     <!-- Success Message -->
                     <div
                       v-if="submitSuccess"
-                      class="mt-4 p-4 rounded-xl bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/30"
+                      class="mt-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 border border-primary/30"
                     >
                       <div class="flex items-center gap-3">
                         <svg
-                          class="w-5 h-5 text-[#00e1ff]"
+                          class="w-5 h-5 text-primary"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -375,12 +375,12 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
+                  class="relative bg-card rounded-3xl border border-border group-hover:border-primary/30 p-6 transition-all duration-300"
                 >
                   <div class="flex items-start gap-4">
                     <!-- Icon -->
@@ -398,7 +398,7 @@
                       }"
                     >
                       <svg
-                        class="w-6 h-6 text-[#00e1ff] group-hover:text-[#1bd4c1] transition-colors duration-300"
+                        class="w-6 h-6 text-primary group-hover:text-[#1bd4c1] transition-colors duration-300"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -435,7 +435,7 @@
                         :href="info.link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="font-medium text-white hover:text-[#00e1ff] transition-colors duration-300 inline-flex items-center gap-1"
+                        class="font-medium text-textPrimary hover:text-primary transition-colors duration-300 inline-flex items-center gap-1"
                       >
                         {{ info.value }}
                         <svg
@@ -452,7 +452,7 @@
                           />
                         </svg>
                       </a>
-                      <p v-else class="font-medium text-white">
+                      <p v-else class="font-medium text-textPrimary">
                         {{ info.value }}
                       </p>
                     </div>
@@ -469,12 +469,12 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
+                  class="relative bg-card rounded-3xl border border-border group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
                 >
                   <p class="text-sm text-[#94a3b8] mb-4">
                     {{ t("contact.follow_us") }}
@@ -491,17 +491,17 @@
                     >
                       <!-- Background -->
                       <div
-                        class="absolute inset-0 bg-[#1e293b] border border-[#334155] rounded-xl group-hover/social:border-[#00e1ff]/30 transition-colors duration-300"
+                        class="absolute inset-0 bg-card border border-border rounded-xl group-hover/social:border-[#00e1ff]/30 transition-colors duration-300"
                       ></div>
 
                       <!-- Gradient overlay -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
+                        class="absolute inset-0 bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
                       ></div>
 
                       <!-- Icon -->
                       <svg
-                        class="relative z-10 w-5 h-5 text-[#94a3b8] group-hover/social:text-white transition-colors duration-300"
+                        class="relative z-10 w-5 h-5 text-[#94a3b8] group-hover/social:text-primary transition-colors duration-300"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -536,12 +536,12 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 overflow-hidden transition-all duration-300"
+                  class="relative bg-card rounded-3xl border border-b-card group-hover:border-primary/30 overflow-hidden transition-all duration-300"
                 >
                   <!-- Map -->
                   <div class="aspect-video">
@@ -567,7 +567,7 @@
                   >
                     <div class="flex items-center gap-2 text-white">
                       <svg
-                        class="w-4 h-4 text-[#00e1ff]"
+                        class="w-4 h-4 text-primary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -594,26 +594,26 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
+                  class="relative bg-bg rounded-3xl border border-border group-hover:border-primary/30 p-6 transition-all duration-300"
                 >
-                  <h3 class="text-lg font-bold text-white mb-4">
+                  <h3 class="text-lg font-bold text-textPrimary mb-4">
                     {{ t("contact.quick.title") }}
                   </h3>
                   <div class="space-y-3">
                     <a
                       href="tel:+15551234567"
-                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-[#1e293b] border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300"
+                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-card border border-borderå hover:border-primary/30 transition-all duration-300"
                     >
                       <div
-                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
+                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center"
                       >
                         <svg
-                          class="w-5 h-5 text-[#00e1ff]"
+                          class="w-5 h-5 text-primary"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -626,19 +626,21 @@
                         <p class="text-sm text-[#94a3b8]">
                           {{ t("contact.quick.call_us") }}
                         </p>
-                        <p class="text-white font-medium">+1 (555) 123-4567</p>
+                        <p class="text-textPrimary font-medium">
+                          +1 (555) 123-4567
+                        </p>
                       </div>
                     </a>
 
                     <a
                       href="mailto:hello@aftech.dev"
-                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-[#1e293b] border border-[#334155] hover:border-[#1bd4c1]/30 transition-all duration-300"
+                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
                     >
                       <div
-                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-[#1bd4c1]/10 to-[#00e1ff]/10 flex items-center justify-center"
+                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center"
                       >
                         <svg
-                          class="w-5 h-5 text-[#1bd4c1]"
+                          class="w-5 h-5 text-primary"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -654,7 +656,9 @@
                         <p class="text-sm text-[#94a3b8]">
                           {{ t("contact.quick.email_us") }}
                         </p>
-                        <p class="text-white font-medium">hello@aftech.dev</p>
+                        <p class="text-textPrimary font-medium">
+                          hello@aftech.dev
+                        </p>
                       </div>
                     </a>
                   </div>

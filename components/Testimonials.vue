@@ -1,7 +1,7 @@
 <template>
   <section class="relative py-16 md:py-24 lg:py-32 overflow-hidden">
     <!-- Background Effects -->
-    <div class="absolute inset-0 bg-[#0f1729]">
+    <div class="absolute inset-0 bg-bg">
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-10">
         <div
@@ -35,14 +35,14 @@
 
       <!-- Floating Quote Marks -->
       <div class="absolute top-10 left-4 md:top-20 md:left-10 opacity-10">
-        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-[#00e1ff]">
+        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-primary">
           "
         </div>
       </div>
       <div
         class="absolute bottom-10 right-4 md:bottom-20 md:right-10 opacity-10"
       >
-        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-[#1bd4c1]">
+        <div class="text-5xl md:text-7xl lg:text-9xl font-serif text-secondary">
           "
         </div>
       </div>
@@ -53,7 +53,7 @@
       <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16 lg:mb-20">
         <!-- Animated Badge -->
         <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 mb-4 md:mb-6 group/badge"
+          class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/20 hover:border-[#00e1ff]/30 transition-all duration-300 mb-4 md:mb-6 group/badge"
         >
           <!-- Pulsing dots -->
           <div class="relative">
@@ -65,7 +65,7 @@
             ></div>
           </div>
           <span
-            class="text-xs md:text-sm font-medium text-white tracking-wider"
+            class="text-xs md:text-sm font-medium text-textPrimary tracking-wider"
             >{{ t("testimonials.badge") }}</span
           >
           <div class="relative">
@@ -83,7 +83,9 @@
         <h2
           class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6"
         >
-          <span class="text-white">{{ t("testimonials.title.part1") }}</span>
+          <span class="text-textPrimary">{{
+            t("testimonials.title.part1")
+          }}</span>
           <span class="block mt-2 md:mt-4">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -182,7 +184,7 @@
 
                 <!-- Main Card -->
                 <div
-                  class="relative rounded-xl md:rounded-2xl lg:rounded-3xl bg-[#111827] border border-[#334155] group-hover/testimonial:border-[#00e1ff]/30 overflow-hidden transition-all duration-500"
+                  class="relative rounded-xl md:rounded-2xl lg:rounded-3xl bg-bg shadow-lgx border border-border group-hover/testimonial:border-[#00e1ff]/30 overflow-hidden transition-all duration-500"
                 >
                   <!-- Background pattern -->
                   <div class="absolute inset-0 opacity-5">
@@ -253,7 +255,7 @@
                         <img
                           :src="testimonial.avatar"
                           :alt="testimonial.author"
-                          class="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-[#111827]"
+                          class="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary/40"
                         />
                       </div>
 
@@ -264,7 +266,7 @@
                         >
                           <div>
                             <p
-                              class="text-base sm:text-lg md:text-xl font-bold text-white"
+                              class="text-base sm:text-lg md:text-xl font-bold text-textPrimary"
                             >
                               {{ testimonial.author }}
                             </p>
@@ -290,7 +292,7 @@
 
                         <!-- Project info -->
                         <div
-                          class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#334155]"
+                          class="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-border"
                         >
                           <div class="flex flex-wrap gap-1.5 sm:gap-2">
                             <span
@@ -307,7 +309,7 @@
 
                     <!-- Result metrics -->
                     <div
-                      class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-[#334155]"
+                      class="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border"
                     >
                       <div
                         class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
@@ -318,7 +320,7 @@
                           class="text-center"
                         >
                           <div
-                            class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1"
+                            class="text-lg sm:text-xl md:text-2xl font-bold text-textPrimary mb-1"
                           >
                             {{ metric.value }}
                           </div>
@@ -352,7 +354,7 @@
             aria-label="Previous testimonial"
           >
             <svg
-              class="w-4 h-4 sm:w-5 sm:h-5 text-[#94a3b8] group-hover/prev:text-[#00e1ff] transition-colors duration-300"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/prev:text-[#00e1ff] transition-colors duration-300"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -370,7 +372,7 @@
             aria-label="Next testimonial"
           >
             <svg
-              class="w-4 h-4 sm:w-5 sm:h-5 text-[#94a3b8] group-hover/next:text-[#1bd4c1] transition-colors duration-300"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/next:text-[#1bd4c1] transition-colors duration-300"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -391,11 +393,11 @@
 
       <!-- Company Logos Section -->
       <div
-        class="mt-16 md:mt-20 lg:mt-24 pt-12 md:pt-16 border-t border-[#334155]/30"
+        class="mt-16 md:mt-20 lg:mt-24 pt-12 md:pt-16 border-t border-primary/30"
       >
         <div class="text-center mb-8 md:mb-10 lg:mb-12">
           <h3
-            class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4"
+            class="text-xl sm:text-2xl md:text-3xl font-bold text-textPrimary mb-3 md:mb-4"
           >
             {{ t("testimonials.company.title") }}
           </h3>
@@ -421,7 +423,7 @@
             >
               <!-- Background effect -->
               <div
-                class="absolute inset-0 bg-[#111827] rounded-lg sm:rounded-xl border border-[#334155] group-hover/company:border-[#00e1ff]/30 transition-all duration-300 opacity-0 group-hover/company:opacity-100"
+                class="absolute inset-0 bg-bg rounded-lg sm:rounded-xl border group-hover/company:border-primary/30 transition-all duration-300 opacity-0 group-hover/company:opacity-100"
               ></div>
 
               <!-- Logo placeholder -->
@@ -446,7 +448,7 @@
       <div class="text-center mt-16 md:mt-20 lg:mt-24">
         <div class="max-w-lg sm:max-w-xl md:max-w-2xl mx-auto px-2 sm:px-0">
           <h3
-            class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4"
+            class="text-xl sm:text-2xl md:text-3xl font-bold text-textPrimary mb-3 md:mb-4"
           >
             {{ t("testimonials.cta.title") }}
           </h3>

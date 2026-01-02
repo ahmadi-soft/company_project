@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="relative overflow-hidden border-t border-[#1e293b] bg-[#0f1729]"
-  >
+  <footer class="relative overflow-hidden border-t border-primary/50 bg-bg">
     <!-- Background effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <!-- Grid pattern -->
@@ -51,7 +49,7 @@
                 ></div>
                 <!-- Main logo -->
                 <div
-                  class="absolute inset-[2px] rounded-xl bg-[#111827] flex items-center justify-center"
+                  class="absolute inset-[2px] rounded-xl bg-card flex items-center justify-center"
                 >
                   <div class="relative">
                     <svg
@@ -99,7 +97,7 @@
 
           <!-- Newsletter -->
           <div class="space-y-4 pt-4">
-            <h3 class="text-white font-semibold flex items-center gap-2">
+            <h3 class="text-textPrimary font-semibold flex items-center gap-2">
               <Icon
                 name="ph:paper-plane-tilt-fill"
                 class="w-5 h-5 text-[#00e1ff]"
@@ -111,7 +109,7 @@
                 <input
                   type="email"
                   :placeholder="t('footer.newsletter.placeholder')"
-                  class="w-full px-4 py-3 rounded-lg bg-[#111827] border border-[#334155] text-white placeholder-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300 pl-10"
+                  class="w-full px-4 py-3 rounded-lg bg-bgSoft border border-primary/50 text-textPrimary placeholder-[#64748b] focus:outline-none focus:ring-2 focus:ring-[#00e1ff] focus:border-transparent transition-all duration-300 pl-10"
                 />
                 <Icon
                   name="ph:envelope-simple"
@@ -142,22 +140,22 @@
           :key="category"
           class="space-y-4"
         >
-          <div class="relative">
+          <div class="relative flex flex-col justify-start">
             <h3
-              class="text-white font-semibold text-lg mb-4 inline-flex items-center gap-2"
+              class="text-textPrimary font-semibold text-lg mb-4 inline-flex items-center gap-2"
             >
               <Icon name="ph:caret-right-fill" class="w-4 h-4 text-[#00e1ff]" />
               {{ t(`footer.categories.${category}`) }}
             </h3>
             <div
-              class="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
+              class="w-8 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
             ></div>
           </div>
           <ul class="space-y-3">
             <li v-for="link in links" :key="link.nameKey">
               <NuxtLink
                 :to="link.path"
-                class="group flex items-center text-[#94a3b8] hover:text-white transition-all duration-300 py-1.5"
+                class="group flex items-center text-[#94a3b8] hover:text-textPrimary transition-all duration-300 py-1.5"
               >
                 <div class="relative overflow-hidden">
                   <div
@@ -165,7 +163,7 @@
                   ></div>
                 </div>
                 <span
-                  class="ml-3 group-hover:translate-x-1 transition-transform duration-300"
+                  class="group-hover:mx-3 group-hover:translate-x-1 transition-transform duration-300"
                 >
                   {{ t(link.nameKey) }}
                 </span>
@@ -180,10 +178,10 @@
       </div>
 
       <!-- Bottom bar - MODERN DESIGN -->
-      <div class="mt-12 pt-8 border-t border-[#1e293b]">
+      <div class="mt-12 pt-8 border-t border-primary/50">
         <!-- Main bottom bar -->
         <div
-          class="flex flex-col lg:flex-row items-center justify-between gap-6 p-4 rounded-2xl bg-[#111827]/80 backdrop-blur-sm border border-[#334155]/50"
+          class="flex flex-col lg:flex-row items-center justify-between gap-6 p-4 rounded-2xl bg-bg/80 backdrop-blur-sm border border-primary/50"
         >
           <!-- Left: Trust badges -->
           <div class="flex flex-wrap items-center gap-4">
@@ -200,7 +198,7 @@
                   class="absolute -inset-1 bg-[#00e1ff] rounded-full blur opacity-20"
                 ></div>
               </div>
-              <span class="text-sm text-white font-medium">{{
+              <span class="text-sm text-textPrimary font-medium">{{
                 t("footer.badges.secure")
               }}</span>
             </div>
@@ -218,7 +216,7 @@
                   class="absolute -inset-1 bg-[#1bd4c1] rounded-full blur opacity-20"
                 ></div>
               </div>
-              <span class="text-sm text-white font-medium">{{
+              <span class="text-sm text-textPrimary font-medium">{{
                 t("footer.badges.global")
               }}</span>
             </div>
@@ -229,7 +227,7 @@
             <p class="text-[#94a3b8] text-sm">
               © {{ new Date().getFullYear() }}
               <span
-                class="text-white font-semibold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
+                class="text-textPrimary font-semibold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
                 >{{ t("navbar.brand") }}</span
               >. {{ t("footer.copyright") }}
             </p>
@@ -258,7 +256,7 @@
               }}</span>
             </NuxtLink>
 
-            <div class="w-px h-4 bg-[#334155]"></div>
+            <div class="w-px h-4 bg-primary"></div>
 
             <NuxtLink
               to="#"
@@ -290,11 +288,11 @@
               <div
                 v-for="tech in techStack"
                 :key="tech.name"
-                class="group relative px-3 py-1.5 rounded-lg bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 cursor-pointer"
+                class="group relative px-3 py-1.5 rounded-lg bg-bgSoft border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
               >
                 <div class="flex items-center gap-2">
                   <Icon :name="tech.icon" class="w-4 h-4" :class="tech.color" />
-                  <span class="text-[#cbd5e1] group-hover:text-white">{{
+                  <span class="text-textPrimary group-hover:text-primary">{{
                     tech.name
                   }}</span>
                 </div>
@@ -307,21 +305,21 @@
 
             <!-- CTA Button -->
             <button
-              class="ml-2 group flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 hover:from-[#00e1ff]/20 hover:to-[#1bd4c1]/20 border border-[#00e1ff]/20 hover:border-[#00e1ff]/40 transition-all duration-300"
+              class="ml-2 group flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] hover:scale-105 transition-all duration-500"
             >
-              <span class="text-sm text-white font-medium">{{
+              <span class="text-sm text-textPrimary font-medium">{{
                 t("footer.view_tech")
               }}</span>
               <Icon
                 name="ph:arrow-up-right"
-                class="w-3 h-3 text-[#00e1ff] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                class="w-3 h-3 text-textPrimary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
               />
             </button>
           </div>
         </div>
 
         <!-- Contact info -->
-        <div class="mt-6 pt-6 border-t border-[#1e293b]">
+        <div class="mt-6 pt-6 border-t border-primary/50">
           <div
             class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#94a3b8]"
           >

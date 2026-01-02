@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#0f1729] overflow-hidden">
+  <div class="min-h-screen bg-bg overflow-hidden">
     <!-- Hero Section -->
     <section class="relative py-24 md:py-32 overflow-hidden">
       <!-- Background Effects -->
@@ -63,7 +63,7 @@
                 ></div>
               </div>
               <span
-                class="text-white font-semibold text-sm tracking-wider uppercase"
+                class="text-textPrimary font-semibold text-sm tracking-wider uppercase"
                 >{{ t("projects.badge") }}</span
               >
             </div>
@@ -73,7 +73,9 @@
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span class="text-white">{{ t("projects.title.part1") }}</span>
+            <span class="text-textPrimary">{{
+              t("projects.title.part1")
+            }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -111,7 +113,7 @@
         <!-- Filter Section -->
         <div
           ref="filterRef"
-          class="sticky top-24 z-20 mb-12 bg-[#0f1729]/80 backdrop-blur-xl border border-[#334155] rounded-2xl p-4 shadow-xl"
+          class="sticky top-24 z-20 mb-12 bg-bgSoft/80 backdrop-blur-xl border border-primary/50 rounded-2xl p-4 shadow-xl"
         >
           <div
             class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
@@ -132,7 +134,7 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-white font-semibold">
+                <h3 class="text-textPrimary font-semibold">
                   {{ t("projects.filter.title") }}
                 </h3>
                 <p class="text-sm text-[#94a3b8]">
@@ -154,20 +156,20 @@
                 :class="[
                   'group relative px-5 py-2.5 rounded-xl font-medium transition-all duration-300',
                   activeCategory === category
-                    ? 'text-white'
+                    ? 'text-textPrimary'
                     : 'text-[#94a3b8] hover:text-white',
                 ]"
               >
                 <!-- Background for active state -->
                 <div
                   v-if="activeCategory === category"
-                  class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 rounded-xl border border-[#00e1ff]/30"
+                  class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl border border-[#00e1ff]/30"
                 ></div>
 
                 <!-- Hover background -->
                 <div
                   v-else
-                  class="absolute inset-0 bg-[#111827] border border-[#334155] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-primary/20 border border-primary/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
 
                 <span class="relative z-10">{{
@@ -259,7 +261,7 @@
 
                 <!-- Main Card -->
                 <div
-                  class="relative h-full bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 overflow-hidden transition-all duration-300"
+                  class="relative h-full shadow-lg bg-card rounded-3xl border border-primary/20 group-hover:border-primary/50 overflow-hidden transition-all duration-300"
                 >
                   <!-- Project Image -->
                   <div class="relative aspect-[16/9] overflow-hidden">
@@ -272,7 +274,7 @@
 
                     <!-- Gradient Overlay -->
                     <div
-                      class="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-[#0f1729]/50 to-transparent"
+                      class="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"
                     ></div>
 
                     <!-- Hover Overlay -->
@@ -287,7 +289,7 @@
                           class="px-3 py-1 rounded-full bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 backdrop-blur-sm border border-white/10"
                         >
                           <span
-                            class="text-white text-xs font-semibold tracking-wider"
+                            class="text-textPrimary text-xs font-semibold tracking-wider"
                             >{{ project.category }}</span
                           >
                         </div>
@@ -298,9 +300,9 @@
                     <div class="absolute top-4 right-4">
                       <div class="relative">
                         <div
-                          class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                          class="w-10 h-10 rounded-xl bg-card/10 backdrop-blur-sm border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                         >
-                          <div class="text-white font-bold text-sm">
+                          <div class="text-textPrimary font-bold text-sm">
                             {{ project.client.charAt(0) }}
                           </div>
                         </div>
@@ -314,13 +316,13 @@
                       <a
                         :href="project.demoUrl"
                         target="_blank"
-                        class="group/action relative px-5 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#00e1ff]/30 transition-all duration-300"
+                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-[#00e1ff]/30 transition-all duration-300"
                       >
                         <div
                           class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
                         ></div>
                         <span
-                          class="relative z-10 text-white font-medium flex items-center gap-2 text-sm"
+                          class="relative z-10 text-textPrimary font-medium flex items-center gap-2 text-sm"
                         >
                           <svg
                             class="w-4 h-4"
@@ -341,13 +343,13 @@
                       <a
                         :href="project.codeUrl"
                         target="_blank"
-                        class="group/action relative px-5 py-2.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#1bd4c1]/30 transition-all duration-300"
+                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-[#1bd4c1]/30 transition-all duration-300"
                       >
                         <div
                           class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1]/10 to-[#00e1ff]/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
                         ></div>
                         <span
-                          class="relative z-10 text-white font-medium flex items-center gap-2 text-sm"
+                          class="relative z-10 text-textPrimary font-medium flex items-center gap-2 text-sm"
                         >
                           <svg
                             class="w-4 h-4"
@@ -380,7 +382,7 @@
 
                     <!-- Title -->
                     <h3
-                      class="text-xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300 line-clamp-1"
+                      class="text-xl font-bold text-textPrimary mb-3 group-hover:text-gradient transition-all duration-300 line-clamp-1"
                     >
                       {{ project.title }}
                     </h3>
@@ -401,10 +403,10 @@
                           class="group/tag relative"
                         >
                           <div
-                            class="px-3 py-1.5 rounded-lg bg-[#1e293b] border border-[#334155] group-hover/tag:border-[#00e1ff]/30 transition-all duration-300"
+                            class="px-3 py-1.5 rounded-lg cursor-pointer bg-card border border-primary/30 group-hover/tag:border-primary/50 transition-all duration-300"
                           >
                             <span
-                              class="text-[#94a3b8] text-xs font-medium group-hover/tag:text-white"
+                              class="text-textPrimary text-xs font-medium group-hover/tag:text-primary"
                               >{{ tag }}</span
                             >
                           </div>
@@ -418,10 +420,10 @@
                           class="group/more relative"
                         >
                           <div
-                            class="px-3 py-1.5 rounded-lg bg-[#1e293b] border border-[#334155] group-hover/more:border-[#1bd4c1]/30 transition-all duration-300"
+                            class="px-3 py-1.5 cursor-pointer rounded-lg bg-card border border-primary/30 group-hover/more:border-primary/500 transition-all duration-300"
                           >
                             <span
-                              class="text-[#94a3b8] text-xs font-medium group-hover/more:text-white"
+                              class="text-textPrimary text-xs font-medium group-hover/more:text-primary"
                               >+{{ project.tags.length - 4 }}</span
                             >
                           </div>
@@ -431,10 +433,10 @@
 
                     <!-- Project Stats -->
                     <div
-                      class="grid grid-cols-3 gap-4 pt-4 border-t border-[#334155]"
+                      class="grid grid-cols-3 gap-4 pt-4 border-t border-primary/50"
                     >
                       <div class="text-center">
-                        <div class="text-lg font-bold text-white mb-1">
+                        <div class="text-lg font-bold text-textPrimary mb-1">
                           {{ project.year }}
                         </div>
                         <div
@@ -444,7 +446,7 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <div class="text-lg font-bold text-white mb-1">
+                        <div class="text-lg font-bold text-textPrimary mb-1">
                           {{ project.duration }}
                         </div>
                         <div
@@ -454,7 +456,7 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <div class="text-lg font-bold text-white mb-1">
+                        <div class="text-lg font-bold text-textPrimary mb-1">
                           {{ project.teamSize }}
                         </div>
                         <div

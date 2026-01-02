@@ -2,6 +2,7 @@
   "language_modal": {
     "title": "Choose language",
     "subtitle": "Choose your preferred language",
+    "current": "Current language",
     "english": "English",
     "chinese": "中文",
     "arabic": "Arabic",
@@ -327,7 +328,12 @@
       { "name": "Global Finance", "initials": "GF" },
       { "name": "Innovate Co", "initials": "IC" },
       { "name": "Digital Solutions", "initials": "DS" }
-    ]
+    ],
+    "titleStart": "Ready to Start",
+    "titleEnd": "Your Project?",
+    "description2": "Let's discuss how we can help bring your vision to life with cutting-edge technology and expert development.",
+    "primaryButton": "Contact Us Today",
+    "secondaryButton": "View Our Work"
   },
   "footer": {
     "about": {

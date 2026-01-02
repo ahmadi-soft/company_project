@@ -2,16 +2,12 @@
   <nav
     ref="navRef"
     :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-700 transform',
+      'bg-bg fixed top-0 left-0 right-0 z-50 transition-all duration-700 transform',
       scrolled
-        ? 'bg-[#0f1729]/80 backdrop-blur-xl border-b border-[#1e293b]/50 shadow-2xl shadow-[#00e1ff]/10'
-        : 'bg-[#0f1729]/90 backdrop-blur-md',
+        ? ' backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-[#00e1ff]/10'
+        : ' backdrop-blur-md',
     ]"
     :style="{
-      '--primary': '#00e1ff',
-      '--secondary': '#1bd4c1',
-      '--bg': '#0f1729',
-      '--card': '#111827',
       opacity: navOpacity,
       transform: `translateY(${navTranslateY}px)`,
       transition: `opacity ${navTransitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1), 
@@ -76,7 +72,7 @@
 
               <!-- Main logo -->
               <div
-                class="relative w-12 h-12 rounded-xl bg-[#111827] flex items-center justify-center transition-all duration-500"
+                class="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center transition-all duration-500"
                 :class="scrolled ? 'shadow-lg shadow-[#00e1ff]/20' : ''"
                 :style="{ opacity: navOpacity }"
               >
@@ -127,7 +123,11 @@
             </h1>
             <p
               class="text-xs font-medium mt-0.5 transition-all duration-500"
-              :class="scrolled ? 'text-[#cbd5e1]' : 'text-[#94a3b8]'"
+              :class="
+                scrolled
+                  ? 'text-[rgb(var(--text-secondary))]'
+                  : 'text-[rgb(var(--text-muted))]'
+              "
               :style="{ opacity: navOpacity }"
             >
               {{ t("navbar.tagline") }}
@@ -158,10 +158,10 @@
             :key="item.path"
             :to="item.path"
             :class="[
-              'relative px-4 py-2 rounded-lg font-medium transition-all duration-500 group/nav-item',
+              'relative bg-transparent px-4 py-2 rounded-lg font-medium transition-all duration-500 group/nav-item',
               route.path === item.path
-                ? 'text-white bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10'
-                : 'text-[#94a3b8] hover:text-white',
+                ? 'text-textPrimary bg-gradient-to-r from-[#00e1ff]/40 to-[#1bd4c1]/40'
+                : 'text-[#94a3b8] hover:text-primary',
             ]"
             @mouseenter="setActiveHover(item.path)"
             @mouseleave="clearActiveHover"
@@ -218,7 +218,7 @@
 
         <!-- Desktop Actions with fade animation -->
         <div
-          class="hidden lg:flex items-center gap-4"
+          class="hidden lg:flex items-center gap-2"
           :style="{
             opacity: navOpacity,
             transform: `translateY(${actionsTranslateY}px) scale(${
@@ -231,15 +231,7 @@
           <!-- Language Button -->
           <button
             @click="openLangModal"
-            class="group/language relative px-4 py-2 rounded-xl bg-[#111827] border transition-all duration-500 flex items-center gap-3"
-            :class="
-              scrolled
-                ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
-                : 'border-[#334155] hover:border-[#00e1ff]/30'
-            "
-            :style="{
-              opacity: navOpacity,
-            }"
+            class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-[#00e1ff]/30"
             :aria-label="t('navbar.language')"
           >
             <!-- Current Language Display -->
@@ -247,11 +239,13 @@
               <span class="text-xl">{{ getCurrentFlag() }}</span>
               <div class="text-left">
                 <div
-                  class="text-sm font-medium text-white transition-all duration-300"
+                  class="text-sm font-medium text-textPrimary transition-all duration-300"
                 >
                   {{ currentLocale.toUpperCase() }}
                 </div>
-                <div class="text-xs text-[#94a3b8] transition-all duration-300">
+                <div
+                  class="text-xs text-[rgb(var(--text-muted))] transition-all duration-300"
+                >
                   {{ getCurrentLanguageName() }}
                 </div>
               </div>
@@ -259,7 +253,7 @@
 
             <!-- Language Icon -->
             <svg
-              class="w-4 h-4 transition-all duration-500 text-[#64748b] group-hover/language:text-[#00e1ff]"
+              class="w-4 h-4 transition-all duration-500 text-[rgb(var(--text-muted))] group-hover/language:text-[#00e1ff]"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -269,85 +263,55 @@
                 clip-rule="evenodd"
               />
             </svg>
-
-            <!-- Background Glow -->
-            <div
-              class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/language:opacity-10 blur transition-opacity duration-300"
-              :style="{ opacity: 0.1 * navOpacity }"
-            ></div>
-
-            <!-- Animated Border -->
-            <div
-              class="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/language:opacity-30 blur-sm transition-opacity duration-500"
-              :style="{
-                backgroundSize: '300% 300%',
-              }"
-            ></div>
           </button>
-
-          <!-- Contact Button -->
-          <NuxtLink
-            to="/contact"
-            class="group/contact relative px-6 py-3 rounded-xl font-semibold overflow-hidden transition-all duration-500"
+          <!-- Theme Toggle Button -->
+          <button
+            @click="toggle"
+            class="group/theme relative p-3.5 rounded-xl bg-card border border-border transition-all duration-500 flex items-center gap-2"
+            :class="
+              scrolled
+                ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
+                : 'border-[#334155] hover:border-[#00e1ff]/30'
+            "
             :style="{
-              transform: `scale(${scrolled ? 0.95 : 1})`,
-              boxShadow: scrolled
-                ? '0 4px 20px rgba(0, 225, 255, 0.2)'
-                : 'none',
               opacity: navOpacity,
             }"
+            :aria-label="
+              isDark === true ? 'Switch to light theme' : 'Switch to dark theme'
+            "
           >
-            <!-- Gradient background -->
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transition-all duration-500"
-              :class="scrolled ? 'opacity-90' : 'opacity-100'"
-            ></div>
-
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300"
-            ></div>
-
-            <!-- Shine effect -->
-            <div class="absolute inset-0 overflow-hidden">
-              <div
-                class="absolute -inset-y-full -left-20 w-20 bg-white/20 skew-x-12 group-hover/contact:left-full transition-all duration-1000"
-              ></div>
-            </div>
-            <!-- Text -->
-            <span
-              class="relative z-10 text-[#0f1729] font-bold flex items-center gap-2 transition-all duration-500"
-              :class="scrolled ? 'text-sm' : ''"
+            <!-- Sun Icon (Light Mode) -->
+            <svg
+              v-show="isDark === false"
+              class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+              fill="currentColor"
+              viewBox="0 0 20 20"
             >
-              {{ t("navbar.get_started") }}
-              <svg
-                :class="[
-                  'w-4 h-4 transition-transform duration-300',
-                  contactArrowHoverClass,
-                  contactArrowFlipClass,
-                ]"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </span>
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              />
+            </svg>
 
-            <!-- Glow effect -->
-            <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/contact:opacity-50 transition-opacity duration-300 -z-10"
-            ></div>
-          </NuxtLink>
+            <!-- Moon Icon (Dark Mode) -->
+            <svg
+              v-show="isDark === true"
+              class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              />
+            </svg>
+          </button>
         </div>
 
         <!-- Mobile Menu Toggle -->
         <button
           @click="toggleMobileMenu"
-          class="lg:hidden relative p-2 rounded-lg bg-[#111827] border transition-all duration-500 group/menu"
+          class="lg:hidden relative p-2 rounded-lg bg-card border-border transition-all duration-500 group/menu"
           :class="
             scrolled
               ? 'border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
@@ -407,7 +371,7 @@
           transform: isMobileOpen ? 'translateY(0)' : 'translateY(-10px)',
         }"
       >
-        <div class="py-4 border-t border-[#1e293b] mt-2">
+        <div class="py-4 border-t border-border mt-2">
           <div class="flex flex-col gap-2">
             <NuxtLink
               v-for="item in navItems"
@@ -418,7 +382,7 @@
                 'relative px-4 py-3 rounded-xl font-medium transition-all duration-300 group/mobile-item',
                 route.path === item.path
                   ? 'text-white bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20'
-                  : 'text-[#94a3b8] hover:text-white hover:bg-[#111827]',
+                  : 'text-[rgb(var(--text-muted))] hover:text-white hover:bg-card',
               ]"
               :style="{
                 opacity: isMobileOpen ? 1 : 0,
@@ -455,12 +419,12 @@
 
             <!-- Mobile Actions -->
             <div
-              class="flex items-center gap-3 mt-4 pt-4 border-t border-[#1e293b]"
+              class="flex items-center gap-3 mt-4 pt-4 border-t border-border"
             >
               <!-- Language Button Mobile -->
               <button
                 @click="openLangModal"
-                class="group/language-mobile flex-1 py-3 rounded-xl bg-[#111827] border border-[#1e293b] hover:border-[#00e1ff]/30 transition-all duration-300 flex items-center justify-center gap-2"
+                class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-[#00e1ff]/30"
                 :style="{
                   opacity: isMobileOpen ? 1 : 0,
                   transform: isMobileOpen
@@ -471,21 +435,64 @@
                 :aria-label="t('navbar.language')"
               >
                 <span class="text-lg">{{ getCurrentFlag() }}</span>
-                <span class="font-medium text-white">{{
+                <span class="font-medium text-textPrimary">{{
                   getCurrentLanguageName()
                 }}</span>
                 <span
-                  class="text-xs px-1.5 py-0.5 rounded bg-[#1e293b] text-[#94a3b8]"
+                  class="text-xs px-1.5 py-0.5 rounded bg-[rgb(var(--bg-soft))] text-[rgb(var(--text-muted))]"
                 >
                   {{ currentLocale.toUpperCase() }}
                 </span>
               </button>
+              <!-- Theme Toggle Button -->
+              <button
+                @click="toggle"
+                class="group/theme relative p-3.5 rounded-xl bg-card border border-border transition-all duration-500 flex items-center gap-2"
+                :class="
+                  scrolled
+                    ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
+                    : 'border-[#334155] hover:border-[#00e1ff]/30'
+                "
+                :style="{
+                  opacity: navOpacity,
+                }"
+                :aria-label="
+                  isDark === true
+                    ? 'Switch to light theme'
+                    : 'Switch to dark theme'
+                "
+              >
+                <!-- Sun Icon (Light Mode) -->
+                <svg
+                  v-show="isDark === false"
+                  class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
 
+                <!-- Moon Icon (Dark Mode) -->
+                <svg
+                  v-show="isDark === true"
+                  class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  />
+                </svg>
+              </button>
               <!-- Contact Button Mobile -->
               <NuxtLink
                 to="/contact"
                 @click="closeMobileMenu"
-                class="flex-1 py-3 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729] font-semibold text-center transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,225,255,0.3)]"
+                class="flex-1 py-3 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[rgb(var(--text-primary))] font-semibold text-center transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,225,255,0.3)]"
                 :style="{
                   opacity: isMobileOpen ? 1 : 0,
                   transform: isMobileOpen
@@ -516,6 +523,7 @@ import LanguageModal from "~/components/LanguageModal.vue";
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 const route = useRoute();
+const { toggle, isDark } = useTheme();
 
 const { t, locale } = useI18n();
 
@@ -729,7 +737,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   // Set dark mode as default
-  document.documentElement.classList.add("dark");
+  // Note: we do not toggle the global document theme here; TopNavbar uses scoped variables
 
   // Load saved locale
   try {

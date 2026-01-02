@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#0f1729]">
+  <div class="min-h-screen bg-bg">
     <!-- Hero Section -->
     <section class="relative py-24 md:py-32 overflow-hidden">
       <!-- Background Effects -->
@@ -66,7 +66,7 @@
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider">{{
+          <span class="text-sm font-medium text-textPrimary tracking-wider">{{
             t("services.badge")
           }}</span>
           <div class="relative">
@@ -84,14 +84,18 @@
         <h1
           class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span class="text-white">{{ t("services.heading.fullstack") }}</span>
+          <span class="text-textPrimary">{{
+            t("services.heading.fullstack")
+          }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("services.heading.development") }}
             </span>
-            <span class="text-white">{{ t("services.heading.services") }}</span>
+            <span class="text-textPrimary">{{
+              t("services.heading.services")
+            }}</span>
           </span>
         </h1>
 
@@ -112,14 +116,14 @@
 
         <!-- Quick Stats -->
         <div
-          class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-[#334155]/30"
+          class="flex flex-wrap gap-8 mt-12 pt-10 border-t border-primary/50"
         >
           <div
             v-for="stat in quickStats"
             :key="stat.labelKey || stat.label"
             class="text-center"
           >
-            <div class="text-3xl font-bold text-white mb-1">
+            <div class="text-3xl font-bold text-textPrimary mb-1">
               {{ stat.value }}
             </div>
             <div class="text-sm text-[#94a3b8] uppercase tracking-wider">
@@ -150,9 +154,7 @@
       :key="service.id"
       :id="service.id"
       :class="`relative py-24 md:py-32 overflow-hidden ${
-        index % 2 === 0
-          ? ''
-          : 'bg-gradient-to-r from-[#111827]/50 to-transparent'
+        index % 2 === 0 ? '' : 'bg-gradient-to-r from-bg/50 to-transparent'
       }`"
     >
       <!-- Background Effects -->
@@ -195,7 +197,7 @@
 
               <!-- Icon Container -->
               <div
-                class="relative w-20 h-20 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] flex items-center justify-center group-hover:border-[#00e1ff]/30 transition-all duration-300"
+                class="relative w-20 h-20 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/30 flex items-center justify-center group-hover:border-[#00e1ff]/30 transition-all duration-300"
               >
                 <!-- Modern Icon -->
                 <Icon
@@ -234,7 +236,7 @@
 
             <!-- Title -->
             <h2 class="text-4xl md:text-5xl font-bold mb-6">
-              <span class="text-white">{{ service.title }}</span>
+              <span class="text-textPrimary">{{ service.title }}</span>
             </h2>
 
             <!-- Description -->
@@ -247,7 +249,7 @@
               <span
                 v-for="tech in service.technologies"
                 :key="tech"
-                class="group/tech relative px-4 py-2 rounded-lg bg-[#1e293b] border border-[#334155] text-[#cbd5e1] hover:text-white hover:border-[#00e1ff]/30 transition-all duration-300"
+                class="group/tech relative px-4 py-2 rounded-lg bg-card border border-border text-textPrimary hover:text-primary hover:border-[#00e1ff]/30 transition-all duration-300"
               >
                 {{ tech }}
                 <div
@@ -297,19 +299,19 @@
             >
               <!-- Card -->
               <div
-                class="relative h-full rounded-xl bg-[#111827] border border-[#334155] p-6 group-hover/feature:border-[#00e1ff]/30 transition-all duration-300 transform group-hover/feature:-translate-y-1"
+                class="relative h-full rounded-xl shadow-lg bg-card border border-border p-6 group-hover/feature:border-[#00e1ff]/30 transition-all duration-300 transform group-hover/feature:-translate-y-1"
               >
                 <!-- Shimmer effect -->
                 <div class="absolute inset-0 overflow-hidden rounded-xl">
                   <div
-                    class="absolute -inset-y-full -left-16 w-16 bg-white/5 skew-x-12 group-hover/feature:left-full transition-all duration-1000"
+                    class="absolute -inset-y-full -left-16 w-16 bg-textPrimary/5 skew-x-12 group-hover/feature:left-full transition-all duration-1000"
                   ></div>
                 </div>
 
                 <!-- Icon -->
                 <div class="relative mb-4">
                   <div
-                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] flex items-center justify-center"
+                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/50 flex items-center justify-center"
                   >
                     <Icon
                       :name="getFeatureIcon(feature.icon)"
@@ -346,12 +348,12 @@
 
     <!-- Process Section -->
     <section
-      class="relative py-24 md:py-32 bg-gradient-to-b from-transparent to-[#111827]/50"
+      class="relative py-24 md:py-32 bg-gradient-to-b from-transparent to-bg/50"
     >
       <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-16">
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            <span class="text-white">{{
+            <span class="text-textPrimary">{{
               t("services.process.title_prefix")
             }}</span>
             <span class="block">
@@ -389,7 +391,7 @@
 
               <!-- Step card -->
               <div
-                class="relative rounded-2xl bg-[#111827] border border-[#334155] p-8 pt-12 group-hover/step:border-[#00e1ff]/30 transition-all duration-300"
+                class="relative shadow-lg hover:shadow-primary/20 rounded-2xl bg-card border border-primary/50 p-8 pt-12 transition-all duration-300"
               >
                 <!-- Icon -->
                 <div class="mb-6">
@@ -400,7 +402,7 @@
                 </div>
 
                 <!-- Content -->
-                <h3 class="text-xl font-bold text-white mb-3">
+                <h3 class="text-xl font-bold text-textPrimary mb-3">
                   {{ t(step.titleKey) }}
                 </h3>
                 <p class="text-[#94a3b8]">{{ t(step.descriptionKey) }}</p>
@@ -438,12 +440,14 @@
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            <span class="text-white">Ready to Start</span>
+            <span class="text-textPrimary">
+              {{ $t("cta.titleStart") }}
+            </span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
-                Your Project?
+                {{ $t("cta.titleEnd") }}
               </span>
             </span>
           </h2>
@@ -451,8 +455,7 @@
           <p
             class="text-lg md:text-xl text-[#cbd5e1] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Let's discuss how we can help bring your vision to life with
-            cutting-edge technology and expert development.
+            {{ $t("cta.description2") }}
           </p>
 
           <!-- CTA Buttons -->
@@ -478,7 +481,7 @@
               <div
                 class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
               >
-                <span>Contact Us Today</span>
+                <span>{{ $t("cta.primaryButton") }}</span>
                 <Icon
                   name="lucide:arrow-right"
                   class="w-5 h-5 group-hover/primary:translate-x-2 transition-transform duration-300"
@@ -505,7 +508,7 @@
               <div
                 class="relative z-10 flex items-center justify-center gap-3 text-white"
               >
-                View Our Work
+                {{ $t("cta.secondaryButton") }}
                 <Icon
                   name="lucide:external-link"
                   class="w-5 h-5 group-hover/secondary:translate-x-1 transition-transform duration-300"

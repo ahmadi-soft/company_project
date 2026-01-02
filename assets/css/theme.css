@@ -1,0 +1,32 @@
+:root {
+  /* ===== Brand ===== */
+  --primary: 0 225 255; /* #00e1ff */
+  --secondary: 27 212 193; /* #1bd4c1 */
+
+  /* ===== Light Theme ===== */
+  --bg: 248 250 252; /* #f8fafc */
+  --bg-soft: 241 245 249; /* #f1f5f9 */
+  --card: 255 255 255; /* #ffffff */
+  --border: 226 232 240; /* #e2e8f0 */
+
+  --input-field: 241 245 249; /* #F1F5F9 */
+
+  --text-primary: 15 23 42; /* #0f172a */
+  --text-secondary: 51 65 85; /* #334155 */
+  --text-muted: 100 116 139; /* #64748b */
+}
+
+.dark {
+  /* ===== Dark Theme ===== */
+  --bg: 15 23 41; /* #0f1729 */
+  --bg-soft: 17 24 39; /* #111827 */
+  --card: 17 24 39; /* #111827 */
+  --border: 31 41 55; /* #1f2937 */
+
+  --input-field: 30 41 59; /* #1E293B */
+
+  --text-primary: 248 250 252; /* #f8fafc */
+
+  --text-secondary: 203 213 245; /* #cbd5f5 */
+  --text-muted: 148 163 184; /* #94a3b8 */
+}

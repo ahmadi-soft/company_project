@@ -1,7 +1,7 @@
 <template>
   <section class="relative py-24 md:py-32 overflow-hidden">
     <!-- Background Elements -->
-    <div class="absolute inset-0 bg-[#0f1729]">
+    <div class="absolute inset-0 bg-bg">
       <!-- Animated gradient orbs -->
       <div class="absolute top-1/4 -left-40 w-[800px] h-[800px]">
         <div
@@ -57,7 +57,7 @@
                 ></div>
               </div>
               <span
-                class="text-white font-semibold text-sm tracking-wider uppercase"
+                class="text-textPrimary font-semibold text-sm tracking-wider uppercase"
                 >{{ t("featured_projects.badge") }}</span
               >
             </div>
@@ -65,7 +65,7 @@
 
           <!-- Title -->
           <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span class="text-white">{{
+            <span class="text-textPrimary">{{
               t("featured_projects.title.part1")
             }}</span>
             <span
@@ -73,7 +73,7 @@
             >
               {{ t("featured_projects.title.highlight") }}
             </span>
-            <span class="text-white">{{
+            <span class="text-textPrimary">{{
               t("featured_projects.title.part3")
             }}</span>
           </h2>
@@ -136,7 +136,7 @@
         >
           <!-- Card -->
           <div
-            class="relative h-full rounded-3xl overflow-hidden transition-all duration-500"
+            class="relative h-full shadow-lg rounded-3xl overflow-hidden transition-all duration-500"
           >
             <!-- Gradient Border -->
             <div
@@ -145,7 +145,7 @@
 
             <!-- Main Card -->
             <div
-              class="relative h-full bg-[#111827] rounded-3xl border border-[#334155] group-hover:border-[#00e1ff]/30 overflow-hidden transition-all duration-300"
+              class="relative h-full bg-bg rounded-3xl border border-border group-hover:border-[#00e1ff]/30 overflow-hidden transition-all duration-300"
             >
               <!-- Project Image -->
               <div class="relative aspect-[16/10] overflow-hidden">
@@ -158,7 +158,7 @@
 
                 <!-- Gradient Overlay -->
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-[#0f1729]/50 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-bg via-bg/50 to-transparent"
                 ></div>
 
                 <!-- Hover Overlay -->
@@ -173,7 +173,7 @@
                       class="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 backdrop-blur-sm border border-white/10"
                     >
                       <span
-                        class="text-white text-xs font-semibold tracking-wider"
+                        class="text-textPrimary text-xs font-semibold tracking-wider"
                         >{{ project.category }}</span
                       >
                     </div>
@@ -186,9 +186,9 @@
                 <!-- Client Logo -->
                 <div class="absolute top-6 right-6">
                   <div
-                    class="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center"
+                    class="w-10 h-10 rounded-xl bg-primary/10 backdrop-blur-sm border border-white/10 flex items-center justify-center"
                   >
-                    <div class="text-white font-bold text-sm">
+                    <div class="text-textPrimary font-bold text-sm">
                       {{ project.client.charAt(0) }}
                     </div>
                   </div>
@@ -207,7 +207,7 @@
                       class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/demo:opacity-100 transition-opacity duration-300"
                     ></div>
                     <span
-                      class="relative z-10 text-white font-medium flex items-center gap-2"
+                      class="relative z-10 text-textPrimary font-medium flex items-center gap-2"
                     >
                       <svg
                         class="w-4 h-4"
@@ -234,7 +234,7 @@
                       class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1]/10 to-[#00e1ff]/10 rounded-xl opacity-0 group-hover/code:opacity-100 transition-opacity duration-300"
                     ></div>
                     <span
-                      class="relative z-10 text-white font-medium flex items-center gap-2"
+                      class="relative z-10 text-textPrimary font-medium flex items-center gap-2"
                     >
                       <svg
                         class="w-4 h-4"
@@ -267,7 +267,7 @@
 
                 <!-- Title -->
                 <h3
-                  class="text-2xl font-bold text-white mb-4 group-hover:text-gradient transition-all duration-300"
+                  class="text-2xl font-bold text-textPrimary mb-4 group-hover:text-gradient transition-all duration-300"
                 >
                   {{ project.title }}
                 </h3>
@@ -286,7 +286,7 @@
                       class="group/tag relative"
                     >
                       <div
-                        class="px-3 py-1.5 rounded-lg bg-[#1e293b] border border-[#334155] group-hover/tag:border-[#00e1ff]/30 transition-all duration-300"
+                        class="px-3 py-1.5 rounded-lg bg-bgSoft border border-primary/20 group-hover/tag:border-[#00e1ff]/30 transition-all duration-300"
                       >
                         <span
                           class="text-[#94a3b8] text-xs font-medium group-hover/tag:text-white"
@@ -309,7 +309,7 @@
                     :key="stat.label"
                     class="text-center"
                   >
-                    <div class="text-2xl font-bold text-white mb-1">
+                    <div class="text-2xl font-bold text-textPrimary mb-1">
                       {{ stat.value }}
                     </div>
                     <div
@@ -344,12 +344,12 @@
       </div>
 
       <!-- View All Projects Footer -->
-      <div class="mt-20 pt-12 border-t border-[#334155]">
+      <div class="mt-20 pt-12 border-t border-primary/50">
         <div
           class="flex flex-col md:flex-row items-center justify-between gap-8"
         >
           <div class="max-w-xl">
-            <h3 class="text-3xl font-bold text-white mb-4">
+            <h3 class="text-3xl font-bold text-textPrimary mb-4">
               {{ t("featured_projects.cta.title.part1") }}
               <span
                 class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"

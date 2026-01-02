@@ -3,12 +3,12 @@
     class="relative min-h-screen flex items-center justify-center overflow-hidden"
   >
     <!-- Background Layers -->
-    <div class="absolute inset-0 bg-[#0f1729]">
+    <div class="absolute inset-0 bg-bg">
       <!-- Background Image -->
       <img
         src="~/assets/images/bg-1.jpeg"
         :alt="t('hero.alt.bg')"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none dark:pointer-events-auto"
         :style="{
           maskImage:
             'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
@@ -105,7 +105,7 @@
         <!-- Tagline Badge -->
         <div class="flex justify-center mb-8">
           <div
-            class="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#111827]/80 backdrop-blur-sm border border-[#334155]/50 hover:border-[#00e1ff]/30 transition-all duration-300 overflow-hidden"
+            class="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/20 backdrop-blur-sm border border-primary/50 hover:border-[#00e1ff]/30 transition-all duration-300 overflow-hidden"
           >
             <!-- Animated border -->
             <div
@@ -125,7 +125,7 @@
               </div>
 
               <span
-                class="text-white font-medium text-sm tracking-wider uppercase"
+                class="text-textPrimary font-medium text-sm tracking-wider uppercase"
                 >{{ t("hero.tagline") }}</span
               >
 
@@ -150,7 +150,9 @@
           <h1
             class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight tracking-tight"
           >
-            <span class="block text-white">{{ t("hero.title.we_build") }}</span>
+            <span class="block text-textPrimary">{{
+              t("hero.title.we_build")
+            }}</span>
             <span class="block relative">
               <!-- Gradient text with animation -->
               <span
@@ -162,7 +164,7 @@
                 class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-full blur-sm"
               ></span>
             </span>
-            <span class="block text-white mt-4">{{
+            <span class="block text-textPrimary mt-4">{{
               t("hero.title.software_solutions")
             }}</span>
           </h1>

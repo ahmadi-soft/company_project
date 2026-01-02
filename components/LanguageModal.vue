@@ -12,7 +12,7 @@
         <transition name="backdrop-fade">
           <div
             v-if="show"
-            class="fixed inset-0 bg-gradient-to-br from-[#0f1729]/95 via-[#0f1729]/90 to-[#0f1729]/95 backdrop-blur-xl"
+            class="fixed inset-0 backdrop-blur-xl"
             @click="close"
           >
             <!-- Animated particles -->
@@ -43,7 +43,7 @@
             >
               <!-- Modern Glass Card -->
               <div
-                class="relative bg-gradient-to-br from-[#0f1729]/90 to-[#111827]/90 backdrop-blur-xl border border-[#1e293b]/50 rounded-3xl shadow-2xl shadow-[#00e1ff]/10 overflow-hidden"
+                class="relative bg-gradient-to-br from-bg/90 to-bg/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-[#00e1ff]/10 overflow-hidden"
               >
                 <!-- Animated Border -->
                 <div class="absolute -inset-1 overflow-hidden rounded-3xl">
@@ -52,13 +52,13 @@
                     :style="{ backgroundSize: '400% 400%' }"
                   ></div>
                   <div
-                    class="absolute inset-[2px] bg-gradient-to-br from-[#0f1729] to-[#111827] rounded-3xl"
+                    class="absolute inset-[2px] bg-gradient-to-br from-bg to-bg rounded-3xl"
                   ></div>
                 </div>
 
                 <!-- Header -->
                 <div
-                  class="relative p-6 border-b border-[#1e293b]/50 bg-gradient-to-r from-transparent via-[#00e1ff]/5 to-transparent"
+                  class="relative p-6 border-b border-primary/50 bg-gradient-to-r from-transparent via-[#00e1ff]/5 to-transparent"
                 >
                   <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
@@ -120,7 +120,7 @@
                   <div
                     class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20"
                   >
-                    <span class="text-sm font-medium text-white">
+                    <span class="text-sm font-medium text-textPrimary">
                       {{ t("language_modal.current") }}:
                       <span class="text-[#00e1ff]">
                         {{ getLanguageName(current) }}
@@ -138,21 +138,20 @@
                     :class="[
                       'group/language relative w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300',
                       current === lang.code
-                        ? 'bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border-2 border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
-                        : 'hover:bg-[#1e293b]/50 border-2 border-transparent hover:border-[#1e293b]/30',
+                        ? 'bg-gradient-to-r from-primary/10 to-primary/10 border border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
+                        : 'hover:bg-bgSoft border-2 border-transparent hover:border-primary/20',
                     ]"
                   >
                     <!-- Flag Container -->
                     <div
-                      class="relative flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden shadow-lg"
+                      class="relative border border-border flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden shadow-lg"
                       :class="{
-                        'ring-2 ring-[#00e1ff] ring-offset-2 ring-offset-[#0f1729]':
-                          current === lang.code,
+                        'ring-1 ring-[#00e1ff] ': current === lang.code,
                       }"
                     >
                       <!-- Gradient Background -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-br from-[#111827] to-[#1e293b]"
+                        class="absolute inset-0 bg-gradient-to-br from-bg to-bgSoft"
                       ></div>
 
                       <!-- Flag Content -->
@@ -175,7 +174,7 @@
                     <div class="flex-1 text-left min-w-0">
                       <div class="flex items-center justify-between mb-1">
                         <span
-                          class="font-semibold text-white truncate"
+                          class="font-semibold text-textPrimary truncate"
                           :class="{
                             'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent':
                               current === lang.code,
@@ -188,7 +187,7 @@
                             'text-xs font-bold px-2 py-1 rounded-full transition-all duration-300',
                             current === lang.code
                               ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729]'
-                              : 'bg-[#1e293b] text-[#94a3b8]',
+                              : 'bg-[#1e293b] text-white',
                           ]"
                         >
                           {{ lang.code.toUpperCase() }}
@@ -242,7 +241,7 @@
 
                 <!-- Footer -->
                 <div
-                  class="relative p-6 border-t border-[#1e293b]/50 bg-gradient-to-t from-[#0f1729] to-transparent"
+                  class="relative p-6 border-t border-primary/50 bg-gradient-to-t from-bg to-transparent"
                 >
                   <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2 text-sm text-[#94a3b8]">

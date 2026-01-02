@@ -2,6 +2,8 @@
   "language_modal": {
     "title": "选择语言",
     "subtitle": "选择您偏好的语言",
+    "current": "当前语言",
+
     "english": "English",
     "chinese": "中文",
     "default_note": "默认 / 全局",
@@ -341,7 +343,12 @@
       { "name": "全球金融", "initials": "GF" },
       { "name": "创新公司", "initials": "IC" },
       { "name": "数字解决方案", "initials": "DS" }
-    ]
+    ],
+    "titleStart": "准备开始",
+    "titleEnd": "您的项目？",
+    "description2": "让我们一起探讨如何通过前沿技术和专业开发，将您的愿景变为现实。",
+    "primaryButton": "立即联系我们",
+    "secondaryButton": "查看我们的作品"
   },
   "footer": {
     "about": {

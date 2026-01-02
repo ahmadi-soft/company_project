@@ -1,7 +1,7 @@
 <template>
   <section class="relative py-20 md:py-32 overflow-hidden">
     <!-- Background Effects -->
-    <div class="absolute inset-0 bg-[#0f1729]">
+    <div class="absolute inset-0 bg-bg">
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-10">
         <div
@@ -35,7 +35,7 @@
       <div class="text-center max-w-4xl mx-auto mb-16 md:mb-24">
         <!-- Badge -->
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 mb-6 group/badge"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/10 border border-primary/10 hover:border-[#00e1ff]/30 transition-all duration-300 mb-6 group/badge"
         >
           <!-- Animated sparkles -->
           <div class="relative">
@@ -47,7 +47,7 @@
               class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
             ></div>
           </div>
-          <span class="text-sm font-medium text-white tracking-wider">{{
+          <span class="text-sm font-medium text-textPrimary tracking-wider">{{
             t("services.badge")
           }}</span>
           <div class="relative">
@@ -66,14 +66,18 @@
         <h2
           class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
         >
-          <span class="text-white">{{ t("services.heading.fullstack") }}</span>
+          <span class="text-textPrimary">{{
+            t("services.heading.fullstack")
+          }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("services.heading.development") }}
             </span>
-            <span class="text-white">{{ t("services.heading.services") }}</span>
+            <span class="text-textPrimary">{{
+              t("services.heading.services")
+            }}</span>
           </span>
         </h2>
 
@@ -116,12 +120,12 @@
 
             <!-- Main Card -->
             <div
-              class="relative h-full rounded-2xl bg-[#111827] border border-[#334155] group-hover/service:border-[#00e1ff]/30 overflow-hidden transition-all duration-500 transform group-hover/service:-translate-y-2"
+              class="relative h-full rounded-2xl bg-bg border border-border shadow-lg group-hover/service:border-[#00e1ff]/30 overflow-hidden transition-all duration-500 transform group-hover/service:-translate-y-2"
             >
               <!-- Shimmer effect -->
               <div class="absolute inset-0 overflow-hidden">
                 <div
-                  class="absolute -inset-y-full -left-32 w-32 bg-white/5 skew-x-12 group-hover/service:left-full transition-all duration-1000"
+                  class="absolute -inset-y-full -left-32 w-32 bg-textPrimary/5 skew-x-12 group-hover/service:left-full transition-all duration-1000"
                 ></div>
               </div>
 
@@ -136,7 +140,7 @@
 
                   <!-- Icon Circle -->
                   <div
-                    class="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] group-hover/service:border-[#00e1ff]/50 flex items-center justify-center transition-all duration-300 group-hover/service:scale-110"
+                    class="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/20 -[#00e1ff]/50 flex items-center justify-center transition-all duration-300 group-hover/service:scale-110"
                   >
                     <!-- Nuxt Icon -->
                     <Icon
@@ -175,7 +179,7 @@
                 <div class="space-y-4">
                   <!-- Title -->
                   <h3
-                    class="text-2xl font-bold text-white group-hover/service:text-transparent group-hover/service:bg-gradient-to-r group-hover/service:from-[#00e1ff] group-hover/service:via-[#1bd4c1] group-hover/service:to-[#00e1ff] group-hover/service:bg-clip-text transition-all duration-500"
+                    class="text-2xl font-bold text-textPrimary group-hover/service:text-transparent group-hover/service:bg-gradient-to-r group-hover/service:from-[#00e1ff] group-hover/service:via-[#1bd4c1] group-hover/service:to-[#00e1ff] group-hover/service:bg-clip-text transition-all duration-500"
                   >
                     {{ t(service.titleKey) }}
                   </h3>
@@ -190,7 +194,7 @@
                     <span
                       v-for="tag in service.tags"
                       :key="tag"
-                      class="px-3 py-1.5 text-sm rounded-lg bg-[#1e293b] border border-[#334155] text-[#cbd5e1] group-hover/service:text-white group-hover/service:border-[#00e1ff]/30 transition-all duration-300"
+                      class="px-3 py-1.5 text-sm shadow-lg rounded-lg bg-bg border border-border text-textPrimary group-hover/service:border-[#00e1ff]/70 transition-all duration-300"
                     >
                       {{ tag }}
                     </span>
@@ -235,7 +239,7 @@
         >
           <!-- Gradient background -->
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#111827] to-[#111827] rounded-xl"
+            class="absolute inset-0 bg-gradient-to-r from-bg to-bgSoft rounded-xl"
           ></div>
 
           <!-- Hover gradient overlay -->
@@ -249,7 +253,7 @@
           ></div>
 
           <!-- Content -->
-          <span class="relative z-10 text-white flex items-center gap-3">
+          <span class="relative z-10 text-textPrimary flex items-center gap-3">
             {{ t("services.cta.explore_all") }}
             <!-- Animated arrow -->
             <Icon
@@ -278,10 +282,10 @@
       </div>
 
       <!-- Tech Stack Overview -->
-      <div class="mt-20 pt-12 border-t border-[#334155]/30">
+      <div class="mt-20 pt-12 border-t border-primary/30">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-white mb-2">
+            <h3 class="text-2xl font-bold text-textPrimary mb-2">
               {{ t("services.tech.title") }}
             </h3>
             <p class="text-[#94a3b8]">
@@ -293,7 +297,7 @@
             <div
               v-for="tech in techStack"
               :key="tech.name"
-              class="group/tech flex items-center gap-3 px-4 py-3 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300"
+              class="group/tech flex items-center gap-3 px-4 py-3 rounded-xl bg-bg border border-border cursor-pointer hover:border-[#00e1ff]/50 transition-all duration-300"
             >
               <!-- Tech Icons -->
               <Icon
@@ -301,7 +305,7 @@
                 class="w-6 h-6"
                 :class="tech.iconColor"
               />
-              <span class="text-white font-medium">{{ tech.name }}</span>
+              <span class="text-textPrimary font-medium">{{ tech.name }}</span>
               <div class="w-2 h-2 rounded-full" :class="tech.dotColor"></div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#0f1729]">
+  <div class="min-h-screen bg-bg">
     <!-- Hero Section with Parallax -->
     <section class="relative min-h-[90vh] flex items-center overflow-hidden">
       <!-- Parallax Background Layers -->
@@ -60,7 +60,7 @@
         <div class="max-w-6xl mx-auto">
           <!-- Animated Badge -->
           <div
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#111827] to-[#111827]/90 border border-[#334155]/50 backdrop-blur-sm mb-8 group/badge hover:border-[#00e1ff]/30 transition-all duration-500"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/50 backdrop-blur-sm mb-8 group/badge transition-all duration-500"
           >
             <!-- Pulsing Dot -->
             <div class="relative">
@@ -72,7 +72,7 @@
               ></div>
             </div>
             <span
-              class="text-sm font-medium text-white tracking-[0.2em] uppercase"
+              class="text-sm font-medium text-textPrimary tracking-[0.2em] uppercase"
               >{{ t("team.badge") }}</span
             >
             <Icon
@@ -85,7 +85,9 @@
           <h1
             class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9]"
           >
-            <span class="text-white block">{{ t("team.title.part1") }}</span>
+            <span class="text-textPrimary block">{{
+              t("team.title.part1")
+            }}</span>
             <span class="relative">
               <!-- Gradient Text with Animation -->
               <span
@@ -103,7 +105,7 @@
                 ></span>
               </span>
             </span>
-            <span class="text-white block mt-8">{{
+            <span class="text-textPrimary block mt-8">{{
               t("team.title.part3")
             }}</span>
           </h1>
@@ -129,7 +131,7 @@
 
           <!-- Interactive Stats -->
           <div
-            class="flex flex-wrap gap-8 mt-16 pt-8 border-t border-[#334155]/30"
+            class="flex flex-wrap gap-8 mt-16 pt-10 border-t border-primary/30"
           >
             <div
               v-for="(stat, index) in teamStats"
@@ -203,8 +205,8 @@
             :class="[
               'group/filter relative px-5 py-2.5 rounded-xl font-medium transition-all duration-300 overflow-hidden',
               activeFilter === filter.id
-                ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729] font-semibold shadow-lg shadow-[#00e1ff]/20'
-                : 'bg-[#111827] border border-[#334155] text-[#94a3b8] hover:text-white hover:border-[#00e1ff]/30',
+                ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-textPrimary font-semibold shadow-lg shadow-[#00e1ff]/20'
+                : 'bg-card border border-border text-[#94a3b8] hover:text-primary hover:border-[#00e1ff]/30',
             ]"
           >
             <!-- Shimmer Effect -->
@@ -227,19 +229,14 @@
             <!-- Card Container -->
             <div
               :ref="(el) => setCardRef(el, member.id)"
-              class="relative h-full rounded-3xl overflow-hidden transition-all duration-500"
+              class="relative h-full rounded-3xl overflow-hidden transition-all duration-500 shadow-lg"
               :style="{
                 transform: getCardTransform(member.id),
               }"
             >
-              <!-- Glow Border -->
-              <div
-                class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover/card:opacity-100 blur transition-opacity duration-500 animate-gradient-border -z-10"
-              ></div>
-
               <!-- Main Card -->
               <div
-                class="relative h-full bg-[#111827] border border-[#334155] rounded-3xl overflow-hidden group-hover/card:border-[#00e1ff]/30 transition-all duration-500"
+                class="relative h-full bg-card border border-border rounded-3xl overflow-hidden group-hover/card:border-[#00e1ff]/30 transition-all duration-500"
               >
                 <!-- Image Container with Parallax -->
                 <div class="relative h-64 overflow-hidden">
@@ -252,7 +249,7 @@
 
                   <!-- Gradient Overlay -->
                   <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent opacity-80"
+                    class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80"
                   ></div>
 
                   <!-- Role Badge with Animation -->
@@ -280,7 +277,7 @@
                     >
                       <Icon
                         :name="getSocialIcon(platform)"
-                        class="w-5 h-5 text-[#94a3b8] group-hover/social:text-white transition-colors duration-300"
+                        class="w-5 h-5 text-white group-hover/social:text-primary transition-colors duration-300"
                       />
                     </a>
                   </div>
@@ -291,7 +288,7 @@
                   <!-- Name with Gradient Hover -->
                   <h3 class="text-2xl font-bold mb-3">
                     <span
-                      class="text-white group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#00e1ff] group-hover/card:via-[#1bd4c1] group-hover/card:to-[#00e1ff] group-hover/card:bg-clip-text transition-all duration-500"
+                      class="text-textPrimary group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#00e1ff] group-hover/card:via-[#1bd4c1] group-hover/card:to-[#00e1ff] group-hover/card:bg-clip-text transition-all duration-500"
                     >
                       {{ member.name }}
                     </span>
@@ -305,15 +302,15 @@
                   </p>
 
                   <!-- Skills with Animated Tags -->
-                  <div class="flex flex-wrap gap-2 mb-4">
+                  <div class="flex flex-wrap gap-2 mb-4 cursor-pointer">
                     <span
                       v-for="skill in member.skills"
                       :key="skill"
-                      class="group/tag inline-block px-3 py-1.5 text-xs rounded-lg bg-[#1e293b] border border-[#334155] text-[#cbd5e1] hover:text-white hover:border-[#00e1ff]/30 transition-all duration-300"
+                      class="group/tag inline-block px-3 py-1.5 text-xs rounded-lg bg-card border border-border text-primary hover:text-primary hover:border-primary/30 transition-all duration-300"
                     >
                       {{ skill }}
                       <span
-                        class="inline-block w-0 group-hover/tag:w-2 transition-all duration-300"
+                        class="inline-block px-2 w-0 group-hover/tag:w-2 transition-all duration-300"
                         >→</span
                       >
                     </span>
@@ -323,7 +320,7 @@
                   <div class="pt-4 border-t border-[#334155]">
                     <div class="grid grid-cols-2 gap-4 text-xs">
                       <div class="text-center">
-                        <div class="text-white font-semibold">
+                        <div class="text-textPrimary font-semibold">
                           {{ member.experience }}
                         </div>
                         <div class="text-[#94a3b8]">
@@ -331,7 +328,7 @@
                         </div>
                       </div>
                       <div class="text-center">
-                        <div class="text-white font-semibold">
+                        <div class="text-textPrimary font-semibold">
                           {{ member.projects }}+
                         </div>
                         <div class="text-[#94a3b8]">
@@ -373,7 +370,7 @@
         <div class="text-center mt-16">
           <button
             @click="loadMore"
-            class="group/view-more inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 text-white font-medium transition-all duration-300"
+            class="group/view-more inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 text-textPrimary font-medium transition-all duration-300"
           >
             {{ t("team.view_all") }}
             <Icon
@@ -411,7 +408,7 @@
         <!-- Section Header -->
         <div class="text-center max-w-4xl mx-auto mb-16">
           <div
-            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#111827]/50 backdrop-blur-sm border border-[#334155]/50 mb-6"
+            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/50 mb-6"
           >
             <div class="relative">
               <div
@@ -419,13 +416,15 @@
               ></div>
             </div>
             <span
-              class="text-sm font-medium text-white tracking-[0.2em] uppercase"
+              class="text-sm font-medium text-textPrimary tracking-[0.2em] uppercase"
               >{{ t("team.tech.badge") }}</span
             >
           </div>
 
           <h2 class="text-5xl md:text-6xl font-bold mb-6">
-            <span class="text-white">{{ t("team.tech.title.part1") }}</span>
+            <span class="text-textPrimary">{{
+              t("team.tech.title.part1")
+            }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -440,33 +439,6 @@
           </p>
         </div>
 
-        <!-- Interactive Tech Cloud -->
-        <div class="relative h-[400px] md:h-[500px] mb-16">
-          <div
-            v-for="(tech, index) in techCloud"
-            :key="tech.name"
-            class="absolute tech-tag group/tech"
-            :style="getTechTagStyle(index)"
-            @mouseenter="hoveredTech = tech.name"
-            @mouseleave="hoveredTech = null"
-          >
-            <div
-              class="relative px-4 py-2 rounded-xl backdrop-blur-sm transition-all duration-300"
-              :class="[
-                'border',
-                hoveredTech === tech.name
-                  ? 'border-[#00e1ff] bg-[#00e1ff]/10 scale-110'
-                  : 'border-[#334155] bg-[#111827]/50',
-              ]"
-            >
-              <span class="text-white font-medium">{{ tech.name }}</span>
-              <div
-                class="absolute -inset-1 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] opacity-0 group-hover/tech:opacity-20 blur transition-opacity duration-300 -z-10"
-              ></div>
-            </div>
-          </div>
-        </div>
-
         <!-- Tech Categories -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
@@ -475,7 +447,7 @@
             class="group/category"
           >
             <div
-              class="relative h-full rounded-2xl bg-gradient-to-br from-[#111827] to-[#1e293b] border border-[#334155] p-6 transition-all duration-300 hover:border-[#00e1ff]/30"
+              class="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-card to-card border border-border p-6 transition-all duration-300 hover:border-[#00e1ff]/30"
             >
               <!-- Category Header -->
               <div class="flex items-center gap-3 mb-6">
@@ -484,7 +456,7 @@
                 >
                   <Icon name="uil:arrow-right" class="w-6 h-6 text-[#00e1ff]" />
                 </div>
-                <h3 class="text-xl font-bold text-white">
+                <h3 class="text-xl font-bold text-textPrimary">
                   {{ category.name }}
                 </h3>
               </div>
@@ -494,11 +466,12 @@
                 <div
                   v-for="tech in category.items"
                   :key="tech"
-                  class="group/item flex items-center justify-between p-3 rounded-lg bg-[#1e293b] hover:bg-[#00e1ff]/5 transition-all duration-300"
+                  class="group/item flex items-center justify-between p-3 rounded-lg bg-border hover:bg-primary/10 border border-transparent hover:border-primary/50 transition-all duration-300"
                 >
-                  <span class="text-[#cbd5e1] group-hover/item:text-white">{{
-                    tech
-                  }}</span>
+                  <span
+                    class="text-textPrimary group-hover/item:text-primary"
+                    >{{ tech }}</span
+                  >
                   <div class="flex items-center gap-2">
                     <div
                       class="w-2 h-2 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] animate-pulse"
@@ -552,7 +525,7 @@
         <div class="max-w-4xl mx-auto text-center">
           <!-- Animated Badge -->
           <div
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#111827] to-[#111827]/90 border border-[#334155]/50 backdrop-blur-sm mb-8 group/cta-badge hover:border-[#00e1ff]/30 transition-all duration-500"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/50 backdrop-blur-sm mb-8 group/cta-badge transition-all duration-500"
           >
             <div class="relative">
               <div
@@ -563,7 +536,7 @@
               ></div>
             </div>
             <span
-              class="text-sm font-medium text-white tracking-[0.2em] uppercase"
+              class="text-sm font-medium text-textPrimary tracking-[0.2em] uppercase"
               >{{ t("team.cta.badge") }}</span
             >
             <Icon
@@ -576,7 +549,9 @@
           <h2
             class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[0.9]"
           >
-            <span class="text-white">{{ t("team.cta.title.part1") }}</span>
+            <span class="text-textPrimary">{{
+              t("team.cta.title.part1")
+            }}</span>
             <span class="block">
               <span
                 class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -584,7 +559,7 @@
                 {{ t("team.cta.title.highlight") }}
               </span>
             </span>
-            <span class="text-white block mt-4">{{
+            <span class="text-textPrimary block mt-4">{{
               t("team.cta.title.part3")
             }}</span>
           </h2>

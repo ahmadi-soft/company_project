@@ -1,7 +1,7 @@
 <template>
   <section class="relative py-24 md:py-32 overflow-hidden">
     <!-- Background Elements -->
-    <div class="absolute inset-0 bg-[#0f1729]">
+    <div class="absolute inset-0 bg-bg">
       <!-- Main gradient orb -->
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
@@ -64,19 +64,14 @@
               class="absolute -inset-4 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-full opacity-20 blur-lg group-hover/icon:opacity-30 transition-opacity duration-500 animate-spin-slow"
             ></div>
 
-            <!-- Middle ring -->
-            <div
-              class="absolute -inset-2 bg-gradient-to-r from-[#1bd4c1] via-[#00e1ff] to-[#1bd4c1] rounded-full opacity-30 blur-md group-hover/icon:opacity-40 transition-opacity duration-500 animate-spin-slow-reverse"
-            ></div>
-
             <!-- Main icon container -->
             <div
-              class="relative w-24 h-24 rounded-2xl bg-[#111827] border border-[#334155] group-hover/icon:border-[#00e1ff]/30 flex items-center justify-center transition-all duration-300 group-hover/icon:scale-110"
+              class="relative w-24 h-24 rounded-2xl bg-primary/15 border border-primary/50 group-hover/icon:border-[#00e1ff]/30 flex items-center justify-center transition-all duration-300 group-hover/icon:scale-110"
             >
               <!-- Sparkle icon -->
               <div class="relative">
                 <svg
-                  class="w-12 h-12 text-[#00e1ff] group-hover/icon:text-[#1bd4c1] transition-colors duration-300"
+                  class="w-12 h-12 text-[#00e1ff] transition-colors duration-300"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -106,7 +101,7 @@
           ref="headingRef"
           class="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 leading-tight"
         >
-          <span class="text-white">{{ t("cta.heading.part1") }}</span>
+          <span class="text-textPrimary">{{ t("cta.heading.part1") }}</span>
           <span class="block">
             <span
               class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
@@ -215,11 +210,11 @@
           <!-- Divider -->
           <div class="relative mb-8">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-[#334155]"></div>
+              <div class="w-full border-t border-primary"></div>
             </div>
             <div class="relative flex justify-center">
               <span
-                class="px-4 bg-[#0f1729] text-[#94a3b8] text-sm uppercase tracking-wider"
+                class="px-4 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-white text-sm uppercase tracking-wider"
                 >{{ t("cta.trusted_by") }}</span
               >
             </div>
@@ -234,7 +229,7 @@
             >
               <!-- Logo container -->
               <div
-                class="relative p-6 rounded-xl bg-[#111827]/50 border border-[#334155] group-hover/company:border-[#00e1ff]/20 transition-all duration-300"
+                class="relative p-6 rounded-xl bg-bgSoft border border-border group-hover/company:border-[#00e1ff]/20 transition-all duration-300"
               >
                 <!-- Background glow on hover -->
                 <div
@@ -244,7 +239,7 @@
                 <!-- Logo content -->
                 <div class="relative z-10 flex items-center justify-center">
                   <div class="text-center">
-                    <div class="text-2xl font-bold text-white mb-1">
+                    <div class="text-2xl font-bold text-primary mb-1">
                       {{ company.initials }}
                     </div>
                     <div class="text-xs text-[#94a3b8]">{{ company.name }}</div>
@@ -256,7 +251,7 @@
         </div>
 
         <!-- Contact Info -->
-        <div class="mt-12 pt-8 border-t border-[#334155]">
+        <div class="mt-12 pt-8 border-t border-primary/50">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="text-center">
               <div
@@ -277,7 +272,7 @@
                   <div class="text-sm text-[#94a3b8]">
                     {{ t("cta.contact_info.call.label") }}
                   </div>
-                  <div class="text-white font-medium">
+                  <div class="text-textPrimary font-medium">
                     {{ t("cta.contact_info.call.value") }}
                   </div>
                 </div>
@@ -304,7 +299,7 @@
                   <div class="text-sm text-[#94a3b8]">
                     {{ t("cta.contact_info.email.label") }}
                   </div>
-                  <div class="text-white font-medium">
+                  <div class="text-textPrimary font-medium">
                     {{ contactEmail }}
                   </div>
                 </div>
@@ -330,7 +325,7 @@
                   <div class="text-sm text-[#94a3b8]">
                     {{ t("cta.contact_info.visit.label") }}
                   </div>
-                  <div class="text-white font-medium">
+                  <div class="text-textPrimary font-medium">
                     {{ t("cta.contact_info.visit.value") }}
                   </div>
                 </div>
