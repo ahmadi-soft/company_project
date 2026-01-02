@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen bg-bg overflow-hidden">
+  <div class="min-h-screen bg-bg">
     <!-- Hero Section -->
-    <section class="relative py-24 md:py-32 overflow-hidden">
+    <section class="relative py-16 md:py-24 lg:py-32 overflow-hidden">
       <!-- Background Elements -->
       <div class="absolute inset-0">
         <!-- Grid Pattern -->
@@ -13,51 +13,46 @@
                 linear-gradient(to right, #00e1ff22 1px, transparent 1px),
                 linear-gradient(to bottom, #1bd4c122 1px, transparent 1px)
               `,
-              backgroundSize: '60px 60px',
+              backgroundSize: '40px 40px',
             }"
           ></div>
         </div>
 
         <!-- Animated Orbs -->
-        <div class="absolute top-1/3 -left-40 w-[600px] h-[600px]">
+        <div
+          class="absolute top-1/3 -left-40 w-[400px] h-[400px] md:w-[600px] md:h-[600px]"
+        >
           <div
             class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-5 blur-3xl animate-pulse-slow"
           ></div>
         </div>
 
         <!-- Floating Elements -->
-        <div class="absolute top-1/3 right-20">
+        <div class="absolute top-1/4 right-4 md:right-20">
           <div
-            class="w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-lg border border-primary/50 animate-float rotate-12"
+            class="w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-lg border border-primary/50 animate-float rotate-12"
           ></div>
         </div>
       </div>
 
-      <div class="container mx-auto px-4 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 relative z-10">
         <div ref="heroRef" class="max-w-4xl mx-auto text-center">
           <!-- Badge -->
           <div
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-8"
+            class="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-6 sm:mb-8"
           >
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1 sm:gap-2">
               <div class="relative">
-                <svg
-                  class="w-5 h-5 text-textPrimary"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
+                <Icon
+                  name="heroicons:information-circle"
+                  class="w-4 h-4 sm:w-5 sm:h-5 text-textPrimary"
+                />
                 <div
                   class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 animate-ping"
                 ></div>
               </div>
               <span
-                class="text-textPrimary font-semibold text-sm tracking-wider uppercase"
+                class="text-xs sm:text-sm font-semibold text-textPrimary tracking-wider uppercase"
                 >{{ t("contact.badge") }}</span
               >
             </div>
@@ -65,11 +60,11 @@
 
           <!-- Title -->
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
           >
             <span class="text-textPrimary">{{ t("contact.title.part1") }}</span>
             <span
-              class="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient mt-2"
             >
               {{ t("contact.title.part2") }}
             </span>
@@ -78,7 +73,7 @@
 
           <!-- Description -->
           <p
-            class="text-xl md:text-2xl text-textLightGray max-w-3xl mx-auto leading-relaxed font-light"
+            class="text-base sm:text-lg md:text-xl lg:text-2xl text-textLightGray max-w-3xl mx-auto leading-relaxed font-light px-4 sm:px-0"
           >
             {{ t("contact.description.prefix") }}
             <span class="text-primary font-medium">{{
@@ -91,38 +86,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="relative py-12 pb-32">
-      <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-3 gap-8">
+    <section class="relative py-8 sm:py-12 lg:py-16 pb-16 sm:pb-24 lg:pb-32">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-3 gap-6 sm:gap-8">
           <!-- Contact Form -->
           <div ref="formRef" class="lg:col-span-2 opacity-0 translate-x-8">
             <div
-              class="relative h-full rounded-3xl overflow-hidden transition-all duration-500"
+              class="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500"
             >
               <!-- Gradient Border -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
               ></div>
 
               <!-- Main Card -->
               <div
-                class="relative h-full bg-card rounded-3xl border border-border group-hover:border-primary/30 p-8 transition-all duration-300"
+                class="relative bg-card rounded-2xl sm:rounded-3xl border border-border group-hover:border-primary/30 p-6 sm:p-8 transition-all duration-300"
               >
                 <!-- Form Header -->
-                <div class="mb-8">
-                  <h2 class="text-3xl font-bold text-textPrimary mb-3">
+                <div class="mb-6 sm:mb-8">
+                  <h2
+                    class="text-2xl sm:text-3xl font-bold text-textPrimary mb-2 sm:mb-3"
+                  >
                     {{ t("contact.form.title") }}
                   </h2>
-                  <p class="text-textLightGray">
+                  <p class="text-sm sm:text-base text-textLightGray">
                     {{ t("contact.form.subtitle") }}
                   </p>
                 </div>
 
                 <!-- Form -->
-                <form @submit.prevent="handleSubmit" class="space-y-6">
+                <form
+                  @submit.prevent="handleSubmit"
+                  class="space-y-4 sm:space-y-6"
+                >
                   <!-- Name & Email -->
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-3">
+                  <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="space-y-2 sm:space-y-3">
                       <label
                         for="name"
                         class="block text-sm font-medium text-textPrimary"
@@ -139,14 +139,13 @@
                           v-model="formData.name"
                           type="text"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                          placeholder="John Doe"
+                          class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           :placeholder="t('contact.placeholders.name')"
                         />
                       </div>
                     </div>
 
-                    <div class="space-y-3">
+                    <div class="space-y-2 sm:space-y-3">
                       <label
                         for="email"
                         class="block text-sm font-medium text-textPrimary"
@@ -163,8 +162,7 @@
                           v-model="formData.email"
                           type="email"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300"
-                          placeholder="john@example.com"
+                          class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300"
                           :placeholder="t('contact.placeholders.email')"
                         />
                       </div>
@@ -172,8 +170,8 @@
                   </div>
 
                   <!-- Company & Subject -->
-                  <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-3">
+                  <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="space-y-2 sm:space-y-3">
                       <label
                         for="company"
                         class="block text-sm font-medium text-textPrimary"
@@ -185,14 +183,13 @@
                           id="company"
                           v-model="formData.company"
                           type="text"
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                          placeholder="Your Company"
+                          class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           :placeholder="t('contact.placeholders.company')"
                         />
                       </div>
                     </div>
 
-                    <div class="space-y-3">
+                    <div class="space-y-2 sm:space-y-3">
                       <label
                         for="subject"
                         class="block text-sm font-medium text-textPrimary"
@@ -205,7 +202,7 @@
                           id="subject"
                           v-model="formData.subject"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 appearance-none"
+                          class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="" disabled selected>
                             {{ t("contact.form.select_subject") }}
@@ -226,23 +223,16 @@
                             {{ t("contact.subjects.other") }}
                           </option>
                         </select>
-                        <svg
-                          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-textGray pointer-events-none"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
+                        <Icon
+                          name="heroicons:chevron-down"
+                          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-textGray pointer-events-none"
+                        />
                       </div>
                     </div>
                   </div>
 
                   <!-- Message -->
-                  <div class="space-y-3">
+                  <div class="space-y-2 sm:space-y-3">
                     <label
                       for="message"
                       class="block text-sm font-medium text-textPrimary"
@@ -258,20 +248,20 @@
                         id="message"
                         v-model="formData.message"
                         required
-                        rows="6"
-                        class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
+                        rows="4"
+                        class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                         :placeholder="t('contact.placeholders.message')"
                       ></textarea>
                     </div>
                   </div>
 
                   <!-- Submit Button -->
-                  <div class="pt-4">
+                  <div class="pt-3 sm:pt-4">
                     <button
                       type="submit"
                       :disabled="isSubmitting"
                       :class="[
-                        'group/btn relative px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-1',
+                        'group/btn relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto',
                         isSubmitting ? 'opacity-70 cursor-not-allowed' : '',
                       ]"
                     >
@@ -294,27 +284,20 @@
 
                       <!-- Content -->
                       <div
-                        class="relative z-10 flex items-center justify-center gap-3 text-[#0f1729]"
+                        class="relative z-10 flex items-center justify-center gap-2 sm:gap-3 text-[#0f1729]"
                       >
                         <template v-if="isSubmitting">
                           <div
-                            class="w-5 h-5 border-2 border-[#0f1729] border-t-transparent rounded-full animate-spin"
+                            class="w-4 h-4 sm:w-5 sm:h-5 border-2 border-[#0f1729] border-t-transparent rounded-full animate-spin"
                           ></div>
                           <span>{{ t("contact.submit.sending") }}</span>
                         </template>
                         <template v-else>
                           <span>{{ t("contact.submit.send") }}</span>
-                          <svg
-                            class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            />
-                          </svg>
+                          <Icon
+                            name="heroicons:arrow-right"
+                            class="w-4 h-4 sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform duration-300"
+                          />
                         </template>
                       </div>
 
@@ -330,17 +313,10 @@
                       class="mt-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30"
                     >
                       <div class="flex items-center gap-3">
-                        <svg
-                          class="w-5 h-5 text-primary"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
+                        <Icon
+                          name="heroicons:check-circle"
+                          class="w-5 h-5 text-primary shrink-0"
+                        />
                         <div>
                           <p class="text-white font-medium">
                             {{ t("contact.success.title") }}
@@ -362,7 +338,10 @@
           </div>
 
           <!-- Contact Info & Sidebar -->
-          <div ref="sidebarRef" class="space-y-6 opacity-0 -translate-x-8">
+          <div
+            ref="sidebarRef"
+            class="space-y-4 sm:space-y-6 opacity-0 -translate-x-8"
+          >
             <!-- Contact Info Cards -->
             <div
               v-for="info in contactInfo"
@@ -371,21 +350,21 @@
             >
               <!-- Info Card -->
               <div
-                class="relative rounded-3xl overflow-hidden transition-all duration-500"
+                class="relative rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500"
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-card rounded-3xl border border-border group-hover:border-primary/30 p-6 transition-all duration-300"
+                  class="relative bg-card rounded-2xl sm:rounded-3xl border border-border group-hover:border-primary/30 p-4 sm:p-6 transition-all duration-300"
                 >
-                  <div class="flex items-start gap-4">
+                  <div class="flex items-start gap-3 sm:gap-4">
                     <!-- Icon -->
                     <div
-                      class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
+                      class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
                       :style="{
                         background:
                           info.icon === 'Mail'
@@ -397,37 +376,31 @@
                             : 'linear-gradient(135deg, rgba(27, 212, 193, 0.1) 0%, rgba(0, 225, 255, 0.05) 100%)',
                       }"
                     >
-                      <svg
-                        class="w-6 h-6 text-primary group-hover:text-secondary transition-colors duration-300"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          v-if="info.icon === 'Mail'"
-                          d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                        />
-                        <path
-                          v-else-if="info.icon === 'Phone'"
-                          d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                        />
-                        <path
-                          v-else-if="info.icon === 'MapPin'"
-                          fill-rule="evenodd"
-                          d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                          clip-rule="evenodd"
-                        />
-                        <path
-                          v-else
-                          fill-rule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
+                      <Icon
+                        v-if="info.icon === 'Mail'"
+                        name="heroicons:envelope"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-secondary transition-colors duration-300"
+                      />
+                      <Icon
+                        v-else-if="info.icon === 'Phone'"
+                        name="heroicons:phone"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-secondary transition-colors duration-300"
+                      />
+                      <Icon
+                        v-else-if="info.icon === 'MapPin'"
+                        name="heroicons:map-pin"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-secondary transition-colors duration-300"
+                      />
+                      <Icon
+                        v-else
+                        name="heroicons:clock"
+                        class="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-secondary transition-colors duration-300"
+                      />
                     </div>
 
                     <!-- Content -->
-                    <div class="flex-1">
-                      <p class="text-sm text-textGray mb-1">
+                    <div class="flex-1 min-w-0">
+                      <p class="text-xs sm:text-sm text-textGray mb-1 truncate">
                         {{ t(info.title) }}
                       </p>
                       <a
@@ -435,24 +408,19 @@
                         :href="info.link"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="font-medium text-textPrimary hover:text-primary transition-colors duration-300 inline-flex items-center gap-1"
+                        class="font-medium text-sm sm:text-base text-textPrimary hover:text-primary transition-colors duration-300 inline-flex items-center gap-1 truncate"
                       >
-                        {{ info.value }}
-                        <svg
+                        <span class="truncate">{{ info.value }}</span>
+                        <Icon
                           v-if="info.link.startsWith('http')"
-                          class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
-                          />
-                          <path
-                            d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
-                          />
-                        </svg>
+                          name="heroicons:arrow-top-right-on-square"
+                          class="w-3 h-3 sm:w-4 sm:h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        />
                       </a>
-                      <p v-else class="font-medium text-textPrimary">
+                      <p
+                        v-else
+                        class="font-medium text-sm sm:text-base text-textPrimary truncate"
+                      >
                         {{ info.value }}
                       </p>
                     </div>
@@ -465,63 +433,56 @@
             <div class="group relative">
               <!-- Social Card -->
               <div
-                class="relative rounded-3xl overflow-hidden transition-all duration-500"
+                class="relative rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500"
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-[#00e1ff] rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-card rounded-3xl border border-border group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
+                  class="relative bg-card rounded-2xl sm:rounded-3xl border border-border group-hover:border-[#00e1ff]/30 p-4 sm:p-6 transition-all duration-300"
                 >
-                  <p class="text-sm text-textGray mb-4">
+                  <p class="text-xs sm:text-sm text-textGray mb-3 sm:mb-4">
                     {{ t("contact.follow_us") }}
                   </p>
-                  <div class="flex gap-3">
+                  <div class="flex gap-2 sm:gap-3">
                     <a
                       v-for="social in socialLinks"
                       :key="social.label"
                       :href="social.href"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="group/social relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+                      class="group/social relative w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
                       :aria-label="t(social.label)"
                     >
                       <!-- Background -->
                       <div
-                        class="absolute inset-0 bg-card border border-border rounded-xl group-hover/social:border-[#00e1ff]/30 transition-colors duration-300"
+                        class="absolute inset-0 bg-card border border-border rounded-lg sm:rounded-xl group-hover/social:border-[#00e1ff]/30 transition-colors duration-300"
                       ></div>
 
                       <!-- Gradient overlay -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
+                        class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg sm:rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
                       ></div>
 
                       <!-- Icon -->
-                      <svg
-                        class="relative z-10 w-5 h-5 text-textGray group-hover/social:text-primary transition-colors duration-300"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          v-if="social.icon === 'Github'"
-                          fill-rule="evenodd"
-                          d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
-                          clip-rule="evenodd"
-                        />
-                        <path
-                          v-else-if="social.icon === 'Linkedin'"
-                          fill-rule="evenodd"
-                          d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
-                          clip-rule="evenodd"
-                        />
-                        <path
-                          v-else
-                          d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"
-                        />
-                      </svg>
+                      <Icon
+                        v-if="social.icon === 'Github'"
+                        name="mdi:github"
+                        class="relative z-10 w-4 h-4 sm:w-5 sm:h-5 text-textGray group-hover/social:text-primary transition-colors duration-300"
+                      />
+                      <Icon
+                        v-else-if="social.icon === 'Linkedin'"
+                        name="mdi:linkedin"
+                        class="relative z-10 w-4 h-4 sm:w-5 sm:h-5 text-textGray group-hover/social:text-primary transition-colors duration-300"
+                      />
+                      <Icon
+                        v-else
+                        name="mdi:twitter"
+                        class="relative z-10 w-4 h-4 sm:w-5 sm:h-5 text-textGray group-hover/social:text-primary transition-colors duration-300"
+                      />
                     </a>
                   </div>
                 </div>
@@ -529,19 +490,19 @@
             </div>
 
             <!-- Map Placeholder -->
-            <div class="group relative">
+            <div class="group relative overflow-hidden">
               <!-- Map Card -->
               <div
-                class="relative rounded-3xl overflow-hidden transition-all duration-500"
+                class="relative rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500"
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-card rounded-3xl border border-b-card group-hover:border-primary/30 overflow-hidden transition-all duration-300"
+                  class="relative bg-card rounded-2xl sm:rounded-3xl border border-primary/30 overflow-hidden transition-all duration-300"
                 >
                   <!-- Map -->
                   <div class="aspect-video">
@@ -563,21 +524,14 @@
 
                   <!-- Map Overlay -->
                   <div
-                    class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#0f1729] to-transparent"
+                    class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-[#0f1729] to-transparent"
                   >
                     <div class="flex items-center gap-2 text-white">
-                      <svg
-                        class="w-4 h-4 text-primary"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                      <span class="text-sm font-medium">{{
+                      <Icon
+                        name="heroicons:map-pin"
+                        class="w-3 h-3 sm:w-4 sm:h-4 text-primary"
+                      />
+                      <span class="text-xs sm:text-sm font-medium">{{
                         t("contact.map.location")
                       }}</span>
                     </div>
@@ -590,43 +544,42 @@
             <div class="group relative">
               <!-- Quick Contact Card -->
               <div
-                class="relative rounded-3xl overflow-hidden transition-all duration-500"
+                class="relative rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-500"
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative bg-bg rounded-3xl border border-border group-hover:border-primary/30 p-6 transition-all duration-300"
+                  class="relative bg-bg rounded-2xl sm:rounded-3xl border border-border group-hover:border-primary/30 p-4 sm:p-6 transition-all duration-300"
                 >
-                  <h3 class="text-lg font-bold text-textPrimary mb-4">
+                  <h3
+                    class="text-base sm:text-lg font-bold text-textPrimary mb-3 sm:mb-4"
+                  >
                     {{ t("contact.quick.title") }}
                   </h3>
-                  <div class="space-y-3">
+                  <div class="space-y-2 sm:space-y-3">
                     <a
                       href="tel:+15551234567"
-                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-card border border-borderå hover:border-primary/30 transition-all duration-300"
+                      class="group/quick flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
                     >
                       <div
-                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center"
+                        class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center shrink-0"
                       >
-                        <svg
-                          class="w-5 h-5 text-primary"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                          />
-                        </svg>
+                        <Icon
+                          name="heroicons:phone"
+                          class="w-4 h-4 sm:w-5 sm:h-5 text-primary"
+                        />
                       </div>
-                      <div>
-                        <p class="text-sm text-textGray">
+                      <div class="min-w-0">
+                        <p class="text-xs sm:text-sm text-textGray truncate">
                           {{ t("contact.quick.call_us") }}
                         </p>
-                        <p class="text-textPrimary font-medium">
+                        <p
+                          class="text-sm sm:text-base text-textPrimary font-medium truncate"
+                        >
                           +1 (555) 123-4567
                         </p>
                       </div>
@@ -634,29 +587,23 @@
 
                     <a
                       href="mailto:hello@aftech.dev"
-                      class="group/quick flex items-center gap-3 p-3 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
+                      class="group/quick flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
                     >
                       <div
-                        class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center"
+                        class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-r from-primary/10 to-primary/10 flex items-center justify-center shrink-0"
                       >
-                        <svg
-                          class="w-5 h-5 text-primary"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                          />
-                          <path
-                            d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-                          />
-                        </svg>
+                        <Icon
+                          name="heroicons:envelope"
+                          class="w-4 h-4 sm:w-5 sm:h-5 text-primary"
+                        />
                       </div>
-                      <div>
-                        <p class="text-sm text-textGray">
+                      <div class="min-w-0">
+                        <p class="text-xs sm:text-sm text-textGray truncate">
                           {{ t("contact.quick.email_us") }}
                         </p>
-                        <p class="text-textPrimary font-medium">
+                        <p
+                          class="text-sm sm:text-base text-textPrimary font-medium truncate"
+                        >
                           hello@aftech.dev
                         </p>
                       </div>
@@ -695,7 +642,6 @@ const contactInfo = [
     icon: "Mail",
     title: "contact.info.email",
     value: "hello@aftech.dev",
-    // link: "mailto:hello@aftech.dev",
   },
   {
     icon: "Phone",
@@ -884,7 +830,7 @@ onMounted(() => {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -893,7 +839,7 @@ onMounted(() => {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #00e1ff, #1bd4c1);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -947,6 +893,13 @@ select:focus {
 @-moz-document url-prefix() {
   select {
     padding-right: 2.5rem;
+  }
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 </style>
