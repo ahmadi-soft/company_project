@@ -7,7 +7,7 @@
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px]"
       >
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-10 blur-3xl animate-pulse-slow"
+          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-10 blur-3xl animate-pulse-slow"
         ></div>
       </div>
 
@@ -27,13 +27,13 @@
       <!-- Floating elements -->
       <div class="absolute top-1/4 left-1/4">
         <div
-          class="w-32 h-32 bg-gradient-to-br from-[#00e1ff]/20 to-transparent rounded-full border border-[#00e1ff]/30 animate-float"
+          class="w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full border border-primary/30 animate-float"
         ></div>
       </div>
 
       <div class="absolute bottom-1/4 right-1/4">
         <div
-          class="w-24 h-24 bg-gradient-to-bl from-[#1bd4c1]/20 to-transparent rounded-full border border-[#1bd4c1]/30 animate-float"
+          class="w-24 h-24 bg-gradient-to-bl from-secondary/20 to-transparent rounded-full border border-secondary/30 animate-float"
           style="animation-delay: 1s"
         ></div>
       </div>
@@ -43,7 +43,7 @@
         <div
           v-for="i in 20"
           :key="i"
-          class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+          class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
           :style="{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -61,17 +61,17 @@
           <div class="relative group/icon">
             <!-- Outer ring -->
             <div
-              class="absolute -inset-4 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-full opacity-20 blur-lg group-hover/icon:opacity-30 transition-opacity duration-500 animate-spin-slow"
+              class="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-primary rounded-full opacity-20 blur-lg group-hover/icon:opacity-30 transition-opacity duration-500 animate-spin-slow"
             ></div>
 
             <!-- Main icon container -->
             <div
-              class="relative w-24 h-24 rounded-2xl bg-primary/15 border border-primary/50 group-hover/icon:border-[#00e1ff]/30 flex items-center justify-center transition-all duration-300 group-hover/icon:scale-110"
+              class="relative w-24 h-24 rounded-2xl bg-primary/15 border border-primary/50 group-hover/icon:border-primary/30 flex items-center justify-center transition-all duration-300 group-hover/icon:scale-110"
             >
               <!-- Sparkle icon -->
               <div class="relative">
                 <svg
-                  class="w-12 h-12 text-[#00e1ff] transition-colors duration-300"
+                  class="w-12 h-12 text-primary transition-colors duration-300"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -85,10 +85,10 @@
                 <!-- Pulsing dot -->
                 <div class="absolute -top-1 -right-1 w-3 h-3">
                   <div
-                    class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+                    class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
                   ></div>
                   <div
-                    class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
+                    class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full"
                   ></div>
                 </div>
               </div>
@@ -104,7 +104,7 @@
           <span class="text-textPrimary">{{ t("cta.heading.part1") }}</span>
           <span class="block">
             <span
-              class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("cta.heading.part2") }}
             </span>
@@ -114,7 +114,7 @@
         <!-- Description -->
         <p
           ref="descriptionRef"
-          class="text-xl md:text-2xl text-center text-[#cbd5e1] mb-12 max-w-2xl mx-auto leading-relaxed font-light"
+          class="text-xl md:text-2xl text-center text-textLightGray mb-12 max-w-2xl mx-auto leading-relaxed font-light"
         >
           {{ t("cta.description") }}
         </p>
@@ -131,12 +131,12 @@
           >
             <!-- Background gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+              class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
             ></div>
 
             <!-- Hover gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
             ></div>
 
             <!-- Shine effect -->
@@ -166,7 +166,7 @@
 
             <!-- Outer glow -->
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
+              class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
             ></div>
           </NuxtLink>
 
@@ -177,12 +177,12 @@
           >
             <!-- Glass background -->
             <div
-              class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-[#00e1ff]/30 transition-colors duration-300"
+              class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-primary/30 transition-colors duration-300"
             ></div>
 
             <!-- Gradient border on hover -->
             <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
+              class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
             ></div>
 
             <!-- Content -->
@@ -190,7 +190,7 @@
               class="relative z-10 flex items-center justify-center gap-3 text-white"
             >
               <svg
-                class="w-5 h-5 text-[#00e1ff] group-hover/secondary:text-[#1bd4c1] transition-colors duration-300"
+                class="w-5 h-5 text-primary group-hover/secondary:text-secondary transition-colors duration-300"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -214,7 +214,7 @@
             </div>
             <div class="relative flex justify-center">
               <span
-                class="px-4 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-white text-sm uppercase tracking-wider"
+                class="px-4 bg-gradient-to-r from-primary to-secondary text-white text-sm uppercase tracking-wider"
                 >{{ t("cta.trusted_by") }}</span
               >
             </div>
@@ -229,11 +229,11 @@
             >
               <!-- Logo container -->
               <div
-                class="relative p-6 rounded-xl bg-bgSoft border border-border group-hover/company:border-[#00e1ff]/20 transition-all duration-300"
+                class="relative cursor-pointer p-6 rounded-xl bg-bgSoft border border-border group-hover/company:border-primary/20 transition-all duration-300"
               >
                 <!-- Background glow on hover -->
                 <div
-                  class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5 rounded-xl opacity-0 group-hover/company:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl opacity-0 group-hover/company:opacity-100 transition-opacity duration-300"
                 ></div>
 
                 <!-- Logo content -->
@@ -242,7 +242,7 @@
                     <div class="text-2xl font-bold text-primary mb-1">
                       {{ company.initials }}
                     </div>
-                    <div class="text-xs text-[#94a3b8]">{{ company.name }}</div>
+                    <div class="text-xs text-textGray">{{ company.name }}</div>
                   </div>
                 </div>
               </div>
@@ -255,10 +255,10 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="text-center">
               <div
-                class="flex items-center justify-center gap-3 text-[#cbd5e1]"
+                class="flex items-center justify-center gap-3 text-textLightGray"
               >
                 <svg
-                  class="w-5 h-5 text-[#00e1ff]"
+                  class="w-5 h-5 text-primary"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -269,7 +269,7 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">
+                  <div class="text-sm text-textGray">
                     {{ t("cta.contact_info.call.label") }}
                   </div>
                   <div class="text-textPrimary font-medium">
@@ -281,10 +281,10 @@
 
             <div class="text-center">
               <div
-                class="flex items-center justify-center gap-3 text-[#cbd5e1]"
+                class="flex items-center justify-center gap-3 text-textLightGray"
               >
                 <svg
-                  class="w-5 h-5 text-[#1bd4c1]"
+                  class="w-5 h-5 text-secondary"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -296,7 +296,7 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">
+                  <div class="text-sm text-textGray">
                     {{ t("cta.contact_info.email.label") }}
                   </div>
                   <div class="text-textPrimary font-medium">
@@ -308,10 +308,10 @@
 
             <div class="text-center">
               <div
-                class="flex items-center justify-center gap-3 text-[#cbd5e1]"
+                class="flex items-center justify-center gap-3 text-textLightGray"
               >
                 <svg
-                  class="w-5 h-5 text-[#00e1ff]"
+                  class="w-5 h-5 text-primary"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -322,7 +322,7 @@
                   />
                 </svg>
                 <div>
-                  <div class="text-sm text-[#94a3b8]">
+                  <div class="text-sm text-textGray">
                     {{ t("cta.contact_info.visit.label") }}
                   </div>
                   <div class="text-textPrimary font-medium">

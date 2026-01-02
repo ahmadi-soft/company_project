@@ -20,7 +20,7 @@
               <div
                 v-for="i in 15"
                 :key="i"
-                class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-20 animate-float"
+                class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 animate-float"
                 :style="{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -43,12 +43,12 @@
             >
               <!-- Modern Glass Card -->
               <div
-                class="relative bg-gradient-to-br from-bg/90 to-bg/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-[#00e1ff]/10 overflow-hidden"
+                class="relative bg-gradient-to-br from-bg/90 to-bg/90 backdrop-blur-xl rounded-3xl shadow-2xl shadow-primary/10 overflow-hidden"
               >
                 <!-- Animated Border -->
                 <div class="absolute -inset-1 overflow-hidden rounded-3xl">
                   <div
-                    class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] opacity-30 animate-gradient-slow"
+                    class="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-30 animate-gradient-slow"
                     :style="{ backgroundSize: '400% 400%' }"
                   ></div>
                   <div
@@ -58,15 +58,15 @@
 
                 <!-- Header -->
                 <div
-                  class="relative p-6 border-b border-primary/50 bg-gradient-to-r from-transparent via-[#00e1ff]/5 to-transparent"
+                  class="relative p-6 border-b border-primary/50 bg-gradient-to-r from-transparent via-primary/5 to-transparent"
                 >
                   <div class="flex items-center justify-between">
                     <div class="flex items-center gap-4">
                       <div
-                        class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-[#00e1ff]/20 to-[#1bd4c1]/20 flex items-center justify-center shadow-lg shadow-[#00e1ff]/10"
+                        class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center shadow-lg shadow-primary/10"
                       >
                         <svg
-                          class="w-6 h-6 text-[#00e1ff]"
+                          class="w-6 h-6 text-primary"
                           viewBox="0 0 24 24"
                           fill="none"
                         >
@@ -77,23 +77,23 @@
                         </svg>
                         <!-- Pulsing dot -->
                         <div
-                          class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+                          class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
                         ></div>
                       </div>
                       <div>
                         <h3
-                          class="text-xl font-bold bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent"
+                          class="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"
                         >
                           {{ t("language_modal.title") }}
                         </h3>
-                        <p class="text-sm text-[#94a3b8] mt-1 font-medium">
+                        <p class="text-sm text-textGray mt-1 font-medium">
                           {{ t("language_modal.subtitle") }}
                         </p>
                       </div>
                     </div>
                     <button
                       @click="close"
-                      class="group/close relative w-9 h-9 flex items-center justify-center text-[#94a3b8] hover:text-white transition-all duration-300 rounded-lg hover:bg-[#1e293b]"
+                      class="group/close relative w-9 h-9 flex items-center justify-center text-textGray hover:text-white transition-all duration-300 rounded-lg hover:bg-[#1e293b]"
                       :aria-label="t('language_modal.close')"
                     >
                       <svg
@@ -111,18 +111,18 @@
                       </svg>
                       <!-- Hover glow -->
                       <div
-                        class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg opacity-0 group-hover/close:opacity-10 blur transition-opacity duration-300"
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-0 group-hover/close:opacity-10 blur transition-opacity duration-300"
                       ></div>
                     </button>
                   </div>
 
                   <!-- Current Selection Badge -->
                   <div
-                    class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20"
+                    class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20"
                   >
                     <span class="text-sm font-medium text-textPrimary">
                       {{ t("language_modal.current") }}:
-                      <span class="text-[#00e1ff]">
+                      <span class="text-primary">
                         {{ getLanguageName(current) }}
                       </span>
                     </span>
@@ -138,7 +138,7 @@
                     :class="[
                       'group/language relative w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300',
                       current === lang.code
-                        ? 'bg-gradient-to-r from-primary/10 to-primary/10 border border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
+                        ? 'bg-gradient-to-r from-primary/10 to-primary/10 border border-primary/40 shadow-lg shadow-primary/10'
                         : 'hover:bg-bgSoft border-2 border-transparent hover:border-primary/20',
                     ]"
                   >
@@ -146,7 +146,7 @@
                     <div
                       class="relative border border-border flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden shadow-lg"
                       :class="{
-                        'ring-1 ring-[#00e1ff] ': current === lang.code,
+                        'ring-1 ring-primary ': current === lang.code,
                       }"
                     >
                       <!-- Gradient Background -->
@@ -176,7 +176,7 @@
                         <span
                           class="font-semibold text-textPrimary truncate"
                           :class="{
-                            'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent':
+                            'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent':
                               current === lang.code,
                           }"
                         >
@@ -186,14 +186,14 @@
                           :class="[
                             'text-xs font-bold px-2 py-1 rounded-full transition-all duration-300',
                             current === lang.code
-                              ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729]'
+                              ? 'bg-gradient-to-r from-primary to-secondary text-[#0f1729]'
                               : 'bg-[#1e293b] text-white',
                           ]"
                         >
                           {{ lang.code.toUpperCase() }}
                         </span>
                       </div>
-                      <p class="text-sm text-[#94a3b8] truncate">
+                      <p class="text-sm text-textGray truncate">
                         {{ lang.native }}
                       </p>
 
@@ -202,8 +202,8 @@
                         v-if="lang.code === 'ar'"
                         class="mt-1 flex items-center gap-1 text-xs"
                       >
-                        <span class="text-[#1bd4c1] font-medium">RTL</span>
-                        <span class="text-[#64748b]"
+                        <span class="text-secondary font-medium">RTL</span>
+                        <span class="text-textLightGray"
                           >• Right-to-left layout</span
                         >
                       </div>
@@ -214,8 +214,8 @@
                       :class="[
                         'w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300',
                         current === lang.code
-                          ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] shadow-lg shadow-[#00e1ff]/30'
-                          : 'border-2 border-[#334155] group-hover/language:border-[#00e1ff]/50',
+                          ? 'bg-gradient-to-r from-primary to-secondary shadow-lg shadow-primary/30'
+                          : 'border-2 border-textLightGray group-hover/language:border-primary/50',
                       ]"
                     >
                       <svg
@@ -234,7 +234,7 @@
 
                     <!-- Hover Gradient -->
                     <div
-                      class="absolute inset-0 rounded-xl bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5 opacity-0 group-hover/language:opacity-100 transition-opacity duration-300 -z-10"
+                      class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover/language:opacity-100 transition-opacity duration-300 -z-10"
                     ></div>
                   </button>
                 </div>
@@ -244,9 +244,9 @@
                   class="relative p-6 border-t border-primary/50 bg-gradient-to-t from-bg to-transparent"
                 >
                   <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2 text-sm text-[#94a3b8]">
+                    <div class="flex items-center gap-2 text-sm text-textGray">
                       <svg
-                        class="w-4 h-4 text-[#00e1ff]"
+                        class="w-4 h-4 text-primary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -268,7 +268,7 @@
                     <div class="flex items-center gap-3">
                       <button
                         @click="close"
-                        class="px-4 py-2.5 rounded-lg font-medium text-[#94a3b8] hover:text-white hover:bg-[#1e293b] transition-all duration-300"
+                        class="px-4 py-2.5 rounded-lg font-medium text-textGray hover:text-white hover:bg-[#1e293b] transition-all duration-300"
                       >
                         {{ t("language_modal.close") }}
                       </button>
@@ -278,11 +278,11 @@
                       >
                         <!-- Gradient Background -->
                         <div
-                          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transition-opacity duration-300"
+                          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary transition-opacity duration-300"
                         ></div>
                         <!-- Hover Overlay -->
                         <div
-                          class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/apply:opacity-100 transition-opacity duration-300"
+                          class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/apply:opacity-100 transition-opacity duration-300"
                         ></div>
                         <!-- Shine Effect -->
                         <div class="absolute inset-0 overflow-hidden">
@@ -312,10 +312,10 @@
 
                   <!-- Corner Accents -->
                   <div
-                    class="absolute top-0 left-6 w-8 h-px bg-gradient-to-r from-transparent via-[#00e1ff] to-transparent"
+                    class="absolute top-0 left-6 w-8 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
                   ></div>
                   <div
-                    class="absolute top-0 right-6 w-8 h-px bg-gradient-to-r from-transparent via-[#1bd4c1] to-transparent"
+                    class="absolute top-0 right-6 w-8 h-px bg-gradient-to-r from-transparent via-secondary to-transparent"
                   ></div>
                 </div>
               </div>

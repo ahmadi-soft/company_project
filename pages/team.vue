@@ -19,7 +19,7 @@
 
         <!-- Animated Gradient Mesh -->
         <div
-          class="absolute inset-0 bg-gradient-to-br from-[#00e1ff]/5 via-transparent to-[#1bd4c1]/5"
+          class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
         ></div>
 
         <!-- Floating Orbs -->
@@ -30,10 +30,10 @@
           :class="[
             'w-[500px] h-[500px]',
             i === 1
-              ? 'top-1/4 -left-40 bg-gradient-to-r from-[#00e1ff]/10 to-transparent'
+              ? 'top-1/4 -left-40 bg-gradient-to-r from-primary/10 to-transparent'
               : i === 2
-              ? 'bottom-1/4 -right-40 bg-gradient-to-l from-[#1bd4c1]/10 to-transparent'
-              : 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5',
+              ? 'bottom-1/4 -right-40 bg-gradient-to-l from-secondary/10 to-transparent'
+              : 'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary/5 to-secondary/5',
           ]"
           :style="{ animationDelay: `${i * 2}s` }"
         ></div>
@@ -43,7 +43,7 @@
           <div
             v-for="i in 20"
             :key="`binary-${i}`"
-            class="absolute text-[#00e1ff] font-mono text-sm animate-binary-rain"
+            class="absolute text-primary font-mono text-sm animate-binary-rain"
             :style="{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 5}s`,
@@ -65,10 +65,10 @@
             <!-- Pulsing Dot -->
             <div class="relative">
               <div
-                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-primary to-secondary"
               ></div>
               <div
-                class="absolute -inset-1 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] blur opacity-50 animate-ping"
+                class="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary blur opacity-50 animate-ping"
               ></div>
             </div>
             <span
@@ -77,7 +77,7 @@
             >
             <Icon
               name="uil:arrow-right"
-              class="w-4 h-4 text-[#00e1ff] group-hover/badge:translate-x-1 transition-transform duration-300"
+              class="w-4 h-4 text-primary group-hover/badge:translate-x-1 transition-transform duration-300"
             />
           </div>
 
@@ -91,17 +91,17 @@
             <span class="relative">
               <!-- Gradient Text with Animation -->
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("team.title.highlight") }}
               </span>
               <!-- Animated Underline -->
               <span class="absolute -bottom-4 left-0 w-full h-1">
                 <span
-                  class="absolute left-0 w-1/2 h-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] animate-slide-right"
+                  class="absolute left-0 w-1/2 h-full bg-gradient-to-r from-primary to-secondary animate-slide-right"
                 ></span>
                 <span
-                  class="absolute right-0 w-1/2 h-full bg-gradient-to-l from-[#1bd4c1] to-[#00e1ff] animate-slide-left"
+                  class="absolute right-0 w-1/2 h-full bg-gradient-to-l from-secondary to-primary animate-slide-left"
                 ></span>
               </span>
             </span>
@@ -112,14 +112,14 @@
 
           <!-- Description -->
           <p
-            class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mt-12 leading-relaxed font-light"
+            class="text-xl md:text-2xl text-textLightGray max-w-3xl mt-12 leading-relaxed font-light"
           >
             {{ t("team.description.prefix") }}
-            <span class="text-[#00e1ff] font-medium">{{
+            <span class="text-primary font-medium">{{
               t("team.description.highlight1")
             }}</span
             >,
-            <span class="text-[#1bd4c1] font-medium">{{
+            <span class="text-secondary font-medium">{{
               t("team.description.highlight2")
             }}</span
             >, and
@@ -143,21 +143,21 @@
               <!-- Animated Counter -->
               <div class="text-4xl md:text-5xl font-bold mb-2">
                 <span
-                  class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
+                  class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                 >
                   {{ stat.value }}
                 </span>
-                <span class="text-[#00e1ff]">+</span>
+                <span class="text-primary">+</span>
               </div>
               <div class="relative inline-block">
                 <div
-                  class="text-sm text-[#94a3b8] uppercase tracking-wider font-medium transition-all duration-300 group-hover/stat:text-white"
+                  class="text-sm text-textGray uppercase tracking-wider font-medium transition-all duration-300 group-hover/stat:text-white"
                 >
                   {{ t(stat.label) }}
                 </div>
                 <!-- Animated underline -->
                 <div
-                  class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] group-hover/stat:w-full transition-all duration-500"
+                  class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover/stat:w-full transition-all duration-500"
                 ></div>
               </div>
             </div>
@@ -166,7 +166,7 @@
           <!-- Scroll Indicator -->
           <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2">
             <div class="flex flex-col items-center gap-2">
-              <span class="text-xs text-[#64748b] uppercase tracking-widest">{{
+              <span class="text-xs text-textGray uppercase tracking-widest">{{
                 t("team.explore")
               }}</span>
               <div class="relative w-6 h-10">
@@ -174,7 +174,7 @@
                   class="absolute inset-0 rounded-full border border-[#334155]"
                 ></div>
                 <div
-                  class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-[#00e1ff] to-[#1bd4c1] rounded-full animate-scroll"
+                  class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-primary to-secondary rounded-full animate-scroll"
                 ></div>
               </div>
             </div>
@@ -205,8 +205,8 @@
             :class="[
               'group/filter relative px-5 py-2.5 rounded-xl font-medium transition-all duration-300 overflow-hidden',
               activeFilter === filter.id
-                ? 'bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-textPrimary font-semibold shadow-lg shadow-[#00e1ff]/20'
-                : 'bg-card border border-border text-[#94a3b8] hover:text-primary hover:border-[#00e1ff]/30',
+                ? 'bg-gradient-to-r from-primary to-secondary text-textPrimary font-semibold shadow-lg shadow-primary/20'
+                : 'bg-card border border-border text-textGray hover:text-primary hover:border-primary/30',
             ]"
           >
             <!-- Shimmer Effect -->
@@ -236,7 +236,7 @@
             >
               <!-- Main Card -->
               <div
-                class="relative h-full bg-card border border-border rounded-3xl overflow-hidden group-hover/card:border-[#00e1ff]/30 transition-all duration-500"
+                class="relative h-full bg-card border border-border rounded-3xl overflow-hidden group-hover/card:border-primary/30 transition-all duration-500"
               >
                 <!-- Image Container with Parallax -->
                 <div class="relative h-64 overflow-hidden">
@@ -271,7 +271,7 @@
                       v-for="(link, platform) in member.social"
                       :key="platform"
                       :href="link"
-                      class="group/social relative w-10 h-10 rounded-xl bg-[#111827]/90 backdrop-blur-sm border border-[#334155] hover:border-[#00e1ff] flex items-center justify-center transition-all duration-300"
+                      class="group/social relative w-10 h-10 rounded-xl bg-[#111827]/90 backdrop-blur-sm border border-[#334155] hover:border-primary flex items-center justify-center transition-all duration-300"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -288,7 +288,7 @@
                   <!-- Name with Gradient Hover -->
                   <h3 class="text-2xl font-bold mb-3">
                     <span
-                      class="text-textPrimary group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-[#00e1ff] group-hover/card:via-[#1bd4c1] group-hover/card:to-[#00e1ff] group-hover/card:bg-clip-text transition-all duration-500"
+                      class="text-textPrimary group-hover/card:text-transparent group-hover/card:bg-gradient-to-r group-hover/card:from-primary group-hover/card:via-secondary group-hover/card:to-primary group-hover/card:bg-clip-text transition-all duration-500"
                     >
                       {{ member.name }}
                     </span>
@@ -296,7 +296,7 @@
 
                   <!-- Bio -->
                   <p
-                    class="text-[#94a3b8] text-sm leading-relaxed mb-4 line-clamp-2"
+                    class="text-textGray text-sm leading-relaxed mb-4 line-clamp-2"
                   >
                     {{ member.bio }}
                   </p>
@@ -323,7 +323,7 @@
                         <div class="text-textPrimary font-semibold">
                           {{ member.experience }}
                         </div>
-                        <div class="text-[#94a3b8]">
+                        <div class="text-textGray">
                           {{ t("team.card.experience") }}
                         </div>
                       </div>
@@ -331,7 +331,7 @@
                         <div class="text-textPrimary font-semibold">
                           {{ member.projects }}+
                         </div>
-                        <div class="text-[#94a3b8]">
+                        <div class="text-textGray]">
                           {{ t("team.card.projects") }}
                         </div>
                       </div>
@@ -341,7 +341,7 @@
 
                 <!-- Bottom Progress Bar -->
                 <div
-                  class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-700 origin-left"
+                  class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover/card:scale-x-100 transition-transform duration-700 origin-left"
                 ></div>
               </div>
 
@@ -352,7 +352,7 @@
                 <div
                   v-for="i in 3"
                   :key="`code-${member.id}-${i}`"
-                  class="absolute text-[#00e1ff]/20 font-mono text-xs"
+                  class="absolute text-primary/20 font-mono text-xs"
                   :style="{
                     left: `${10 + i * 25}%`,
                     top: `${20 + i * 10}%`,
@@ -386,7 +386,7 @@
     <section class="relative py-24 md:py-32 overflow-hidden">
       <!-- Animated Background -->
       <div
-        class="absolute inset-0 bg-gradient-to-br from-[#00e1ff]/5 via-transparent to-[#1bd4c1]/5"
+        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
       ></div>
 
       <!-- Moving Particles -->
@@ -394,7 +394,7 @@
         <div
           v-for="i in 15"
           :key="`particle-${i}`"
-          class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+          class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
           :style="{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -412,7 +412,7 @@
           >
             <div class="relative">
               <div
-                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] animate-pulse"
+                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-primary to-secondary animate-pulse"
               ></div>
             </div>
             <span
@@ -427,14 +427,14 @@
             }}</span>
             <span class="block">
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("team.tech.title.highlight") }}
               </span>
             </span>
           </h2>
 
-          <p class="text-lg text-[#cbd5e1] max-w-2xl mx-auto">
+          <p class="text-lg text-textLightGray max-w-2xl mx-auto">
             {{ t("team.tech.description") }}
           </p>
         </div>
@@ -447,14 +447,14 @@
             class="group/category"
           >
             <div
-              class="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-card to-card border border-border p-6 transition-all duration-300 hover:border-[#00e1ff]/30"
+              class="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-card to-card border border-border p-6 transition-all duration-300 hover:border-primary/30"
             >
               <!-- Category Header -->
               <div class="flex items-center gap-3 mb-6">
                 <div
-                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center"
                 >
-                  <Icon name="uil:arrow-right" class="w-6 h-6 text-[#00e1ff]" />
+                  <Icon name="uil:arrow-right" class="w-6 h-6 text-primary" />
                 </div>
                 <h3 class="text-xl font-bold text-textPrimary">
                   {{ category.name }}
@@ -474,11 +474,11 @@
                   >
                   <div class="flex items-center gap-2">
                     <div
-                      class="w-2 h-2 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] animate-pulse"
+                      class="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary animate-pulse"
                     ></div>
                     <Icon
                       name="uil:arrow-right"
-                      class="w-4 h-4 text-[#94a3b8] group-hover/item:text-[#00e1ff] transition-colors duration-300"
+                      class="w-4 h-4 text-textGray group-hover/item:text-primary transition-colors duration-300"
                     />
                   </div>
                 </div>
@@ -486,7 +486,7 @@
 
               <!-- Bottom Gradient -->
               <div
-                class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transform scale-x-0 group-hover/category:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"
+                class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover/category:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"
               ></div>
             </div>
           </div>
@@ -499,12 +499,12 @@
       <!-- Parallax Background -->
       <div class="absolute inset-0">
         <div
-          class="absolute inset-0 bg-gradient-to-br from-[#00e1ff]/10 via-transparent to-[#1bd4c1]/10"
+          class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"
         ></div>
         <div
           v-for="i in 5"
           :key="`cta-orb-${i}`"
-          class="absolute rounded-full bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5 animate-float"
+          class="absolute rounded-full bg-gradient-to-r from-primary/5 to-secondary/5 animate-float"
           :class="[
             'w-[300px] h-[300px]',
             i === 1
@@ -529,10 +529,10 @@
           >
             <div class="relative">
               <div
-                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-primary to-secondary"
               ></div>
               <div
-                class="absolute -inset-1 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] blur opacity-50 animate-ping"
+                class="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary blur opacity-50 animate-ping"
               ></div>
             </div>
             <span
@@ -541,7 +541,7 @@
             >
             <Icon
               name="uil:arrow-right"
-              class="w-4 h-4 text-[#00e1ff] group-hover/cta-badge:translate-x-1 transition-transform duration-300"
+              class="w-4 h-4 text-primary group-hover/cta-badge:translate-x-1 transition-transform duration-300"
             />
           </div>
 
@@ -554,7 +554,7 @@
             }}</span>
             <span class="block">
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("team.cta.title.highlight") }}
               </span>
@@ -566,7 +566,7 @@
 
           <!-- Description -->
           <p
-            class="text-xl md:text-2xl text-[#cbd5e1] max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+            class="text-xl md:text-2xl text-textLightGray max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           >
             {{ t("team.cta.description") }}
           </p>
@@ -582,10 +582,10 @@
             >
               <!-- Background Layers -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                class="absolute inset-0 bg-gradient-to-r from-primary to-secondary"
               ></div>
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/primary:opacity-100 transition-opacity duration-500"
+                class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/primary:opacity-100 transition-opacity duration-500"
               ></div>
 
               <!-- Shimmer Effect -->
@@ -607,7 +607,7 @@
 
               <!-- Glow Effect -->
               <div
-                class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-500 -z-10"
+                class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-500 -z-10"
               ></div>
             </NuxtLink>
 
@@ -618,7 +618,7 @@
             >
               <!-- Glass Background -->
               <div
-                class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-[#1bd4c1]/30 transition-all duration-300"
+                class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-secondary/30 transition-all duration-300"
               ></div>
 
               <!-- Content -->
@@ -634,7 +634,7 @@
 
               <!-- Gradient Border -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
+                class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
               ></div>
             </NuxtLink>
           </div>
@@ -924,17 +924,17 @@ const techCategories = [
 // Helper functions
 const getRoleColor = (role) => {
   const colors = {
-    founder: "bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729]",
+    founder: "bg-gradient-to-r from-primary to-secondary text-[#0f1729]",
     lead_frontend:
-      "bg-gradient-to-r from-[#00e1ff]/20 to-[#00e1ff]/40 text-white border border-[#00e1ff]/30",
+      "bg-gradient-to-r from-primary/20 to-primary/40 text-white border border-primary/30",
     backend_architect:
-      "bg-gradient-to-r from-[#1bd4c1]/20 to-[#1bd4c1]/40 text-white border border-[#1bd4c1]/30",
+      "bg-gradient-to-r from-secondary/20 to-secondary/40 text-white border border-secondary/30",
     creative_director:
-      "bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/40 text-white border border-[#334155]",
+      "bg-gradient-to-r from-primary/20 to-secondary/40 text-white border border-[#334155]",
     mobile_lead:
-      "bg-gradient-to-r from-[#00e1ff]/20 to-[#00e1ff]/40 text-white border border-[#00e1ff]/30",
+      "bg-gradient-to-r from-primary/20 to-primary/40 text-white border border-primary/30",
     devops_principal:
-      "bg-gradient-to-r from-[#1bd4c1]/20 to-[#1bd4c1]/40 text-white border border-[#1bd4c1]/30",
+      "bg-gradient-to-r from-secondary/20 to-secondary/40 text-white border border-secondary/30",
   };
   return colors[role] || "bg-[#334155] text-white border border-[#334155]";
 };

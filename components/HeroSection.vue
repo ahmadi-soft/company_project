@@ -19,7 +19,7 @@
 
       <!-- Gradient Overlay -->
       <div
-        class="absolute inset-0 bg-gradient-to-br from-[#00e1ff]/5 via-transparent to-[#1bd4c1]/5"
+        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"
       ></div>
 
       <!-- Grid Pattern -->
@@ -44,7 +44,7 @@
           <div
             v-for="(particle, i) in particles"
             :key="i"
-            class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+            class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
             :style="{
               left: `${particle.left}%`,
               top: `${particle.top}%`,
@@ -59,16 +59,16 @@
     <!-- Animated Orbs -->
     <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px]">
       <div
-        class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-10 blur-3xl animate-pulse-slow"
+        class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-10 blur-3xl animate-pulse-slow"
       ></div>
       <div
-        class="absolute inset-10 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-5 blur-2xl animate-spin-slow"
+        class="absolute inset-10 bg-gradient-to-r from-secondary to-primary rounded-full opacity-5 blur-2xl animate-spin-slow"
       ></div>
     </div>
 
     <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px]">
       <div
-        class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-10 blur-3xl animate-pulse-slow"
+        class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-10 blur-3xl animate-pulse-slow"
         style="animation-delay: 1s"
       ></div>
     </div>
@@ -77,10 +77,10 @@
     <div class="absolute top-1/3 left-1/5">
       <div class="relative">
         <div
-          class="w-24 h-24 bg-gradient-to-br from-[#00e1ff]/20 to-transparent rounded-lg border border-[#00e1ff]/30 backdrop-blur-sm animate-float"
+          class="w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rounded-lg border border-primary/30 backdrop-blur-sm animate-float"
         >
           <div class="absolute inset-2 flex items-center justify-center">
-            <div class="text-[#00e1ff] font-mono text-sm">{ }</div>
+            <div class="text-primary font-mono text-sm">{ }</div>
           </div>
         </div>
       </div>
@@ -89,11 +89,11 @@
     <div class="absolute bottom-1/3 right-1/5">
       <div class="relative">
         <div
-          class="w-20 h-20 bg-gradient-to-bl from-[#1bd4c1]/20 to-transparent rounded-lg border border-[#1bd4c1]/30 backdrop-blur-sm animate-float"
+          class="w-20 h-20 bg-gradient-to-bl from-secondary/20 to-transparent rounded-lg border border-secondary/30 backdrop-blur-sm animate-float"
           style="animation-delay: 1s"
         >
           <div class="absolute inset-2 flex items-center justify-center">
-            <div class="text-[#1bd4c1] font-mono text-sm">< /></div>
+            <div class="text-secondary font-mono text-sm">< /></div>
           </div>
         </div>
       </div>
@@ -105,11 +105,11 @@
         <!-- Tagline Badge -->
         <div class="flex justify-center mb-8">
           <div
-            class="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/20 backdrop-blur-sm border border-primary/50 hover:border-[#00e1ff]/30 transition-all duration-300 overflow-hidden"
+            class="group relative inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-primary/20 backdrop-blur-sm border border-primary/50 hover:border-primary/30 transition-all duration-300 overflow-hidden"
           >
             <!-- Animated border -->
             <div
-              class="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"
+              class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-20 blur transition-opacity duration-300"
             ></div>
 
             <!-- Content -->
@@ -117,10 +117,10 @@
               <!-- Animated sparkle -->
               <div class="relative">
                 <div
-                  class="w-5 h-5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
+                  class="w-5 h-5 bg-gradient-to-r from-primary to-secondary rounded-full"
                 ></div>
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-50 animate-ping"
+                  class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-50 animate-ping"
                 ></div>
               </div>
 
@@ -131,7 +131,7 @@
 
               <!-- Arrow -->
               <svg
-                class="w-4 h-4 text-[#00e1ff] group-hover:translate-x-1 transition-transform duration-300"
+                class="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform duration-300"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -156,12 +156,12 @@
             <span class="block relative">
               <!-- Gradient text with animation -->
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("hero.title.next_generation") }}
               </span>
               <span
-                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-full blur-sm"
+                class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-full blur-sm"
               ></span>
             </span>
             <span class="block text-textPrimary mt-4">{{
@@ -173,7 +173,7 @@
         <!-- Description -->
         <div class="max-w-3xl mx-auto mb-12">
           <p
-            class="text-xl md:text-2xl text-center text-[#cbd5e1] leading-relaxed font-light"
+            class="text-xl md:text-2xl text-center text-textLightGray leading-relaxed font-light"
           >
             {{
               t("hero.description", {
@@ -182,16 +182,16 @@
                 scalable: "",
               })
             }}
-            <span class="text-[#00e1ff] font-medium">{{
+            <span class="text-primary font-medium">{{
               t("hero.description_keywords.concept")
             }}</span>
             {{ t("hero.to") }}
-            <span class="text-[#1bd4c1] font-medium">{{
+            <span class="text-secondary font-medium">{{
               t("hero.description_keywords.deployment")
             }}</span
             >{{ t("hero.transform") }}
             <span
-              class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent font-medium"
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-medium"
               >{{ t("hero.description_keywords.scalable") }}</span
             >
             {{ t("hero.description_tail") }}
@@ -209,12 +209,12 @@
           >
             <!-- Background gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+              class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
             ></div>
 
             <!-- Hover gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
             ></div>
 
             <!-- Shine effect -->
@@ -244,7 +244,7 @@
 
             <!-- Outer glow -->
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
+              class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
             ></div>
           </NuxtLink>
 
@@ -255,12 +255,12 @@
           >
             <!-- Glass background -->
             <div
-              class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-[#00e1ff]/30 transition-colors duration-300"
+              class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-primary/30 transition-colors duration-300"
             ></div>
 
             <!-- Gradient border on hover -->
             <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
+              class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
             ></div>
 
             <!-- Content -->
@@ -270,7 +270,7 @@
               <!-- Play icon with pulse -->
               <div class="relative">
                 <div
-                  class="w-6 h-6 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded flex items-center justify-center"
+                  class="w-6 h-6 bg-gradient-to-r from-primary to-secondary rounded flex items-center justify-center"
                 >
                   <svg
                     class="w-3 h-3 text-[#0f1729]"
@@ -285,7 +285,7 @@
                   </svg>
                 </div>
                 <div
-                  class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-20 animate-ping"
+                  class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-20 animate-ping"
                 ></div>
               </div>
               <span>{{ t("hero.cta.book_call") }}</span>
@@ -297,7 +297,7 @@
         <div class="relative">
           <!-- Divider line -->
           <div
-            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-[#00e1ff] to-transparent blur-sm"
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-primary to-transparent blur-sm"
           ></div>
 
           <!-- Stats Grid -->
@@ -311,7 +311,7 @@
             >
               <!-- Animated background -->
               <div
-                class="absolute inset-0 bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-2xl opacity-0 group-hover/stat:opacity-100 blur transition-opacity duration-300"
+                class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl opacity-0 group-hover/stat:opacity-100 blur transition-opacity duration-300"
               ></div>
 
               <!-- Content -->
@@ -319,23 +319,23 @@
                 <!-- Animated number -->
                 <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                   <span
-                    class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
+                    class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                   >
                     {{ stat.value }}
                   </span>
-                  <span class="text-[#00e1ff]">+</span>
+                  <span class="text-primary">+</span>
                 </div>
 
                 <!-- Label with animation -->
                 <div class="relative inline-block">
                   <div
-                    class="text-[#94a3b8] text-sm md:text-base font-medium uppercase tracking-wider"
+                    class="text-textGray text-sm md:text-base font-medium uppercase tracking-wider"
                   >
                     {{ t(stat.label) }}
                   </div>
                   <!-- Underline animation -->
                   <div
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] group-hover/stat:w-full transition-all duration-500"
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover/stat:w-full transition-all duration-500"
                   ></div>
                 </div>
               </div>
@@ -349,7 +349,7 @@
                   <div
                     v-for="i in 5"
                     :key="i"
-                    class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+                    class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
                     :style="hoverParticleStyles[i - 1]"
                   ></div>
                 </div>
@@ -365,16 +365,16 @@
             @click="scrollToNext"
           >
             <span
-              class="text-xs text-[#64748b] uppercase tracking-wider group-hover/scroll:text-[#94a3b8] transition-colors duration-300"
+              class="text-xs text-textGray uppercase tracking-wider group-hover/scroll:text-textGray transition-colors duration-300"
             >
               {{ t("hero.scroll_down") }}
             </span>
             <!-- Animated scroll line -->
             <div
-              class="relative w-5 h-10 rounded-full border border-[#334155] group-hover/scroll:border-[#00e1ff] transition-colors duration-300"
+              class="relative w-5 h-10 rounded-full border border-textGray group-hover/scroll:border-primary transition-colors duration-300"
             >
               <div
-                class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-[#00e1ff] to-[#1bd4c1] rounded-full animate-scroll"
+                class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-primary to-secondary rounded-full animate-scroll"
               ></div>
             </div>
           </div>

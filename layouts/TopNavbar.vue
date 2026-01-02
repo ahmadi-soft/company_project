@@ -2,13 +2,12 @@
   <nav
     ref="navRef"
     :class="[
-      'bg-bg fixed top-0 left-0 right-0 z-50 transition-all duration-700 transform',
+      'bg-card shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-700 transform',
       scrolled
-        ? ' backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-[#00e1ff]/10'
+        ? ' backdrop-blur-xl border-b border-border/50 shadow-2xl shadow-primary/10'
         : ' backdrop-blur-md',
     ]"
     :style="{
-      opacity: navOpacity,
       transform: `translateY(${navTranslateY}px)`,
       transition: `opacity ${navTransitionDuration}ms cubic-bezier(0.4, 0, 0.2, 1), 
                   transform ${navTransitionDuration}ms cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -20,7 +19,7 @@
     <!-- Scroll progress indicator -->
     <div
       v-if="scrolled"
-      class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transition-all duration-1000"
+      class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-1000"
       :style="{
         width: `${scrollProgress}%`,
         opacity: scrollProgress > 0 ? navOpacity : 0,
@@ -48,7 +47,7 @@
           <div class="relative">
             <!-- Outer glow effect -->
             <div
-              class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur-md transition-all duration-700"
+              class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur-md transition-all duration-700"
               :class="
                 scrolled ? 'opacity-40' : 'opacity-20 group-hover:opacity-30'
               "
@@ -61,7 +60,7 @@
             <div class="relative">
               <!-- Animated gradient border -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-xl blur transition-all duration-700"
+                class="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-primary rounded-xl blur transition-all duration-700"
                 :class="{ 'animate-gradient-border': logoAnimated }"
                 :style="{
                   opacity: 0.8 * navOpacity,
@@ -73,14 +72,14 @@
               <!-- Main logo -->
               <div
                 class="relative w-12 h-12 rounded-xl bg-card flex items-center justify-center transition-all duration-500"
-                :class="scrolled ? 'shadow-lg shadow-[#00e1ff]/20' : ''"
+                :class="scrolled ? 'shadow-lg shadow-primary/20' : ''"
                 :style="{ opacity: navOpacity }"
               >
                 <!-- Animated code symbol -->
                 <div class="relative">
                   <svg
                     class="w-6 h-6 transition-colors duration-500"
-                    :class="scrolled ? 'text-[#1bd4c1]' : 'text-[#00e1ff]'"
+                    :class="scrolled ? 'text-secondary' : 'text-primary'"
                     viewBox="0 0 24 24"
                     fill="none"
                     :style="{ opacity: navOpacity }"
@@ -97,7 +96,7 @@
 
                   <!-- Pulsing dot -->
                   <div
-                    class="absolute -top-1 -right-1 w-2 h-2 bg-[#1bd4c1] rounded-full transition-all duration-500"
+                    class="absolute -top-1 -right-1 w-2 h-2 bg-secondary rounded-full transition-all duration-500"
                     :class="[
                       { 'animate-ping': logoAnimated },
                       scrolled ? 'scale-125' : '',
@@ -112,7 +111,7 @@
           <!-- Company Name with Gradient -->
           <div class="relative">
             <h1
-              class="text-2xl font-bold bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent transition-all duration-700"
+              class="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent transition-all duration-700"
               :style="{
                 backgroundSize: scrolled ? '200% auto' : '100% auto',
                 backgroundPosition: scrolled ? '100% 50%' : '0% 50%',
@@ -126,7 +125,7 @@
               :class="
                 scrolled
                   ? 'text-[rgb(var(--text-secondary))]'
-                  : 'text-[rgb(var(--text-muted))]'
+                  : 'text-[rgb(var(--text-gray))]'
               "
               :style="{ opacity: navOpacity }"
             >
@@ -135,7 +134,7 @@
 
             <!-- Underline animation -->
             <div
-              class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transition-all duration-700"
+              class="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-700"
               :style="{
                 width: scrolled ? '100%' : '0',
                 opacity: (scrolled ? 1 : 0.5) * navOpacity,
@@ -160,8 +159,8 @@
             :class="[
               'relative bg-transparent px-4 py-2 rounded-lg font-medium transition-all duration-500 group/nav-item',
               route.path === item.path
-                ? 'text-textPrimary bg-gradient-to-r from-[#00e1ff]/40 to-[#1bd4c1]/40'
-                : 'text-[#94a3b8] hover:text-primary',
+                ? 'text-textPrimary bg-gradient-to-r from-primary/40 to-secondary/40'
+                : 'text-textGray hover:text-primary',
             ]"
             @mouseenter="setActiveHover(item.path)"
             @mouseleave="clearActiveHover"
@@ -175,13 +174,13 @@
             <!-- Active indicator -->
             <div
               v-if="route.path === item.path"
-              class="absolute inset-0 rounded-lg bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 transition-opacity duration-500"
+              class="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-secondary/20 transition-opacity duration-500"
               :style="{ opacity: 0.2 * navOpacity }"
             ></div>
 
             <!-- Hover indicator -->
             <div
-              class="absolute inset-0 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 opacity-0 group-hover/nav-item:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover/nav-item:opacity-100 transition-opacity duration-300"
               v-show="route.path !== item.path"
               :style="{ opacity: 0.1 * navOpacity }"
             ></div>
@@ -192,7 +191,7 @@
                 v-if="route.path === item.path"
                 class="w-4 h-4 transition-all duration-500"
                 :class="
-                  scrolled ? 'text-[#1bd4c1] animate-pulse' : 'text-[#00e1ff]'
+                  scrolled ? 'text-secondary animate-pulse' : 'text-primary'
                 "
                 viewBox="0 0 20 20"
                 fill="currentColor"
@@ -209,7 +208,7 @@
             <!-- Bottom indicator for active item -->
             <div
               v-if="route.path === item.path"
-              class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full transition-all duration-500"
+              class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500"
               :class="scrolled ? 'scale-125' : ''"
               :style="{ opacity: navOpacity }"
             ></div>
@@ -231,7 +230,7 @@
           <!-- Language Button -->
           <button
             @click="openLangModal"
-            class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-[#00e1ff]/30"
+            class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-primary/30"
             :aria-label="t('navbar.language')"
           >
             <!-- Current Language Display -->
@@ -244,7 +243,7 @@
                   {{ currentLocale.toUpperCase() }}
                 </div>
                 <div
-                  class="text-xs text-[rgb(var(--text-muted))] transition-all duration-300"
+                  class="text-xs text-[rgb(var(--text-gray))] transition-all duration-300"
                 >
                   {{ getCurrentLanguageName() }}
                 </div>
@@ -253,7 +252,7 @@
 
             <!-- Language Icon -->
             <svg
-              class="w-4 h-4 transition-all duration-500 text-[rgb(var(--text-muted))] group-hover/language:text-[#00e1ff]"
+              class="w-4 h-4 transition-all duration-500 text-primary group-hover/language:text-primary"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -270,8 +269,8 @@
             class="group/theme relative p-3.5 rounded-xl bg-card border border-border transition-all duration-500 flex items-center gap-2"
             :class="
               scrolled
-                ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
-                : 'border-[#334155] hover:border-[#00e1ff]/30'
+                ? 'border-primary/30 shadow-lg shadow-primary/5'
+                : 'border-border hover:border-primary/30'
             "
             :style="{
               opacity: navOpacity,
@@ -283,7 +282,7 @@
             <!-- Sun Icon (Light Mode) -->
             <svg
               v-show="isDark === false"
-              class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+              class="w-5 h-5 transition-all duration-500 text-primary"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -297,7 +296,7 @@
             <!-- Moon Icon (Dark Mode) -->
             <svg
               v-show="isDark === true"
-              class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+              class="w-5 h-5 transition-all duration-500 text-primary"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -314,8 +313,8 @@
           class="lg:hidden relative p-2 rounded-lg bg-card border-border transition-all duration-500 group/menu"
           :class="
             scrolled
-              ? 'border-[#00e1ff]/40 shadow-lg shadow-[#00e1ff]/10'
-              : 'border-[#334155] hover:border-[#00e1ff]/30'
+              ? 'border-primary/40 shadow-lg shadow-primary/10'
+              : 'border-border hover:border-primary/30'
           "
           :aria-label="t('navbar.toggle_menu')"
           :style="{
@@ -329,7 +328,7 @@
           <!-- Animated hamburger icon -->
           <div class="relative w-6 h-5">
             <span
-              class="absolute left-0 w-6 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full transition-all duration-300"
+              class="absolute left-0 w-6 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
               :class="
                 isMobileOpen
                   ? 'top-1/2 transform -translate-y-1/2 rotate-45'
@@ -338,12 +337,12 @@
               :style="{ opacity: navOpacity }"
             ></span>
             <span
-              class="absolute left-0 top-1/2 transform -translate-y-1/2 w-6 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full transition-all duration-300"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 w-6 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
               :class="isMobileOpen ? 'opacity-0' : 'opacity-100'"
               :style="{ opacity: navOpacity }"
             ></span>
             <span
-              class="absolute left-0 w-6 h-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full transition-all duration-300"
+              class="absolute left-0 w-6 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300"
               :class="
                 isMobileOpen
                   ? 'top-1/2 transform -translate-y-1/2 -rotate-45'
@@ -355,7 +354,7 @@
 
           <!-- Background glow -->
           <div
-            class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg opacity-0 group-hover/menu:opacity-10 blur transition-opacity duration-300"
+            class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-0 group-hover/menu:opacity-10 blur transition-opacity duration-300"
             :style="{ opacity: 0.1 * navOpacity }"
           ></div>
         </button>
@@ -381,8 +380,8 @@
               :class="[
                 'relative px-4 py-3 rounded-xl font-medium transition-all duration-300 group/mobile-item',
                 route.path === item.path
-                  ? 'text-white bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20'
-                  : 'text-[rgb(var(--text-muted))] hover:text-white hover:bg-card',
+                  ? 'text-white bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20'
+                  : 'text-[rgb(var(--text-gray))] hover:text-white hover:bg-card',
               ]"
               :style="{
                 opacity: isMobileOpen ? 1 : 0,
@@ -393,18 +392,18 @@
               <!-- Active indicator -->
               <div
                 v-if="route.path === item.path"
-                class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-[#00e1ff] to-[#1bd4c1] rounded-r-full"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-r-full"
               ></div>
 
               <!-- Hover gradient -->
               <div
-                class="absolute inset-0 rounded-xl bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5 opacity-0 group-hover/mobile-item:opacity-100 transition-opacity duration-300"
+                class="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover/mobile-item:opacity-100 transition-opacity duration-300"
               ></div>
 
               <span class="relative z-10 flex items-center justify-between">
                 <span>{{ t(item.nameKey) }}</span>
                 <svg
-                  class="w-4 h-4 text-[#00e1ff] group-hover/mobile-item:translate-x-1 transition-transform duration-300"
+                  class="w-4 h-4 text-primary group-hover/mobile-item:translate-x-1 transition-transform duration-300"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -424,7 +423,7 @@
               <!-- Language Button Mobile -->
               <button
                 @click="openLangModal"
-                class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-[#00e1ff]/30"
+                class="bg-card relative px-4 py-2 rounded-xl border border-border transition-all duration-500 flex items-center gap-3 hover:border-primary/30"
                 :style="{
                   opacity: isMobileOpen ? 1 : 0,
                   transform: isMobileOpen
@@ -439,7 +438,7 @@
                   getCurrentLanguageName()
                 }}</span>
                 <span
-                  class="text-xs px-1.5 py-0.5 rounded bg-[rgb(var(--bg-soft))] text-[rgb(var(--text-muted))]"
+                  class="text-xs px-1.5 py-0.5 rounded bg-[rgb(var(--bg-soft))] text-[rgb(var(--text-gray))]"
                 >
                   {{ currentLocale.toUpperCase() }}
                 </span>
@@ -450,8 +449,8 @@
                 class="group/theme relative p-3.5 rounded-xl bg-card border border-border transition-all duration-500 flex items-center gap-2"
                 :class="
                   scrolled
-                    ? 'border-[#00e1ff]/30 shadow-lg shadow-[#00e1ff]/5'
-                    : 'border-[#334155] hover:border-[#00e1ff]/30'
+                    ? 'border-primary/30 shadow-lg shadow-primary/5'
+                    : 'border-[#334155] hover:border-primary/30'
                 "
                 :style="{
                   opacity: navOpacity,
@@ -465,7 +464,7 @@
                 <!-- Sun Icon (Light Mode) -->
                 <svg
                   v-show="isDark === false"
-                  class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+                  class="w-5 h-5 transition-all duration-500 text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -479,7 +478,7 @@
                 <!-- Moon Icon (Dark Mode) -->
                 <svg
                   v-show="isDark === true"
-                  class="w-5 h-5 transition-all duration-500 text-[#00e1ff]"
+                  class="w-5 h-5 transition-all duration-500 text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -492,7 +491,7 @@
               <NuxtLink
                 to="/contact"
                 @click="closeMobileMenu"
-                class="flex-1 py-3 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[rgb(var(--text-primary))] font-semibold text-center transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,225,255,0.3)]"
+                class="flex-1 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-[rgb(var(--text-primary))] font-semibold text-center transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,225,255,0.3)]"
                 :style="{
                   opacity: isMobileOpen ? 1 : 0,
                   transform: isMobileOpen

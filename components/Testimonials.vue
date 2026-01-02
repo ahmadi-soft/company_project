@@ -21,14 +21,14 @@
         class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]"
       >
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-5 blur-3xl animate-pulse-slow"
         ></div>
       </div>
       <div
         class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]"
       >
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+          class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-5 blur-3xl animate-pulse-slow"
           style="animation-delay: 2s"
         ></div>
       </div>
@@ -53,15 +53,15 @@
       <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16 lg:mb-20">
         <!-- Animated Badge -->
         <div
-          class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/20 hover:border-[#00e1ff]/30 transition-all duration-300 mb-4 md:mb-6 group/badge"
+          class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:border-primary/30 transition-all duration-300 mb-4 md:mb-6 group/badge"
         >
           <!-- Pulsing dots -->
           <div class="relative">
             <div
-              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
             ></div>
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"
             ></div>
           </div>
           <span
@@ -70,11 +70,11 @@
           >
           <div class="relative">
             <div
-              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
               style="animation-delay: 0.5s"
             ></div>
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"
             ></div>
           </div>
         </div>
@@ -88,7 +88,7 @@
           }}</span>
           <span class="block mt-2 md:mt-4">
             <span
-              class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("testimonials.title.highlight") }}
             </span>
@@ -97,10 +97,10 @@
 
         <!-- Description -->
         <p
-          class="text-sm sm:text-base md:text-lg lg:text-xl text-[#cbd5e1] max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+          class="text-sm sm:text-base md:text-lg lg:text-xl text-textLightGray max-w-2xl sm:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
         >
           {{ t("testimonials.description.prefix") }}
-          <span class="text-[#00e1ff] font-medium">{{
+          <span class="text-primary font-medium">{{
             t("testimonials.description.brand")
           }}</span>
           {{ t("testimonials.description.suffix") }}
@@ -108,7 +108,7 @@
 
         <!-- Stats Row -->
         <div
-          class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#334155]/30"
+          class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-8 md:mt-12 pt-6 md:pt-8 border-t border-primary/30"
         >
           <div
             v-for="stat in stats"
@@ -116,12 +116,12 @@
             class="text-center px-2 sm:px-0"
           >
             <div
-              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent mb-1"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1"
             >
               {{ stat.value }}
             </div>
             <div
-              class="text-xs sm:text-sm text-[#94a3b8] uppercase tracking-wider"
+              class="text-xs sm:text-sm text-textGray uppercase tracking-wider"
             >
               {{ t(stat.labelKey) }}
             </div>
@@ -179,12 +179,12 @@
               <div class="relative group/testimonial">
                 <!-- Outer glow -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-xl md:rounded-2xl lg:rounded-3xl opacity-0 group-hover/testimonial:opacity-30 blur transition-opacity duration-500 animate-gradient-border -z-10"
+                  class="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-primary rounded-xl md:rounded-2xl lg:rounded-3xl opacity-0 group-hover/testimonial:opacity-30 blur transition-opacity duration-500 animate-gradient-border -z-10"
                 ></div>
 
                 <!-- Main Card -->
                 <div
-                  class="relative rounded-xl md:rounded-2xl lg:rounded-3xl bg-bg shadow-lgx border border-border group-hover/testimonial:border-[#00e1ff]/30 overflow-hidden transition-all duration-500"
+                  class="relative rounded-xl md:rounded-2xl lg:rounded-3xl bg-bg shadow-lgx border border-border group-hover/testimonial:border-primary/30 overflow-hidden transition-all duration-500"
                 >
                   <!-- Background pattern -->
                   <div class="absolute inset-0 opacity-5">
@@ -203,12 +203,12 @@
                     <!-- Quote Icon -->
                     <div class="relative mb-4 md:mb-6 lg:mb-8">
                       <div
-                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#00e1ff] opacity-20"
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-primary opacity-20"
                       >
                         "
                       </div>
                       <div
-                        class="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-[#1bd4c1] opacity-10"
+                        class="absolute top-0 left-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-secondary opacity-10"
                       >
                         "
                       </div>
@@ -236,7 +236,7 @@
 
                     <!-- Quote Text -->
                     <p
-                      class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#cbd5e1] leading-relaxed mb-6 md:mb-8"
+                      class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-textLightGray leading-relaxed mb-6 md:mb-8"
                     >
                       "{{ testimonial.quote }}"
                     </p>
@@ -249,7 +249,7 @@
                       <div class="relative self-start">
                         <!-- Gradient border -->
                         <div
-                          class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+                          class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"
                         ></div>
                         <!-- Avatar image -->
                         <img
@@ -271,7 +271,7 @@
                               {{ testimonial.author }}
                             </p>
                             <p
-                              class="text-xs sm:text-sm md:text-[#94a3b8] text-[#94a3b8]"
+                              class="text-xs sm:text-sm md:text-textGray text-textGray"
                             >
                               {{ testimonial.role }}
                             </p>
@@ -279,10 +279,10 @@
                           <!-- Company logo/icon -->
                           <div class="relative self-start sm:self-auto">
                             <div
-                              class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 flex items-center justify-center"
+                              class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 flex items-center justify-center"
                             >
                               <div
-                                class="text-xs sm:text-sm font-bold text-[#00e1ff]"
+                                class="text-xs sm:text-sm font-bold text-primary"
                               >
                                 {{ testimonial.companyInitial }}
                               </div>
@@ -298,7 +298,7 @@
                             <span
                               v-for="tag in testimonial.tags"
                               :key="tag"
-                              class="px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-full bg-[#1e293b] border border-[#334155] text-[#cbd5e1]"
+                              class="px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm rounded-full bg-primary/10 border border-primary/50 text-primary"
                             >
                               {{ tag }}
                             </span>
@@ -325,7 +325,7 @@
                             {{ metric.value }}
                           </div>
                           <div
-                            class="text-[10px] xs:text-xs text-[#94a3b8] uppercase tracking-wider"
+                            class="text-[10px] xs:text-xs text-textGray uppercase tracking-wider"
                           >
                             {{
                               t(`testimonials.metrics_labels.${metric.label}`)
@@ -338,7 +338,7 @@
 
                   <!-- Bottom gradient bar -->
                   <div
-                    class="h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                    class="h-1 bg-gradient-to-r from-primary to-secondary"
                   ></div>
                 </div>
               </div>
@@ -350,11 +350,11 @@
         <div class="swiper-navigation">
           <button
             @click="prevSlide"
-            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 max-sm:left-5 sm:-translate-x-6 md:-translate-x-8 lg:-translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#00e1ff] hover:bg-[#00e1ff]/10 flex items-center justify-center transition-all duration-300 group/prev"
+            class="custom-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 max-sm:left-5 sm:-translate-x-6 md:-translate-x-8 lg:-translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-primary hover:bg-primary/10 flex items-center justify-center transition-all duration-300 group/prev"
             aria-label="Previous testimonial"
           >
             <svg
-              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/prev:text-[#00e1ff] transition-colors duration-300"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/prev:text-primary transition-colors duration-300"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -368,11 +368,11 @@
 
           <button
             @click="nextSlide"
-            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 max-sm:right-5 sm:translate-x-6 md:translate-x-8 lg:translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-[#1bd4c1] hover:bg-[#1bd4c1]/10 flex items-center justify-center transition-all duration-300 group/next"
+            class="custom-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 max-sm:right-5 sm:translate-x-6 md:translate-x-8 lg:translate-x-12 z-20 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-[#111827] border border-[#334155] hover:border-secondary hover:bg-secondary/10 flex items-center justify-center transition-all duration-300 group/next"
             aria-label="Next testimonial"
           >
             <svg
-              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/next:text-[#1bd4c1] transition-colors duration-300"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover/next:text-secondary transition-colors duration-300"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -402,7 +402,7 @@
             {{ t("testimonials.company.title") }}
           </h3>
           <p
-            class="text-sm sm:text-base text-[#94a3b8] max-w-xl sm:max-w-2xl mx-auto px-2 sm:px-0"
+            class="text-sm sm:text-base text-textLightGray max-w-xl sm:max-w-2xl mx-auto px-2 sm:px-0"
           >
             {{ t("testimonials.company.description") }}
           </p>
@@ -419,7 +419,7 @@
           >
             <!-- Company logo container -->
             <div
-              class="relative h-16 sm:h-18 md:h-20 flex items-center justify-center"
+              class="relative h-16 sm:h-18 md:h-20 flex items-center justify-center cursor-pointer"
             >
               <!-- Background effect -->
               <div
@@ -428,7 +428,7 @@
 
               <!-- Logo placeholder -->
               <div
-                class="relative z-10 text-lg sm:text-xl md:text-2xl font-bold text-[#334155] group-hover/company:text-[#00e1ff] transition-colors duration-300"
+                class="relative z-10 text-lg sm:text-xl md:text-2xl font-bold text-textGray group-hover/company:text-primary transition-colors duration-300"
               >
                 {{ company.initial }}
               </div>
@@ -453,7 +453,7 @@
             {{ t("testimonials.cta.title") }}
           </h3>
           <p
-            class="text-sm sm:text-base md:text-lg text-[#cbd5e1] mb-6 md:mb-8"
+            class="text-sm sm:text-base md:text-lg text-textLightGray mb-6 md:mb-8"
           >
             {{ t("testimonials.cta.description") }}
           </p>
@@ -463,12 +463,12 @@
           >
             <!-- Gradient background -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg sm:rounded-xl"
+              class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg sm:rounded-xl"
             ></div>
 
             <!-- Hover gradient overlay -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/cta:opacity-100 rounded-lg sm:rounded-xl transition-opacity duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/cta:opacity-100 rounded-lg sm:rounded-xl transition-opacity duration-300"
             ></div>
 
             <!-- Content -->
@@ -491,7 +491,7 @@
 
             <!-- Glow effect -->
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg sm:rounded-xl blur opacity-0 group-hover/cta:opacity-30 transition-opacity duration-300 -z-10"
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg sm:rounded-xl blur opacity-0 group-hover/cta:opacity-30 transition-opacity duration-300 -z-10"
             ></div>
           </NuxtLink>
         </div>

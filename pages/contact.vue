@@ -21,7 +21,7 @@
         <!-- Animated Orbs -->
         <div class="absolute top-1/3 -left-40 w-[600px] h-[600px]">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-5 blur-3xl animate-pulse-slow"
           ></div>
         </div>
 
@@ -37,7 +37,7 @@
         <div ref="heroRef" class="max-w-4xl mx-auto text-center">
           <!-- Badge -->
           <div
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 border border-primary/20 mb-8"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-8"
           >
             <div class="flex items-center gap-2">
               <div class="relative">
@@ -53,7 +53,7 @@
                   />
                 </svg>
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-full blur opacity-30 animate-ping"
+                  class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 animate-ping"
                 ></div>
               </div>
               <span
@@ -69,7 +69,7 @@
           >
             <span class="text-textPrimary">{{ t("contact.title.part1") }}</span>
             <span
-              class="block bg-gradient-to-r from-primary via-[#1bd4c1] to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("contact.title.part2") }}
             </span>
@@ -78,7 +78,7 @@
 
           <!-- Description -->
           <p
-            class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed font-light"
+            class="text-xl md:text-2xl text-textLightGray max-w-3xl mx-auto leading-relaxed font-light"
           >
             {{ t("contact.description.prefix") }}
             <span class="text-primary font-medium">{{
@@ -101,7 +101,7 @@
             >
               <!-- Gradient Border -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
               ></div>
 
               <!-- Main Card -->
@@ -113,7 +113,7 @@
                   <h2 class="text-3xl font-bold text-textPrimary mb-3">
                     {{ t("contact.form.title") }}
                   </h2>
-                  <p class="text-[#cbd5e1]">
+                  <p class="text-textLightGray">
                     {{ t("contact.form.subtitle") }}
                   </p>
                 </div>
@@ -132,14 +132,14 @@
                       </label>
                       <div class="relative">
                         <div
-                          class="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                          class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                         ></div>
                         <input
                           id="name"
                           v-model="formData.name"
                           type="text"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           placeholder="John Doe"
                           :placeholder="t('contact.placeholders.name')"
                         />
@@ -156,14 +156,14 @@
                       </label>
                       <div class="relative">
                         <div
-                          class="absolute -inset-0.5 bg-gradient-to-r from-[#1bd4c1] to-primary rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                          class="absolute -inset-0.5 bg-gradient-to-r from-secondary to-primary rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                         ></div>
                         <input
                           id="email"
                           v-model="formData.email"
                           type="email"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300"
                           placeholder="john@example.com"
                           :placeholder="t('contact.placeholders.email')"
                         />
@@ -185,7 +185,7 @@
                           id="company"
                           v-model="formData.company"
                           type="text"
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                           placeholder="Your Company"
                           :placeholder="t('contact.placeholders.company')"
                         />
@@ -205,7 +205,7 @@
                           id="subject"
                           v-model="formData.subject"
                           required
-                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary focus:outline-none focus:ring-2 focus:ring-[#1bd4c1] focus:border-transparent transition-all duration-300 appearance-none"
+                          class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300 appearance-none"
                         >
                           <option value="" disabled selected>
                             {{ t("contact.form.select_subject") }}
@@ -227,7 +227,7 @@
                           </option>
                         </select>
                         <svg
-                          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#94a3b8] pointer-events-none"
+                          class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-textGray pointer-events-none"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -252,14 +252,14 @@
                     </label>
                     <div class="relative">
                       <div
-                        class="absolute -inset-0.5 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                        class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                       ></div>
                       <textarea
                         id="message"
                         v-model="formData.message"
                         required
                         rows="6"
-                        class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
+                        class="w-full px-4 py-3 bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
                         :placeholder="t('contact.placeholders.message')"
                       ></textarea>
                     </div>
@@ -277,12 +277,12 @@
                     >
                       <!-- Background gradient -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-xl"
+                        class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
                       ></div>
 
                       <!-- Hover gradient -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-primary opacity-0 group-hover/btn:opacity-100 rounded-xl transition-opacity duration-300"
+                        class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/btn:opacity-100 rounded-xl transition-opacity duration-300"
                       ></div>
 
                       <!-- Shine effect -->
@@ -320,14 +320,14 @@
 
                       <!-- Outer glow -->
                       <div
-                        class="absolute -inset-2 bg-gradient-to-r from-primary to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/btn:opacity-30 transition-opacity duration-300 -z-10"
+                        class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-0 group-hover/btn:opacity-30 transition-opacity duration-300 -z-10"
                       ></div>
                     </button>
 
                     <!-- Success Message -->
                     <div
                       v-if="submitSuccess"
-                      class="mt-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 border border-primary/30"
+                      class="mt-4 p-4 rounded-xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30"
                     >
                       <div class="flex items-center gap-3">
                         <svg
@@ -345,7 +345,7 @@
                           <p class="text-white font-medium">
                             {{ t("contact.success.title") }}
                           </p>
-                          <p class="text-sm text-[#cbd5e1]">
+                          <p class="text-sm text-textLightGray">
                             {{
                               t("contact.success.subtitle", {
                                 hours: t("contact.response_time"),
@@ -375,7 +375,7 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
@@ -398,7 +398,7 @@
                       }"
                     >
                       <svg
-                        class="w-6 h-6 text-primary group-hover:text-[#1bd4c1] transition-colors duration-300"
+                        class="w-6 h-6 text-primary group-hover:text-secondary transition-colors duration-300"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -427,7 +427,7 @@
 
                     <!-- Content -->
                     <div class="flex-1">
-                      <p class="text-sm text-[#94a3b8] mb-1">
+                      <p class="text-sm text-textGray mb-1">
                         {{ t(info.title) }}
                       </p>
                       <a
@@ -469,14 +469,14 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
                 <div
                   class="relative bg-card rounded-3xl border border-border group-hover:border-[#00e1ff]/30 p-6 transition-all duration-300"
                 >
-                  <p class="text-sm text-[#94a3b8] mb-4">
+                  <p class="text-sm text-textGray mb-4">
                     {{ t("contact.follow_us") }}
                   </p>
                   <div class="flex gap-3">
@@ -496,12 +496,12 @@
 
                       <!-- Gradient overlay -->
                       <div
-                        class="absolute inset-0 bg-gradient-to-r from-primary/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
+                        class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"
                       ></div>
 
                       <!-- Icon -->
                       <svg
-                        class="relative z-10 w-5 h-5 text-[#94a3b8] group-hover/social:text-primary transition-colors duration-300"
+                        class="relative z-10 w-5 h-5 text-textGray group-hover/social:text-primary transition-colors duration-300"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -536,7 +536,7 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
@@ -594,7 +594,7 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-[#1bd4c1] to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
@@ -623,7 +623,7 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="text-sm text-[#94a3b8]">
+                        <p class="text-sm text-textGray">
                           {{ t("contact.quick.call_us") }}
                         </p>
                         <p class="text-textPrimary font-medium">
@@ -653,7 +653,7 @@
                         </svg>
                       </div>
                       <div>
-                        <p class="text-sm text-[#94a3b8]">
+                        <p class="text-sm text-textGray">
                           {{ t("contact.quick.email_us") }}
                         </p>
                         <p class="text-textPrimary font-medium">

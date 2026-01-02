@@ -1,23 +1,31 @@
-/* Root variables for theme
-   Provided colors (ARGB):
-   primary: 0xFF111827 -> #111827
-   secondary: 0xFF33CCFF -> #33CCFF
-*/
-/* :root {
-  --primary-color: #33ccff; 
-  --secondary-color: #111827; 
-  --background-color: #202222;
-  --text-color: #bec7ca;
-  --header-height: 48px;
-  --bottom-padding: 63px;
-  --font-family: Inter, sans-serif;
-} */
-/* #00e1ff (Primary/Cyan)
+:root {
+  /* ===== Brand ===== */
+  --primary: 0 225 255; /* #00e1ff */
+  --secondary: 27 212 193; /* #1bd4c1 */
 
-#1bd4c1 (Secondary/Teal)
+  /* ===== Light Theme ===== */
+  --bg: 248 250 252; /* #f8fafc */
+  --bg-soft: 241 245 249; /* #f1f5f9 */
+  --card: 255 255 255; /* #ffffff */
+  --border: 226 232 240; /* #e2e8f0 */
 
-#94a3b8 (Muted Foreground/Slate)
+  --input-field: 241 245 249; /* #F1F5F9 */
 
-#111827 (Card/Button Bar/Dark Blue)
+  --text-primary: 15 23 42; /* #0f172a */
+  --text-light-gray: 100 116 139; /* #64748b → secondary text */
+  --text-gray: 51 65 85; /* #334155 → primary text */
+}
 
-#0f1729 (Background/Darker Blue) */
+.dark {
+  /* ===== Dark Theme ===== */
+  --bg: 15 23 41; /* #0f1729 */
+  --bg-soft: 17 24 39; /* #111827 */
+  --card: 17 24 39; /* #111827 */
+  --border: 31 41 55; /* #1f2937 */
+
+  --input-field: 30 41 59; /* #1E293B */
+
+  --text-primary: 248 250 252; /* #f8fafc */
+  --text-light-gray: 203 213 225; /* #cbd5e1 */
+  --text-gray: 148 163 184; /* #94a3b8 */
+}

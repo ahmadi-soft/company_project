@@ -21,13 +21,13 @@
         <!-- Animated Orbs -->
         <div class="absolute top-1/3 -left-40 w-[600px] h-[600px]">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-5 blur-3xl animate-pulse-slow"
           ></div>
         </div>
 
         <div class="absolute bottom-1/3 -right-40 w-[500px] h-[500px]">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-5 blur-3xl animate-pulse-slow"
             style="animation-delay: 1.5s"
           ></div>
         </div>
@@ -37,7 +37,7 @@
           <div
             v-for="i in 12"
             :key="i"
-            class="absolute w-px h-full bg-gradient-to-b from-transparent via-[#00e1ff]/10 to-transparent animate-float-line"
+            class="absolute w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent animate-float-line"
             :style="{
               left: `${i * 8.33}%`,
               animationDelay: `${i * 0.2}s`,
@@ -51,15 +51,15 @@
         <div ref="heroRef" class="max-w-4xl mx-auto text-center">
           <!-- Badge -->
           <div
-            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20 mb-8"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-8"
           >
             <div class="flex items-center gap-2">
               <div class="relative">
                 <div
-                  class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-pulse"
+                  class="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse"
                 ></div>
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30 animate-ping"
+                  class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 animate-ping"
                 ></div>
               </div>
               <span
@@ -78,7 +78,7 @@
             }}</span>
             <span class="block">
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("projects.title.highlight") }}
               </span>
@@ -87,19 +87,19 @@
 
           <!-- Description -->
           <p
-            class="text-xl md:text-2xl text-[#cbd5e1] max-w-3xl mx-auto leading-relaxed font-light"
+            class="text-xl md:text-2xl text-textLightGray max-w-3xl mx-auto leading-relaxed font-light"
           >
             {{ t("projects.description.pre") }}
-            <span class="text-[#00e1ff] font-medium">{{
+            <span class="text-primary font-medium">{{
               t("projects.categories.Web Apps")
             }}</span
             >,
-            <span class="text-[#1bd4c1] font-medium">{{
+            <span class="text-secondary font-medium">{{
               t("projects.categories.Mobile Apps")
             }}</span
             >, and
             <span
-              class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent font-medium"
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-medium"
               >{{ t("projects.categories.UI/UX Design") }}</span
             >.
           </p>
@@ -122,7 +122,7 @@
             <div class="flex items-center gap-3">
               <div class="relative">
                 <svg
-                  class="w-5 h-5 text-[#00e1ff]"
+                  class="w-5 h-5 text-primary"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -137,7 +137,7 @@
                 <h3 class="text-textPrimary font-semibold">
                   {{ t("projects.filter.title") }}
                 </h3>
-                <p class="text-sm text-[#94a3b8]">
+                <p class="text-sm text-textGray">
                   {{
                     t("projects.filter.found", {
                       count: filteredProjects.length,
@@ -157,19 +157,19 @@
                   'group relative px-5 py-2.5 rounded-xl font-medium transition-all duration-300',
                   activeCategory === category
                     ? 'text-textPrimary'
-                    : 'text-[#94a3b8] hover:text-white',
+                    : 'text-textLightGray hover:text-primary',
                 ]"
               >
                 <!-- Background for active state -->
                 <div
                   v-if="activeCategory === category"
-                  class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl border border-[#00e1ff]/30"
+                  class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl border border-primary/30"
                 ></div>
 
                 <!-- Hover background -->
                 <div
                   v-else
-                  class="absolute inset-0 bg-primary/20 border border-primary/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 bg-primary/10 border border-primary/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 ></div>
 
                 <span class="relative z-10">{{
@@ -179,7 +179,7 @@
                 <!-- Active indicator -->
                 <div
                   v-if="activeCategory === category"
-                  class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full"
+                  class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"
                 ></div>
               </button>
             </div>
@@ -187,10 +187,10 @@
             <!-- Sort Dropdown -->
             <div class="relative group/sort">
               <button
-                class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#111827] border border-[#334155] hover:border-[#00e1ff]/30 transition-colors duration-300"
+                class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#111827] border border-[#334155] hover:border-primary/30 transition-colors duration-300"
               >
                 <svg
-                  class="w-4 h-4 text-[#94a3b8]"
+                  class="w-4 h-4 text-textLightGray"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -220,7 +220,7 @@
                     <span>{{ t(label) }}</span>
                     <svg
                       v-if="activeSort === key"
-                      class="w-4 h-4 text-[#00e1ff]"
+                      class="w-4 h-4 text-primary"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -256,7 +256,7 @@
               >
                 <!-- Gradient Border -->
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+                  class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
                 ></div>
 
                 <!-- Main Card -->
@@ -279,14 +279,14 @@
 
                     <!-- Hover Overlay -->
                     <div
-                      class="absolute inset-0 bg-gradient-to-tr from-[#00e1ff]/20 via-transparent to-[#1bd4c1]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      class="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     ></div>
 
                     <!-- Category Badge -->
                     <div class="absolute top-4 left-4">
                       <div class="relative">
                         <div
-                          class="px-3 py-1 rounded-full bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 backdrop-blur-sm border border-white/10"
+                          class="px-3 py-1 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/10"
                         >
                           <span
                             class="text-textPrimary text-xs font-semibold tracking-wider"
@@ -316,10 +316,10 @@
                       <a
                         :href="project.demoUrl"
                         target="_blank"
-                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-[#00e1ff]/30 transition-all duration-300"
+                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-primary/30 transition-all duration-300"
                       >
                         <div
-                          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
+                          class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
                         ></div>
                         <span
                           class="relative z-10 text-textPrimary font-medium flex items-center gap-2 text-sm"
@@ -343,10 +343,10 @@
                       <a
                         :href="project.codeUrl"
                         target="_blank"
-                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-[#1bd4c1]/30 transition-all duration-300"
+                        class="group/action relative px-5 py-2.5 rounded-xl bg-card/10 backdrop-blur-sm border border-white/20 hover:border-secondary/30 transition-all duration-300"
                       >
                         <div
-                          class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1]/10 to-[#00e1ff]/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
+                          class="absolute inset-0 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-xl opacity-0 group-hover/action:opacity-100 transition-opacity duration-300"
                         ></div>
                         <span
                           class="relative z-10 text-textPrimary font-medium flex items-center gap-2 text-sm"
@@ -373,9 +373,9 @@
                     <!-- Client Info -->
                     <div class="flex items-center gap-2 mb-3">
                       <div
-                        class="w-6 h-px bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                        class="w-6 h-px bg-gradient-to-r from-primary to-secondary"
                       ></div>
-                      <span class="text-[#94a3b8] text-sm font-medium">{{
+                      <span class="text-textGray text-sm font-medium">{{
                         project.client
                       }}</span>
                     </div>
@@ -389,7 +389,7 @@
 
                     <!-- Description -->
                     <p
-                      class="text-[#cbd5e1] mb-4 leading-relaxed font-light text-sm line-clamp-2"
+                      class="text-textLightGray mb-4 leading-relaxed font-light text-sm line-clamp-2"
                     >
                       {{ project.description }}
                     </p>
@@ -403,7 +403,7 @@
                           class="group/tag relative"
                         >
                           <div
-                            class="px-3 py-1.5 rounded-lg cursor-pointer bg-card border border-primary/30 group-hover/tag:border-primary/50 transition-all duration-300"
+                            class="px-3 py-1.5 rounded-lg cursor-pointer bg-card border border-primary/50 group-hover/tag:border-primary/50 transition-all duration-300"
                           >
                             <span
                               class="text-textPrimary text-xs font-medium group-hover/tag:text-primary"
@@ -411,7 +411,7 @@
                             >
                           </div>
                           <div
-                            class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg blur opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 -z-10"
+                            class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 -z-10"
                           ></div>
                         </div>
 
@@ -440,7 +440,7 @@
                           {{ project.year }}
                         </div>
                         <div
-                          class="text-xs text-[#94a3b8] uppercase tracking-wider"
+                          class="text-xs text-textGray uppercase tracking-wider"
                         >
                           {{ t("projects.stats.year") }}
                         </div>
@@ -450,7 +450,7 @@
                           {{ project.duration }}
                         </div>
                         <div
-                          class="text-xs text-[#94a3b8] uppercase tracking-wider"
+                          class="text-xs text-textGray uppercase tracking-wider"
                         >
                           {{ t("projects.stats.duration") }}
                         </div>
@@ -460,7 +460,7 @@
                           {{ project.teamSize }}
                         </div>
                         <div
-                          class="text-xs text-[#94a3b8] uppercase tracking-wider"
+                          class="text-xs text-textGray uppercase tracking-wider"
                         >
                           {{ t("projects.stats.team") }}
                         </div>
@@ -476,7 +476,7 @@
                     <div
                       v-for="i in 6"
                       :key="i"
-                      class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+                      class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
                       :style="{
                         left: `${Math.random() * 100}%`,
                         top: `${Math.random() * 100}%`,
@@ -497,10 +497,10 @@
           class="col-span-1 md:col-span-2 lg:col-span-3 text-center py-20"
         >
           <div
-            class="w-24 h-24 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
+            class="w-24 h-24 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6"
           >
             <svg
-              class="w-12 h-12 text-[#94a3b8]"
+              class="w-12 h-12 text-textGray"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -514,12 +514,12 @@
           <h3 class="text-2xl font-bold text-white mb-3">
             {{ t("projects.empty.title") }}
           </h3>
-          <p class="text-[#cbd5e1] mb-6 max-w-md mx-auto">
+          <p class="text-textLightGray mb-6 max-w-md mx-auto">
             {{ t("projects.empty.desc") }}
           </p>
           <button
             @click="setActiveCategory('All')"
-            class="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] text-[#0f1729] font-semibold hover:shadow-[0_0_30px_rgba(0,225,255,0.3)] transition-all duration-300"
+            class="px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-[#0f1729] font-semibold hover:shadow-[0_0_30px_rgba(0,225,255,0.3)] transition-all duration-300"
           >
             {{ t("projects.empty.view_all") }}
           </button>

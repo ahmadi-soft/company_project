@@ -21,12 +21,12 @@
         <!-- Animated Orbs -->
         <div class="absolute top-1/3 -right-20 w-96 h-96">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-10 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-10 blur-3xl animate-pulse-slow"
           ></div>
         </div>
         <div class="absolute bottom-1/3 -left-20 w-96 h-96">
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-10 blur-3xl animate-pulse-slow"
+            class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-10 blur-3xl animate-pulse-slow"
             style="animation-delay: 2s"
           ></div>
         </div>
@@ -34,20 +34,20 @@
         <!-- Floating Elements -->
         <div class="absolute top-1/4 left-1/4 w-16 h-16">
           <div
-            class="w-full h-full bg-gradient-to-br from-[#00e1ff]/20 to-transparent rounded-xl border border-[#00e1ff]/30 animate-float"
+            class="w-full h-full bg-gradient-to-br from-primary/20 to-transparent rounded-xl border border-primary/30 animate-float"
           >
             <div class="absolute inset-2 flex items-center justify-center">
-              <Icon name="lucide:code" class="w-8 h-8 text-[#00e1ff]" />
+              <Icon name="lucide:code" class="w-8 h-8 text-primary" />
             </div>
           </div>
         </div>
         <div class="absolute bottom-1/4 right-1/4 w-12 h-12">
           <div
-            class="w-full h-full bg-gradient-to-bl from-[#1bd4c1]/20 to-transparent rounded-lg border border-[#1bd4c1]/30 animate-float"
+            class="w-full h-full bg-gradient-to-bl from-secondary/20 to-transparent rounded-lg border border-secondary/30 animate-float"
             style="animation-delay: 1s"
           >
             <div class="absolute inset-2 flex items-center justify-center">
-              <Icon name="lucide:brackets" class="w-6 h-6 text-[#1bd4c1]" />
+              <Icon name="lucide:brackets" class="w-6 h-6 text-secondary" />
             </div>
           </div>
         </div>
@@ -56,14 +56,14 @@
       <div class="container mx-auto px-4 relative z-10">
         <!-- Badge -->
         <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#334155] hover:border-[#00e1ff]/30 transition-all duration-300 mb-6 group/badge"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-[#334155] hover:border-primary/30 transition-all duration-300 mb-6 group/badge"
         >
           <div class="relative">
             <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
             ></div>
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"
             ></div>
           </div>
           <span class="text-sm font-medium text-textPrimary tracking-wider">{{
@@ -71,11 +71,11 @@
           }}</span>
           <div class="relative">
             <div
-              class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-ping"
+              class="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping"
               style="animation-delay: 0.5s"
             ></div>
             <div
-              class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30"
+              class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"
             ></div>
           </div>
         </div>
@@ -89,7 +89,7 @@
           }}</span>
           <span class="block">
             <span
-              class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("services.heading.development") }}
             </span>
@@ -101,14 +101,14 @@
 
         <!-- Description -->
         <p
-          class="text-lg md:text-xl text-[#cbd5e1] max-w-3xl leading-relaxed mb-12"
+          class="text-lg md:text-xl text-textLightGray max-w-3xl leading-relaxed mb-12"
         >
           {{ t("services.page.pre")
-          }}<span class="text-[#00e1ff] font-medium">{{
+          }}<span class="text-primary font-medium">{{
             t("hero.description_keywords.concept")
           }}</span
           >{{ t("services.page.mid")
-          }}<span class="text-[#1bd4c1] font-medium">{{
+          }}<span class="text-secondary font-medium">{{
             t("hero.description_keywords.deployment")
           }}</span
           >{{ t("services.page.post") }}
@@ -126,7 +126,7 @@
             <div class="text-3xl font-bold text-textPrimary mb-1">
               {{ stat.value }}
             </div>
-            <div class="text-sm text-[#94a3b8] uppercase tracking-wider">
+            <div class="text-sm text-textGray uppercase tracking-wider">
               {{ t(stat.labelKey) }}
             </div>
           </div>
@@ -135,12 +135,12 @@
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div class="flex flex-col items-center gap-2">
-            <span class="text-xs text-[#64748b] uppercase tracking-wider">{{
+            <span class="text-xs text-textLightGray uppercase tracking-wider">{{
               t("services.cta.explore_all")
             }}</span>
-            <div class="relative w-5 h-10 rounded-full border border-[#334155]">
+            <div class="relative w-5 h-10 rounded-full border border-textGray">
               <div
-                class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-[#00e1ff] to-[#1bd4c1] rounded-full animate-scroll"
+                class="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-3 bg-gradient-to-b from-primary to-secondary rounded-full animate-scroll"
               ></div>
             </div>
           </div>
@@ -162,7 +162,7 @@
         <!-- Alternating gradient background -->
         <div
           v-if="index % 2 === 0"
-          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/5 via-transparent to-[#1bd4c1]/5"
+          class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5"
         ></div>
 
         <!-- Pattern -->
@@ -192,12 +192,12 @@
             <div class="relative inline-block mb-8">
               <!-- Animated background -->
               <div
-                class="absolute -inset-4 rounded-2xl bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] opacity-10 blur"
+                class="absolute -inset-4 rounded-2xl bg-gradient-to-r from-primary to-secondary opacity-10 blur"
               ></div>
 
               <!-- Icon Container -->
               <div
-                class="relative w-20 h-20 rounded-xl bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/30 flex items-center justify-center group-hover:border-[#00e1ff]/30 transition-all duration-300"
+                class="relative w-20 h-20 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/30 flex items-center justify-center group-hover:border-primary/30 transition-all duration-300"
               >
                 <!-- Modern Icon -->
                 <Icon
@@ -205,8 +205,8 @@
                   class="w-10 h-10"
                   :class="
                     service.color === 'primary'
-                      ? 'text-[#00e1ff]'
-                      : 'text-[#1bd4c1]'
+                      ? 'text-primary'
+                      : 'text-secondary'
                   "
                 />
 
@@ -214,17 +214,15 @@
                 <div
                   class="absolute -top-1 -right-1 w-4 h-4 rounded-full"
                   :class="
-                    service.color === 'primary'
-                      ? 'bg-[#00e1ff]'
-                      : 'bg-[#1bd4c1]'
+                    service.color === 'primary' ? 'bg-primary' : 'bg-secondary'
                   "
                 >
                   <div
                     class="absolute inset-0 rounded-full animate-ping"
                     :class="
                       service.color === 'primary'
-                        ? 'bg-[#00e1ff]'
-                        : 'bg-[#1bd4c1]'
+                        ? 'bg-primary'
+                        : 'bg-secondary'
                     "
                     style="
                       animation-delay: calc(var(--service-index, 0) * 200ms);
@@ -240,7 +238,9 @@
             </h2>
 
             <!-- Description -->
-            <p class="text-lg md:text-xl text-[#cbd5e1] leading-relaxed mb-8">
+            <p
+              class="text-lg md:text-xl text-textLightGray leading-relaxed mb-8"
+            >
               {{ service.description }}
             </p>
 
@@ -249,11 +249,11 @@
               <span
                 v-for="tech in service.technologies"
                 :key="tech"
-                class="group/tech relative px-4 py-2 rounded-lg bg-card border border-border text-textPrimary hover:text-primary hover:border-[#00e1ff]/30 transition-all duration-300"
+                class="group/tech relative px-4 py-2 rounded-lg bg-card border border-border text-textLightGray hover:text-primary hover:border-primary/30 transition-all duration-300"
               >
                 {{ tech }}
                 <div
-                  class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg opacity-0 group-hover/tech:opacity-20 blur transition-opacity duration-300 -z-10"
+                  class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-lg opacity-0 group-hover/tech:opacity-20 blur transition-opacity duration-300 -z-10"
                 ></div>
               </span>
             </div>
@@ -265,12 +265,12 @@
             >
               <!-- Background -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+                class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
               ></div>
 
               <!-- Hover overlay -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/cta:opacity-100 rounded-xl transition-opacity duration-300"
+                class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/cta:opacity-100 rounded-xl transition-opacity duration-300"
               ></div>
 
               <!-- Content -->
@@ -299,7 +299,7 @@
             >
               <!-- Card -->
               <div
-                class="relative h-full rounded-xl shadow-lg bg-card border border-border p-6 group-hover/feature:border-[#00e1ff]/30 transition-all duration-300 transform group-hover/feature:-translate-y-1"
+                class="relative h-full rounded-xl shadow-lg bg-card border border-border p-6 group-hover/feature:border-primary/30 transition-all duration-300 transform group-hover/feature:-translate-y-1"
               >
                 <!-- Shimmer effect -->
                 <div class="absolute inset-0 overflow-hidden rounded-xl">
@@ -311,15 +311,15 @@
                 <!-- Icon -->
                 <div class="relative mb-4">
                   <div
-                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-primary/50 flex items-center justify-center"
+                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/50 flex items-center justify-center"
                   >
                     <Icon
                       :name="getFeatureIcon(feature.icon)"
                       class="w-6 h-6"
                       :class="
                         feature.color === 'primary'
-                          ? 'text-[#00e1ff]'
-                          : 'text-[#1bd4c1]'
+                          ? 'text-primary'
+                          : 'text-secondary'
                       "
                     />
                   </div>
@@ -327,17 +327,17 @@
 
                 <!-- Content -->
                 <h3
-                  class="font-semibold text-white mb-2 group-hover/feature:text-transparent group-hover/feature:bg-gradient-to-r group-hover/feature:from-[#00e1ff] group-hover/feature:via-[#1bd4c1] group-hover/feature:to-[#00e1ff] group-hover/feature:bg-clip-text transition-all duration-300"
+                  class="font-semibold text-white mb-2 group-hover/feature:text-transparent group-hover/feature:bg-gradient-to-r group-hover/feature:from-primary group-hover/feature:via-secondary group-hover/feature:to-primary group-hover/feature:bg-clip-text transition-all duration-300"
                 >
                   {{ t(feature.titleKey) }}
                 </h3>
-                <p class="text-sm text-[#94a3b8] leading-relaxed">
+                <p class="text-sm text-textGray leading-relaxed">
                   {{ t(feature.descKey) }}
                 </p>
 
                 <!-- Bottom gradient bar -->
                 <div
-                  class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] transform scale-x-0 group-hover/feature:scale-x-100 transition-transform duration-500 origin-left rounded-b-xl"
+                  class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover/feature:scale-x-100 transition-transform duration-500 origin-left rounded-b-xl"
                 ></div>
               </div>
             </div>
@@ -358,13 +358,13 @@
             }}</span>
             <span class="block">
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ t("services.process.title_highlight") }}
               </span>
             </span>
           </h2>
-          <p class="text-lg text-[#cbd5e1] max-w-3xl mx-auto">
+          <p class="text-lg text-textLightGray max-w-3xl mx-auto">
             {{ t("services.process.description") }}
           </p>
         </div>
@@ -373,7 +373,7 @@
         <div class="relative">
           <!-- Connecting line -->
           <div
-            class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] transform -translate-y-1/2 hidden lg:block"
+            class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-primary transform -translate-y-1/2 hidden lg:block"
           ></div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -384,7 +384,7 @@
             >
               <!-- Step number -->
               <div
-                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] flex items-center justify-center text-[#0f1729] font-bold text-xl z-10"
+                class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-[#0f1729] font-bold text-xl z-10"
               >
                 {{ index + 1 }}
               </div>
@@ -397,7 +397,7 @@
                 <div class="mb-6">
                   <Icon
                     :name="getProcessIcon(step.icon)"
-                    class="w-10 h-10 text-[#00e1ff]"
+                    class="w-10 h-10 text-primary"
                   />
                 </div>
 
@@ -405,11 +405,11 @@
                 <h3 class="text-xl font-bold text-textPrimary mb-3">
                   {{ t(step.titleKey) }}
                 </h3>
-                <p class="text-[#94a3b8]">{{ t(step.descriptionKey) }}</p>
+                <p class="text-textGray">{{ t(step.descriptionKey) }}</p>
 
                 <!-- Hover effect -->
                 <div
-                  class="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#00e1ff]/5 to-[#1bd4c1]/5 opacity-0 group-hover/step:opacity-100 transition-opacity duration-300"
+                  class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover/step:opacity-100 transition-opacity duration-300"
                 ></div>
               </div>
             </div>
@@ -422,18 +422,18 @@
     <section class="relative py-24 md:py-32 overflow-hidden">
       <!-- Background -->
       <div
-        class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 via-[#1bd4c1]/5 to-[#00e1ff]/10"
+        class="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10"
       ></div>
 
       <!-- Orbs -->
       <div class="absolute top-0 left-0 w-96 h-96">
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-10 blur-3xl"
+          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-10 blur-3xl"
         ></div>
       </div>
       <div class="absolute bottom-0 right-0 w-96 h-96">
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-10 blur-3xl"
+          class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-10 blur-3xl"
         ></div>
       </div>
 
@@ -445,7 +445,7 @@
             </span>
             <span class="block">
               <span
-                class="bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+                class="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
               >
                 {{ $t("cta.titleEnd") }}
               </span>
@@ -453,7 +453,7 @@
           </h2>
 
           <p
-            class="text-lg md:text-xl text-[#cbd5e1] max-w-2xl mx-auto mb-10 leading-relaxed"
+            class="text-lg md:text-xl text-textLightGray max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             {{ $t("cta.description2") }}
           </p>
@@ -469,12 +469,12 @@
             >
               <!-- Background gradient -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+                class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
               ></div>
 
               <!-- Hover gradient -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
+                class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/primary:opacity-100 rounded-xl transition-opacity duration-300"
               ></div>
 
               <!-- Content -->
@@ -490,7 +490,7 @@
 
               <!-- Outer glow -->
               <div
-                class="absolute -inset-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
+                class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-xl blur opacity-0 group-hover/primary:opacity-30 transition-opacity duration-300 -z-10"
               ></div>
             </NuxtLink>
 
@@ -501,7 +501,7 @@
             >
               <!-- Glass background -->
               <div
-                class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-[#1bd4c1]/30 transition-colors duration-300"
+                class="absolute inset-0 bg-[#111827]/80 backdrop-blur-sm border border-[#334155] rounded-xl group-hover/secondary:border-secondary/30 transition-colors duration-300"
               ></div>
 
               <!-- Content -->
@@ -517,7 +517,7 @@
 
               <!-- Gradient border on hover -->
               <div
-                class="absolute -inset-0.5 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
+                class="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-xl opacity-0 group-hover/secondary:opacity-30 blur transition-opacity duration-300 -z-10"
               ></div>
             </NuxtLink>
           </div>

@@ -5,13 +5,13 @@
       <!-- Animated gradient orbs -->
       <div class="absolute top-1/4 -left-40 w-[800px] h-[800px]">
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full opacity-5 blur-3xl animate-pulse-slow"
         ></div>
       </div>
 
       <div class="absolute bottom-1/4 -right-40 w-[600px] h-[600px]">
         <div
-          class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] rounded-full opacity-5 blur-3xl animate-pulse-slow"
+          class="absolute inset-0 bg-gradient-to-r from-secondary to-primary rounded-full opacity-5 blur-3xl animate-pulse-slow"
           style="animation-delay: 2s"
         ></div>
       </div>
@@ -32,7 +32,7 @@
       <div
         v-for="i in 8"
         :key="i"
-        class="absolute top-0 w-px h-full bg-gradient-to-b from-transparent via-[#00e1ff]/10 to-transparent"
+        class="absolute top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/10 to-transparent"
         :style="{ left: `${i * 12.5}%` }"
       ></div>
     </div>
@@ -45,15 +45,15 @@
         <div class="max-w-2xl">
           <!-- Badge -->
           <div
-            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 border border-[#00e1ff]/20 mb-6"
+            class="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 mb-6"
           >
             <div class="flex items-center gap-2">
               <div class="relative">
                 <div
-                  class="w-2 h-2 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-pulse"
+                  class="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse"
                 ></div>
                 <div
-                  class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-30 animate-ping"
+                  class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30 animate-ping"
                 ></div>
               </div>
               <span
@@ -69,7 +69,7 @@
               t("featured_projects.title.part1")
             }}</span>
             <span
-              class="block bg-gradient-to-r from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
+              class="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient"
             >
               {{ t("featured_projects.title.highlight") }}
             </span>
@@ -79,13 +79,13 @@
           </h2>
 
           <!-- Description -->
-          <p class="text-lg text-[#cbd5e1] mt-6 leading-relaxed font-light">
+          <p class="text-lg text-textLightGray mt-6 leading-relaxed font-light">
             {{ t("featured_projects.description.prefix") }}
-            <span class="text-[#00e1ff] font-medium">{{
+            <span class="text-primary font-medium">{{
               t("featured_projects.description.tech")
             }}</span>
             {{ t("featured_projects.description.and") }}
-            <span class="text-[#1bd4c1] font-medium">{{
+            <span class="text-secondary font-medium">{{
               t("featured_projects.description.design")
             }}</span
             >.
@@ -99,12 +99,12 @@
         >
           <!-- Background -->
           <div
-            class="absolute inset-0 bg-[#111827] border border-[#334155] rounded-xl group-hover/all-projects:border-[#00e1ff]/30 transition-colors duration-300"
+            class="absolute inset-0 bg-[#111827] border border-[#334155] rounded-xl group-hover/all-projects:border-primary/30 transition-colors duration-300"
           ></div>
 
           <!-- Hover gradient -->
           <div
-            class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/all-projects:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover/all-projects:opacity-100 transition-opacity duration-300"
           ></div>
 
           <!-- Content -->
@@ -112,7 +112,7 @@
             t("featured_projects.view_all")
           }}</span>
           <svg
-            class="relative z-10 w-5 h-5 text-[#00e1ff] group-hover/all-projects:translate-x-1 transition-transform duration-300"
+            class="relative z-10 w-5 h-5 text-primary group-hover/all-projects:translate-x-1 transition-transform duration-300"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -140,12 +140,12 @@
           >
             <!-- Gradient Border -->
             <div
-              class="absolute -inset-0.5 bg-gradient-to-br from-[#00e1ff] via-[#1bd4c1] to-[#00e1ff] rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
+              class="absolute -inset-0.5 bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl opacity-0 group-hover:opacity-30 blur transition-opacity duration-500"
             ></div>
 
             <!-- Main Card -->
             <div
-              class="relative h-full bg-bg rounded-3xl border border-border group-hover:border-[#00e1ff]/30 overflow-hidden transition-all duration-300"
+              class="relative h-full bg-bg rounded-3xl border border-border group-hover:border-primary/30 overflow-hidden transition-all duration-300"
             >
               <!-- Project Image -->
               <div class="relative aspect-[16/10] overflow-hidden">
@@ -163,14 +163,14 @@
 
                 <!-- Hover Overlay -->
                 <div
-                  class="absolute inset-0 bg-gradient-to-tr from-[#00e1ff]/20 via-transparent to-[#1bd4c1]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  class="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 ></div>
 
                 <!-- Category Badge -->
                 <div class="absolute top-6 left-6">
                   <div class="relative">
                     <div
-                      class="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#00e1ff]/20 to-[#1bd4c1]/20 backdrop-blur-sm border border-white/10"
+                      class="px-4 py-1.5 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-white/10"
                     >
                       <span
                         class="text-textPrimary text-xs font-semibold tracking-wider"
@@ -178,7 +178,7 @@
                       >
                     </div>
                     <div
-                      class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
+                      class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"
                     ></div>
                   </div>
                 </div>
@@ -201,10 +201,10 @@
                   <a
                     :href="project.demoUrl"
                     target="_blank"
-                    class="group/demo relative px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#00e1ff]/30 transition-all duration-300"
+                    class="group/demo relative px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-primary/30 transition-all duration-300"
                   >
                     <div
-                      class="absolute inset-0 bg-gradient-to-r from-[#00e1ff]/10 to-[#1bd4c1]/10 rounded-xl opacity-0 group-hover/demo:opacity-100 transition-opacity duration-300"
+                      class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl opacity-0 group-hover/demo:opacity-100 transition-opacity duration-300"
                     ></div>
                     <span
                       class="relative z-10 text-textPrimary font-medium flex items-center gap-2"
@@ -228,10 +228,10 @@
                   <a
                     :href="project.codeUrl"
                     target="_blank"
-                    class="group/code relative px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#1bd4c1]/30 transition-all duration-300"
+                    class="group/code relative px-6 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 hover:border-secondary/30 transition-all duration-300"
                   >
                     <div
-                      class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1]/10 to-[#00e1ff]/10 rounded-xl opacity-0 group-hover/code:opacity-100 transition-opacity duration-300"
+                      class="absolute inset-0 bg-gradient-to-r from-secondary/10 to-primary/10 rounded-xl opacity-0 group-hover/code:opacity-100 transition-opacity duration-300"
                     ></div>
                     <span
                       class="relative z-10 text-textPrimary font-medium flex items-center gap-2"
@@ -258,9 +258,9 @@
                 <!-- Client -->
                 <div class="flex items-center gap-2 mb-3">
                   <div
-                    class="w-6 h-px bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1]"
+                    class="w-6 h-px bg-gradient-to-r from-primary to-secondary"
                   ></div>
-                  <span class="text-[#94a3b8] text-sm font-medium">{{
+                  <span class="text-textGray text-sm font-medium">{{
                     project.client
                   }}</span>
                 </div>
@@ -273,7 +273,7 @@
                 </h3>
 
                 <!-- Description -->
-                <p class="text-[#cbd5e1] mb-6 leading-relaxed font-light">
+                <p class="text-textLightGray mb-6 leading-relaxed font-light">
                   {{ project.description }}
                 </p>
 
@@ -286,15 +286,15 @@
                       class="group/tag relative"
                     >
                       <div
-                        class="px-3 py-1.5 rounded-lg bg-bgSoft border border-primary/20 group-hover/tag:border-[#00e1ff]/30 transition-all duration-300"
+                        class="px-3 py-1.5 rounded-lg bg-bgSoft border border-primary/30 group-hover/tag:border-primary/50 transition-all duration-300"
                       >
                         <span
-                          class="text-[#94a3b8] text-xs font-medium group-hover/tag:text-white"
+                          class="text-textGray text-xs font-medium cursor-pointer group-hover/tag:text-primary"
                           >{{ tag }}</span
                         >
                       </div>
                       <div
-                        class="absolute -inset-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-lg blur opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 -z-10"
+                        class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-lg blur opacity-0 group-hover/tag:opacity-20 transition-opacity duration-300 -z-10"
                       ></div>
                     </div>
                   </div>
@@ -302,7 +302,7 @@
 
                 <!-- Stats -->
                 <div
-                  class="grid grid-cols-3 gap-4 pt-6 border-t border-[#334155]"
+                  class="grid grid-cols-3 gap-4 pt-6 border-t border-primary/50"
                 >
                   <div
                     v-for="stat in project.stats"
@@ -313,7 +313,7 @@
                       {{ stat.value }}
                     </div>
                     <div
-                      class="text-xs text-[#94a3b8] uppercase tracking-wider"
+                      class="text-xs text-textLightGray uppercase tracking-wider"
                     >
                       {{ stat.label }}
                     </div>
@@ -329,7 +329,7 @@
                 <div
                   v-for="i in 8"
                   :key="i"
-                  class="absolute w-1 h-1 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-full animate-particle"
+                  class="absolute w-1 h-1 bg-gradient-to-r from-primary to-secondary rounded-full animate-particle"
                   :style="{
                     left: `${Math.random() * 100}%`,
                     top: `${Math.random() * 100}%`,
@@ -352,11 +352,11 @@
             <h3 class="text-3xl font-bold text-textPrimary mb-4">
               {{ t("featured_projects.cta.title.part1") }}
               <span
-                class="bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] bg-clip-text text-transparent"
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                 >{{ t("featured_projects.cta.title.highlight") }}</span
               >
             </h3>
-            <p class="text-[#cbd5e1]">
+            <p class="text-textLightGray">
               {{ t("featured_projects.cta.description") }}
             </p>
           </div>
@@ -367,12 +367,12 @@
           >
             <!-- Background gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#00e1ff] to-[#1bd4c1] rounded-xl"
+              class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-xl"
             ></div>
 
             <!-- Hover gradient -->
             <div
-              class="absolute inset-0 bg-gradient-to-r from-[#1bd4c1] to-[#00e1ff] opacity-0 group-hover/cta:opacity-100 rounded-xl transition-opacity duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/cta:opacity-100 rounded-xl transition-opacity duration-300"
             ></div>
 
             <!-- Shine effect -->
@@ -435,7 +435,8 @@ const projects = [
     description:
       "Cross-platform healthcare app connecting patients with providers through secure video consultations.",
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop",
+
     tags: ["React Native", "Firebase", "WebRTC", "iOS", "Android"],
     category: "Mobile App",
     demoUrl: "https://demo.example.com",
