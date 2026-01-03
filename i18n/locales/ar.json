@@ -492,7 +492,7 @@
     },
     "placeholders": {
       "name": "John Doe",
-      "email": "john@example.com",
+      "email": "",
       "company": "شركتك",
       "message": "أخبرنا عن مشروعك، الجدول الزمني، والميزانية..."
     },

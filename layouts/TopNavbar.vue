@@ -380,8 +380,8 @@
               :class="[
                 'relative px-4 py-3 rounded-xl font-medium transition-all duration-300 group/mobile-item',
                 route.path === item.path
-                  ? 'text-white bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20'
-                  : 'text-[rgb(var(--text-gray))] hover:text-white hover:bg-card',
+                  ? 'text-primary bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20'
+                  : 'text-textGray  hover:bg-card',
               ]"
               :style="{
                 opacity: isMobileOpen ? 1 : 0,

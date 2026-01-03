@@ -327,7 +327,7 @@
 
                 <!-- Content -->
                 <h3
-                  class="font-semibold text-white mb-2 group-hover/feature:text-transparent group-hover/feature:bg-gradient-to-r group-hover/feature:from-primary group-hover/feature:via-secondary group-hover/feature:to-primary group-hover/feature:bg-clip-text transition-all duration-300"
+                  class="font-semibold text-textPrimary mb-2 group-hover/feature:text-transparent group-hover/feature:bg-gradient-to-r group-hover/feature:from-primary group-hover/feature:via-secondary group-hover/feature:to-primary group-hover/feature:bg-clip-text transition-all duration-300"
                 >
                   {{ t(feature.titleKey) }}
                 </h3>
@@ -762,7 +762,7 @@ const getFeatureIcon = (iconName) => {
     performance: "lucide:gauge",
     ios: "lucide:apple",
     android: "lucide:smartphone",
-    "cross-platform": "lucide:smartphones",
+    "cross-platform": "lucide:laptop-minimal-check",
     "app-store": "lucide:shopping-bag",
     research: "lucide:users",
     wireframe: "lucide:layout-grid",

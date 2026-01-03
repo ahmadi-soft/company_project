@@ -482,7 +482,7 @@
     },
     "placeholders": {
       "name": "John Doe",
-      "email": "john@example.com",
+      "email": "",
       "company": "您的公司",
       "message": "告诉我们您的项目、时间表和预算..."
     },

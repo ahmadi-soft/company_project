@@ -471,7 +471,7 @@
     },
     "placeholders": {
       "name": "John Doe",
-      "email": "john@example.com",
+      "email": "",
       "company": "Your Company",
       "message": "Tell us about your project, timeline, and budget..."
     },

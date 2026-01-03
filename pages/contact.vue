@@ -163,7 +163,7 @@
                           type="email"
                           required
                           class="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-inputField border border-border rounded-lg text-textPrimary placeholder-textGray focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-300"
-                          :placeholder="t('contact.placeholders.email')"
+                          placeholder="john@example.com"
                         />
                       </div>
                     </div>
